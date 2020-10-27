@@ -13,7 +13,8 @@ class Movie extends Model
         'title',
         'description',
         'time',
-        'age_limit'
+        'age_limit',
+        'new',
     ];
     
     public function screenings()
