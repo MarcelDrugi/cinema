@@ -18,6 +18,7 @@ class MovieSeeder extends Seeder
             'publised' => 1939,
             'time' => 226,
             'age_limit' => 12,
+            'new' => true,
         ]);
         $movie1->save();
         
@@ -29,7 +30,8 @@ class MovieSeeder extends Seeder
             EOD,
             'publised' => 1976,
             'time' => 119,
-            'age_limit' => 12
+            'age_limit' => 12,
+            'new' => false,
         ]);
         $movie2->save();
     }

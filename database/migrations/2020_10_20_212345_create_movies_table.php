@@ -16,6 +16,8 @@ class CreateMoviesTable extends Migration
             $table->smallInteger('publised');
             $table->smallInteger('time');
             $table->tinyInteger('age_limit');
+            $table->string('poster', 255)->default(asset('images/no-poster.jpg'));
+            $table->boolean('new');
         });
     }
 

@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/a', function () {
-    return 'Ala ma kota';
-});
+Route::resource('/', 'App\Http\Controllers\HomepageController');
+Route::resource('/about', 'App\Http\Controllers\AboutController');
+Route::resource('/api-description', 'App\Http\Controllers\ApiDescriptionController');
+Route::resource('/pricing', 'App\Http\Controllers\PricingController');
+Route::resource('/repertoire', 'App\Http\Controllers\RepertoireController');
+Route::resource('/signin', 'App\Http\Controllers\SignInController');
+Route::resource('/signup', 'App\Http\Controllers\SignUpController');
