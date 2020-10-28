@@ -29,10 +29,18 @@
                     	<a class="nav-link" href="/api-description">API z repertuarem</a>
                   	</li>
             	</ul>
-            	<div class="ml-auto">
-                	<a class="btn btn-outline-success" href="/signin">Logowanie</a>
-                	<a class="btn btn-outline-success" href="/signup">Rejestracja</a>
-            	</div>
+            	@if (Auth::user())
+            		<div class="ml-auto">
+            			{{ Auth::user()->first_name }}
+            			{{ Auth::user()->last_name }}
+            			<a class="btn btn-outline-success" href="{{ route('logout') }}"> wyloguj</a>
+            		</div>
+            	@else
+            		<div class="ml-auto">
+                    	<a class="btn btn-outline-success" href="/login">Logowanie</a>
+                    	<a class="btn btn-outline-success" href="/register">Rejestracja</a>
+            		</div>
+            	@endif
         	</div>
         </nav>
         
