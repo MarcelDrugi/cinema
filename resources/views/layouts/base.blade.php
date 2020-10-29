@@ -28,6 +28,13 @@
                   	<li class="nav-item">
                     	<a class="nav-link" href="/api-description">API z repertuarem</a>
                   	</li>
+                  	@if (Auth::user())
+                  		@if (Auth::user()->hasRole("admin"))
+                          	<li class="nav-item">
+                            	<a class="nav-link" href="/admin">panel administracyjny</a>
+                          	</li>
+                      	@endif
+                  	@endif
             	</ul>
             	@if (Auth::user())
             		<div class="ml-auto">

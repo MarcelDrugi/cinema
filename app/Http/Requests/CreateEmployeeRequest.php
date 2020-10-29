@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 //use Response;
 
-class SomeRequest extends FormRequest
+class CreateEmployeeRequest extends FormRequest
 {
     public function rules()
     {
@@ -19,6 +19,6 @@ class SomeRequest extends FormRequest
 
     public function authorize()
     {
-        return false;
+        return true;
     }
 }

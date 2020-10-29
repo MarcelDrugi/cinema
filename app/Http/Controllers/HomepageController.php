@@ -9,11 +9,10 @@ use function PHPUnit\Framework\isEmpty;
 
 class HomepageController extends Controller
 {
-    public function index()
+    public function index($action=null)
     {
-        $m = Movie::all();
-        //return response()->view('homepage.index', []);
-        return response()->view('homepage.index', ['movies' => $m]);
+        $movies = Movie::where('new_movie', true)->take(5)->get();
+        return response()->view('homepage.index', ['movies' => $movies, 'action' => $action]);
     }
 
     public function create()

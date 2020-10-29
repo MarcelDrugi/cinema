@@ -18,7 +18,7 @@ class MovieSeeder extends Seeder
             'publised' => 1939,
             'time' => 226,
             'age_limit' => 12,
-            'new' => true,
+            'new_movie' => true,
         ]);
         $movie1->save();
         
@@ -31,7 +31,7 @@ class MovieSeeder extends Seeder
             'publised' => 1976,
             'time' => 119,
             'age_limit' => 12,
-            'new' => false,
+            'new_movie' => false,
         ]);
         $movie2->save();
     }
