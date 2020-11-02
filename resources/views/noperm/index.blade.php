@@ -2,6 +2,6 @@
 
 @section('content')
 	<h3>
-		Aby objerzeć zawartość musisz posiadać uprawnienie: <b>{{ $role }}</b>
+		Aby przeglądać ten zasób potrzebne są uprawnienia: <b>{{ $role }}</b>.
 	</h3>
 @endsection

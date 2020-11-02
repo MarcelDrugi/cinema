@@ -15,6 +15,6 @@ class CheckRole extends Authenticate
             if($user->hasRole($role))
                 return $next($request);
                 
-                return redirect()->route('no-perm', ['acction' => 'admin']);
+            return redirect()->route('no-perm', ['role' => $role]);
     }
 }

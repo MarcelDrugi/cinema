@@ -38,6 +38,14 @@
             	</ul>
             	@if (Auth::user())
             		<div class="ml-auto">
+            			@if(Auth::user()->hasRole("customer"))
+            				<a class="btn btn-outline-success" href="{{ route('profile.index') }}"> edytuj profil</a>
+            			@endif
+            			@if(Auth::user()->avatar)
+            				<img src="{{ Auth::user()->avatar }}" width="70" height="70">
+            			@else
+            				<img src="{{ asset('images/no-avatar.png') }}" width="70" height="70">
+            			@endif
             			{{ Auth::user()->first_name }}
             			{{ Auth::user()->last_name }}
             			<a class="btn btn-outline-success" href="{{ route('logout') }}"> wyloguj</a>

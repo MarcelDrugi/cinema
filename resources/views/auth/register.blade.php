@@ -1,3 +1,15 @@
+<script>
+  var loadFile = function(event) {
+  	var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.style.height = 100;
+    output.style.width = 100;
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>
+
 @extends('layouts.base')
 
 @section('content')
@@ -8,16 +20,16 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Imię</label>
+                            <label for="first_name" class="col-md-4 col-form-label text-md-right">Imię</label>
 
                             <div class="col-md-6">
                                 <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" autofocus>
 
-                                @error('name')
+                                @error('first_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -26,12 +38,12 @@
                         </div>
                         
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Nazwisko</label>
+                            <label for="last_name" class="col-md-4 col-form-label text-md-right">Nazwisko</label>
 
                             <div class="col-md-6">
                                 <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus>
 
-                                @error('name')
+                                @error('last_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -46,6 +58,20 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="avatar" class="col-md-4 col-form-label text-md-right">Avatar</label>
+
+                            <div class="col-md-6">
+                                <input id="avatar" type="file" onchange="loadFile(event)" class="@error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" autofocus>
+								<img id="output"/>
+                                @error('avatar')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

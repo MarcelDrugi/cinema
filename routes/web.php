@@ -32,6 +32,16 @@ Route::resource('/admin', 'App\Http\Controllers\AdminPanelController',
 );
 Route::resource('/api-description', 'App\Http\Controllers\ApiDescriptionController');
 Route::resource('/pricing', 'App\Http\Controllers\PricingController');
+/*
+Route::resource('/profile', 'App\Http\Controllers\ProfileController',
+    ['names' => [
+        'index' => 'profile.index',
+        'update' => 'profile.update',
+    ]]
+);
+*/
+Route::get('/profile/info/{action?}', 'App\Http\Controllers\ProfileController@index')->name('profile.index');
+Route::put('/profile/{profile}', 'App\Http\Controllers\ProfileController@update')->name('profile.update');
 Route::resource('/repertoire', 'App\Http\Controllers\RepertoireController');
 Route::resource('/signin', 'App\Http\Controllers\SignInController');
 Route::resource('/signup', 'App\Http\Controllers\SignUpController');
