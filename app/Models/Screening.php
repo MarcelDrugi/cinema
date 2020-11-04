@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,6 +23,11 @@ class Screening extends Model
     public function term()
     {
         return $this->hasOne('App\Models\Term');
+    }
+
+    public function sevenDaysTerm()
+    {
+        return $this->hasOne('App\Models\Term')->where('date_time', '<', Carbon::now()->addDays(7));
     }
     
     public function reservations()

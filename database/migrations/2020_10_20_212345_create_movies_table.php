@@ -13,7 +13,7 @@ class CreateMoviesTable extends Migration
             $table->timestamps();
             $table->string('title', 255);
             $table->text('description');
-            $table->smallInteger('publised');
+            $table->smallInteger('published');
             $table->smallInteger('time');
             $table->tinyInteger('age_limit');
             $table->string('poster', 255)->default(asset('images/no-poster.jpg'));

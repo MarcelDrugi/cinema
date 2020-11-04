@@ -15,7 +15,7 @@ class MovieSeeder extends Seeder
             Ekranizacja powieści Margaret Mitchell. Beztroska i bogata Scarlett O Hara wikła się w 
             burzliwy związek z Rhettem Butlerem.
             EOD,
-            'publised' => 1939,
+            'published' => 1939,
             'time' => 226,
             'age_limit' => 12,
             'new_movie' => true,
@@ -25,14 +25,27 @@ class MovieSeeder extends Seeder
         $movie2 = new Movie([
             'title' => 'Rocky',
             'description' => <<<EOD
-            Historia Rocky'ego Balboa, boksera-amatora, któremu nadarza się okazja stoczenia walki 
+            Historia Rocky'ego Balboa, boksera-amatora, któremu nadarza się okazja stoczenia walki
             o tytuł mistrza świata wagi ciężkiej.
             EOD,
-            'publised' => 1976,
+            'published' => 1976,
             'time' => 119,
             'age_limit' => 12,
             'new_movie' => false,
         ]);
         $movie2->save();
+        
+        $movie3 = new Movie([
+            'title' => 'Ben Hur',
+            'description' => <<<EOD
+            Wygnany z kraju przez swojego przyjaciela izraelski książę spotyka na pustyni Chrystusa. 
+            Nauki Jezusa odmieniają życie bohatera.
+            EOD,
+            'published' => 1959,
+            'time' => 212,
+            'age_limit' => 12,
+            'new_movie' => false,
+        ]);
+        $movie3->save();
     }
 }

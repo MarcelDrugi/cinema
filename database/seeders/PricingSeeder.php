@@ -24,5 +24,45 @@ class PricingSeeder extends Seeder
             'senior' => 16,
         ]);
         $tuesday->save();
+        
+        $wendsday = new Pricing([
+            'week_day' => 'Wendsday',
+            'normal' => 20,
+            'school' => 12,
+            'senior' => 16,
+        ]);
+        $wendsday->save();
+        
+        $thursday = new Pricing([
+            'week_day' => 'Thursday',
+            'normal' => 20,
+            'school' => 12,
+            'senior' => 16,
+        ]);
+        $thursday->save();
+        
+        $friday = new Pricing([
+            'week_day' => 'Friday',
+            'normal' => 20,
+            'school' => 12,
+            'senior' => 16,
+        ]);
+        $friday->save();
+        
+        $saturday = new Pricing([
+            'week_day' => 'Saturday',
+            'normal' => 25,
+            'school' => 16,
+            'senior' => 18,
+        ]);
+        $saturday->save();
+        
+        $sunday = new Pricing([
+            'week_day' => 'Sunday',
+            'normal' => 25,
+            'school' => 16,
+            'senior' => 18,
+        ]);
+        $sunday->save();
     }
 }

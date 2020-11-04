@@ -35,13 +35,32 @@ class Term extends Model
     {
         parent::boot();
         
-        self::creating(function($model){
-            $date = $model->date_time;
-            $unixTimestamp = strtotime($date);
-            $dayOfWeek = date("l", $unixTimestamp);
-            
+        self::creating(function($model) {
+            $dayOfWeek = $model->day();
             $pricing = Pricing::where('week_day', $dayOfWeek)->first();
             $model->pricing()->associate($pricing);
         });
+    }
+    
+    /**
+     * Method is public, becouse it is called in the template too.
+     * @return string
+     */
+    public function day()
+    {
+        $date = $this->date_time;
+        $unixTimestamp = strtotime($date);
+        $dayOfWeek = date("l", $unixTimestamp);
+        return $dayOfWeek;
+    }
+    
+    public function time()
+    {
+        return date('H:i', strtotime($this->date_time));
+    }
+    
+    public function date()
+    {
+        return date('mm:dd', strtotime($this->date_time));
     }
 }

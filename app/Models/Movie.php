@@ -12,6 +12,7 @@ class Movie extends Model
     protected $fillable = [
         'title',
         'description',
+        'published',
         'time',
         'age_limit',
         'new_movie',
@@ -20,5 +21,10 @@ class Movie extends Model
     public function screenings()
     {
         return $this->hasMany('App\Models\Screening');
+    }
+    
+    public function sevenDaysScreenings()
+    {
+        return $this->hasMany('App\Models\Screening')->has('sevenDaysTerm');
     }
 }

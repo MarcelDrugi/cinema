@@ -1,0 +1,18 @@
+{
+    "Register": "Rejestracja",
+	"E-Mail Address": "Adres e-mail",
+	"First Name": "Imię",
+	"Last Name": "Nazwisko",
+	"Confirm Password": "Potwierdź hasło",
+	"Password": "Hasło",
+	"Login": "Logowanie",
+	"Remember Me": "Zapamiętaj",
+	"Sunday": "Niedziela",
+    "Monday": "Poniedziałek",
+    "Tuesday": "Wtorek",
+    "Wednesday": "Środa",
+    "Thursday": "Czwartek",
+    "Friday": "Piątek",
+    "Saturday": "Sobota",
+	"Title": "Tytuł"
+}

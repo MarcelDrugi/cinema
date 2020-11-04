@@ -26,5 +26,17 @@ class ScreeningSeeder extends Seeder
             'viewers' => 150,
         ]);
         $screening3->save();
+        
+        $screening4 = new Screening([
+            'movie_id' => 3,
+            'viewers' => 120,
+        ]);
+        $screening4->save();
+        
+        $screening5 = new Screening([
+            'movie_id' => 3,
+            'viewers' => 75,
+        ]);
+        $screening5->save();
     }
 }
