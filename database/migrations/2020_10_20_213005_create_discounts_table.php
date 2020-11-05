@@ -13,7 +13,7 @@ class CreateDiscountsTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
             $table->string('code', 16);
-            $table->tinyInteger('value');
+            $table->float('value', 3, 2);
         });
         
             Schema::table('discounts', function (Blueprint $table) {

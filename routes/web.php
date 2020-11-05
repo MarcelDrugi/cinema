@@ -31,15 +31,15 @@ Route::resource('/admin', 'App\Http\Controllers\AdminPanelController',
     ]]
 );
 Route::resource('/api-description', 'App\Http\Controllers\ApiDescriptionController');
-Route::resource('/pricing', 'App\Http\Controllers\PricingController');
-/*
-Route::resource('/profile', 'App\Http\Controllers\ProfileController',
+Route::get('/order/{id?}', 'App\Http\Controllers\OrderController@index')->name('order.index');
+Route::post('/order', 'App\Http\Controllers\OrderController@store')->name('order.store');
+Route::resource('/api-description', 'App\Http\Controllers\OrderSummaryController',
     ['names' => [
-        'index' => 'profile.index',
-        'update' => 'profile.update',
+        'index' => 'summary.index',
+        'store' => 'summary.store',
     ]]
 );
-*/
+Route::resource('/pricing', 'App\Http\Controllers\PricingController');
 Route::get('/profile/info/{action?}', 'App\Http\Controllers\ProfileController@index')->name('profile.index');
 Route::put('/profile/{profile}', 'App\Http\Controllers\ProfileController@update')->name('profile.update');
 Route::resource('/repertoire', 'App\Http\Controllers\RepertoireController');

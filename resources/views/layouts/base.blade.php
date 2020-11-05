@@ -2,10 +2,12 @@
 <html>
 	<head>
         <meta charset="utf-8">
-        <title>KLASYKA KINA</title>
+        <title>{{ __('CINEMA CLASSICS') }}</title>
     
         <!-- Scripts -->
         <script src="/js/app.js"></script>
+		<script src="/js/main.js"></script>
+        
     
         <!-- Styles -->
         <link href="/css/app.css" rel="stylesheet">
@@ -17,21 +19,21 @@
         	<div class="collapse navbar-collapse">
         		<ul class="navbar-nav">
                 	<li class="nav-item">
-                  		<a class="nav-link" href="/repertoire">Repertuar</a>
+                  		<a class="nav-link" href="/repertoire">{{ __('Repertoire') }}</a>
                   	</li>
                   	<li class="nav-item">
-                    	<a class="nav-link" href="/pricing">Cennik</a>
+                    	<a class="nav-link" href="/pricing">{{ __('Pricing') }}</a>
                   	</li>
                   	<li class="nav-item">
-                    	<a class="nav-link" href="/about">O nas</a>
+                    	<a class="nav-link" href="/about">{{ __('About') }}</a>
                   	</li>
                   	<li class="nav-item">
-                    	<a class="nav-link" href="/api-description">API z repertuarem</a>
+                    	<a class="nav-link" href="/api-description">{{ __('API with repertoire') }}</a>
                   	</li>
                   	@if (Auth::user())
                   		@if (Auth::user()->hasRole("admin"))
                           	<li class="nav-item">
-                            	<a class="nav-link" href="/admin">panel administracyjny</a>
+                            	<a class="nav-link" href="/admin">{{ __('Administration panel') }}</a>
                           	</li>
                       	@endif
                   	@endif
@@ -39,7 +41,7 @@
             	@if (Auth::user())
             		<div class="ml-auto">
             			@if(Auth::user()->hasRole("customer"))
-            				<a class="btn btn-outline-success" href="{{ route('profile.index') }}"> edytuj profil</a>
+            				<a class="btn btn-outline-success" href="{{ route('profile.index') }}"> {{ __('edit profile') }}</a>
             			@endif
             			@if(Auth::user()->avatar)
             				<img src="{{ Auth::user()->avatar }}" width="70" height="70">
@@ -48,12 +50,12 @@
             			@endif
             			{{ Auth::user()->first_name }}
             			{{ Auth::user()->last_name }}
-            			<a class="btn btn-outline-success" href="{{ route('logout') }}"> wyloguj</a>
+            			<a class="btn btn-outline-success" href="{{ route('logout') }}">{{ __('sign out') }}</a>
             		</div>
             	@else
             		<div class="ml-auto">
-                    	<a class="btn btn-outline-success" href="/login">Logowanie</a>
-                    	<a class="btn btn-outline-success" href="/register">Rejestracja</a>
+                    	<a class="btn btn-outline-success" href="/login">{{ __('sign in') }}</a>
+                    	<a class="btn btn-outline-success" href="/register">{{ __('sign up') }}</a>
             		</div>
             	@endif
         	</div>

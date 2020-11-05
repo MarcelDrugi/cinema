@@ -1,8 +1,7 @@
 @extends('layouts.base')
 
 @section('content')
-	dzień tygodnia: 
-	<h1> Oto nasz repertuar na najbliższe 7 dni ({{ $today }} - {{ $lastDay }}): </h1>
+	<h1> {{ __('Our repertoire for the next 7 days') }} ({{ $today }} - {{ $lastDay }}): </h1>
     <div>
     	<table class="table table-dark">
     		<thead>
@@ -21,7 +20,10 @@
         				<tr>
         				<td></td>
         				@foreach($weekDays as $day)
-        					<td>@if($screening->term->day() == $day) {{ $screening->term->time() }} @endif</td>
+        					<td>@if($screening->term->day() == $day) 
+            					{{ $screening->term->time() }}
+            					<a type="button" class="btn btn-secondary btn-sm" href="{{ route('order.index', ['id' => $screening->id]) }}">{{ __('buy a ticket') }}</a> 
+        					@endif</td>
         				@endforeach
         				</tr>
         			@endforeach
