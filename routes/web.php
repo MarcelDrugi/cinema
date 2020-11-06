@@ -54,3 +54,9 @@ Route::get('logout', function()
     Session()->flush();
     return Redirect::to('/');
 })->name('logout');
+
+/*
+ * PayPal
+ */
+Route::post('create-paypal-transaction', 'App\Http\Controllers\PaymentController@createPayment')->name('create-payment');
+Route::post('confirm-paypal-transaction', 'App\Http\Controllers\PaymentController@confirmPayment')->name('confirm-payment');

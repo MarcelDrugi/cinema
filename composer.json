@@ -11,12 +11,14 @@
         "php": "^7.3",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/guzzle": "~6.0",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
         "league/flysystem-aws-s3-v3": "^1.0",
-        "spatie/laravel-permission": "^3.17"
+        "paypal/rest-api-sdk-php": "^1.14",
+        "spatie/laravel-permission": "^3.17",
+        "srmklive/paypal": "~1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",

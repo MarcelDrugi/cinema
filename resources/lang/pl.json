@@ -44,6 +44,13 @@
 	"Back": "Wróć",
 	"You buy": "Kupujesz",
 	"tickets for the amount": "bilety za kwotę",
-	"Order summary": "Podsumowanie zamówienia" 
+	"Order summary": "Podsumowanie zamówienia",
+	"PAYMENT DONE SUCCESSFULLY": "PŁATNOŚĆ WYKONANO POMYŚLNIE",
+	"You can view the booking in the user panel": "Rezerwację możesz obejrzeć w zakładce swojego konta",
+	"BOOKING DONE BUT PAYMENT DID NOT SUCCESSFULLY": "REZERWACJA ZOSTAŁA DOKONANA, ALE PŁATNOŚĆ NIE POWIODŁA SIĘ",
+	"You can try to pay again in the profile panel": "Próbę płatność możesz ponowić w zakładce swojego konta",
+	"THE EMPLOYEE ACCOUNT HAS BEEN ADDED": "KONTO PRACOWNIKA ZOSTAŁO DODANE",
+	"YOUR ACCOUNT DONE SUCCESSFULLY, YOU ARE LOGGED IN": "KONTO ZOSTAŁO UTWORZONE POMYŚLNIE, JESTEŚ ZALOGOWANY",
+	"LOG IN SUCCESSFULLY": "ZALOGOWANO POMYŚLNIE"
 	
 }
