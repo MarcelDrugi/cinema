@@ -16,6 +16,8 @@ class CreateReservationsTable extends Migration
             $table->boolean('payment_status');
             $table->float('price', 8, 2);
             $table->smallInteger('tickets_number');
+            $table->string('payment_id')->nullable();;
+            $table->string('payer_id')->nullable();;
         });
         
         Schema::table('reservations', function (Blueprint $table) {

@@ -116,4 +116,28 @@ function newPass(checkbox) {
         </div>
         <button type="submit">wyślij</button>
 	</form>
+	<h2> {{__('YOUR RESERVATIONS') }}: </h2>
+	<div>
+		@foreach($reservations as $reservation)
+			<div>
+			{{ $reservation->screening->movie->title }} ({{ __($reservation->screening->term->day()) }} - {{ date('d.m.Y - H:i', strtotime($reservation->screening->term->date_time)) }})
+			@if($reservation->payment_status)
+				<b style="color: green;"> opłacone </b>
+			@else
+				<b style="color: red;"> nie opłacone </b>
+				<form action="{{ route('profile.store') }}" method="post">
+					@csrf
+					<input type="hidden" value="{{ $reservation->id }}" name="reservationId">
+					<button type="submit">opłać</button>
+				</form>
+			@endif
+			</div>
+		@endforeach
+	</div>
+	<h2> {{__('YOUR DISCOUNTS') }}: </h2>
+	<div>
+		@foreach($discounts as $discount)
+			<div>{{ $discount->code }} ({{ $discount->value * 100 }}%)</div>
+		@endforeach
+	</div>
 @endsection

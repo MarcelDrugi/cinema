@@ -15,6 +15,8 @@ class ReservationSeeder extends Seeder
             'payment_status' => true,
             'price' => 40,
             'tickets_number' => 2,
+            'payment_id' => 'ijk789',
+            'payer_id' => 'xyz321',
         ]);
         $reservation->save();
     }

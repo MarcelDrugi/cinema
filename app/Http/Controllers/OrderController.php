@@ -31,6 +31,10 @@ class OrderController extends Controller
 
     public function store(OrderRequest $request)
     {
+        $referer = $request->server('HTTP_REFERER');
+        if (!strpos($referer,'/order'))
+            dd("NOT ALLOWED");
+        
         $order = new OrderService($request->all());
         $order->toPay();
         return redirect()->route('summary.index');

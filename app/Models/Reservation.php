@@ -19,11 +19,6 @@ class Reservation extends Model
     
     public function screening()
     {
-        return $this->hasOne('App\Models\Screening');
-    }
-    
-    public function screeninig()
-    {
         return $this->belongsTo('App\Models\Screening');
     }
     

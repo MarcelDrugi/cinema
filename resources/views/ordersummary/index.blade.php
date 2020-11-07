@@ -2,9 +2,18 @@
 
 @section('content')
 	<h2>{{ __('Order summary') }}</h2>
-	{{ __('You buy') }} {{ $summOfTickets }} {{ __('tickets for the amount') }}: {{ $toPay }} {{ __('EUR') }}<br>
-	@if($discountId)
-		{{ __('you use the discount') }}: {{ $discountId }} <br />
+	{{ __('You buy') }} {{ $summOfTickets }} {{ __('tickets for the amount') }}: {{ number_format($toPay, 2) }} {{ __('EUR') }}<br>
+	@if($normalTickets > 0)
+	{{ __('Normal')}}: {{ $normalTickets }}<br />
+	@endif
+	@if($juniorTickets > 0)
+	{{ __('School')}}: {{ $juniorTickets }}<br />
+	@endif
+	@if($seniorTickets > 0)
+	{{ __('Senior')}}: {{ $seniorTickets }}<br />
+	@endif
+	@if($discount)
+		{{ __('you use the discount') }}: {{ $discount->code }} <br />
 	@endif
 	<a href="{{ url()->previous() }}">{{ __('Back') }}</a>
 	<form method="post" action="">
@@ -25,14 +34,9 @@
 	</table>
     
     <div>NOWE</div>
-    <form method="POST" action="{{ route('create-payment') }}">
+    <form method="POST" action="{{ route('create-reservation') }}">
         @csrf
-        <div class="m-2">
-         <input type="text" name="amount" placeholder="Amount">
-         @if ($errors->has('amount'))
-         <span class="error"> {{ $errors->first('amount') }} </span>
-         @endif
-        </div>
+         <input type="hidden" name="toPay" value="{{ $toPay }}" >
         <button>Pay Now</button>
     </form>
 	

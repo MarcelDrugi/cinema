@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\OrderDetailService;
 
 class OrderSummaryController extends Controller
 {
@@ -11,22 +12,13 @@ class OrderSummaryController extends Controller
         $this->middleware('role:customer');
     }
 
-    public function index(Request $request)
+    public function index(Request $request, OrderDetailService $order)
     {
-        $toPay = $request->session()->get('toPay');
-        session()->forget('toPay');
-        
-        $discountId = $request->session()->get('discountId');
-        session()->forget('discountId');
-        
-        $summOfTickets = $request->session()->get('summOfTickets');
-        session()->forget('summOfTickets');
-        
-        return view('ordersummary.index', [
-            'toPay' => $toPay,
-            'discountId' => $discountId,
-            'summOfTickets' => $summOfTickets
-        ]);
+        $referer = $request->server('HTTP_REFERER');
+        if (!strpos($referer,'/order')) 
+            dd("NOT ALLOWED");
+            
+        return view('ordersummary.index', $order->orderContext());
     }
 
     public function create()

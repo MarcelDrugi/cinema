@@ -6,11 +6,19 @@ use App\Models\Movie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use function PHPUnit\Framework\isEmpty;
+use App\Models\Reservation;
+use App\Services\ConfirmReservationService;
 
 class HomepageController extends Controller
 {
     public function index($action=null)
     {
+        $parameters = request()->all();
+        if(!empty($parameters['paymentId']) && !empty($parameters['PayerID'])) {
+            $reservationId = session()->pull('reservationId');
+            $confirmReservation = new ConfirmReservationService($reservationId, $parameters);
+            $confirmReservation->confirm();
+        }
         $movies = Movie::where('new_movie', true)->take(5)->get();
         return response()->view('homepage.index', ['movies' => $movies, 'action' => $action]);
     }
@@ -22,7 +30,6 @@ class HomepageController extends Controller
 
     public function store(Request $request)
     {
-        //$path = $request->file('myfile')->store('images');
         $path = $request->file('myfile')->store('posters', 's3');
         
         echo basename($path);

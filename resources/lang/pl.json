@@ -51,6 +51,11 @@
 	"You can try to pay again in the profile panel": "Próbę płatność możesz ponowić w zakładce swojego konta",
 	"THE EMPLOYEE ACCOUNT HAS BEEN ADDED": "KONTO PRACOWNIKA ZOSTAŁO DODANE",
 	"YOUR ACCOUNT DONE SUCCESSFULLY, YOU ARE LOGGED IN": "KONTO ZOSTAŁO UTWORZONE POMYŚLNIE, JESTEŚ ZALOGOWANY",
-	"LOG IN SUCCESSFULLY": "ZALOGOWANO POMYŚLNIE"
+	"LOG IN SUCCESSFULLY": "ZALOGOWANO POMYŚLNIE",
+	"Normal": "Normalne",
+	"Senior": "Senioralne",
+	"School": "Szkolne",
+	"YOUR RESERVATIONS": "TWOJE REZERWACJE",
+	"YOUR DISCOUNTS": "TWOJE ZNIŻKI"
 	
 }

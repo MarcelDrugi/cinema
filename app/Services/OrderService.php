@@ -24,10 +24,14 @@ class OrderService
         $this->data['seniorTickets'] * $pricing->senior;
         $toPay *= (1.0 - $this->data['discountRadio']);
         
-        $request->session()->put('toPay', $toPay);
-        $request->session()->put('discountId', $this->data['discountId']);
-        $request->session()->put(
-            'summOfTickets',
+        $request->session()->flash('toPay', $toPay);
+        $request->session()->flash('screeningId', $this->data['screeningId']);
+        $request->session()->flash('discountId', $this->data['discountId']);
+        $request->session()->flash('normalTickets', $this->data['normalTickets']);
+        $request->session()->flash('juniorTickets', $this->data['juniorTickets']);
+        $request->session()->flash('seniorTickets', $this->data['seniorTickets']);
+        $request->session()->flash(
+            'sumOfTickets',
             $this->data['normalTickets'] + $this->data['juniorTickets'] + $this->data['seniorTickets']
         );
         

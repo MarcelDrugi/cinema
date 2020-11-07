@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Services;
 
 use Illuminate\Http\Request;
 use App\Clients\PayPalClient;
@@ -17,7 +17,7 @@ use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
 use PayPal\Api\WebProfile;
 
-class PaymentController extends Controller
+class PayPalService
 {
     const CURRENCY = 'PLN';
     
@@ -43,7 +43,7 @@ class PaymentController extends Controller
         Details $details,
         PaymentExecution $paymentExecution,
         WebProfile $webProfile
-    )
+        )
     {
         $this->paypalClient     = $payPalClient;
         $this->payer            = $payer;
@@ -57,34 +57,34 @@ class PaymentController extends Controller
         $this->details          = $details;
     }
     
-    public function createPayment()
+    public function createPayment($toPay)
     {
         $this->payer->setPaymentMethod('paypal');
-        $this->itemList->setItems($this->getPayPalItems());
-        $subTotalAmount = $this->getTotalAmount();
+        $this->itemList->setItems($this->getPayPalItems($toPay));
+        $subTotalAmount = $this->getTotalAmount($toPay);
         $this->amount->setCurrency(self::CURRENCY)
-            ->setTotal($subTotalAmount);      
+        ->setTotal($subTotalAmount);
         $this->transaction->setAmount($this->amount)
-            ->setItemList($this->itemList)
-            ->setDescription('Purchase of tickets at the Klasyka Kina cinema')
-            ->setInvoiceNumber(uniqid());
+        ->setItemList($this->itemList)
+        ->setDescription('Purchase of tickets at the Klasyka Kina cinema')
+        ->setInvoiceNumber(uniqid());
         $this->redirectUrls
-            ->setReturnUrl(route('homepage.index', ['action' => 'paid']))
-            ->setCancelUrl(route('homepage.index', ['action' => 'nonpaid']));
+        ->setReturnUrl(route('homepage.index', ['action' => 'paid']))
+        ->setCancelUrl(route('homepage.index', ['action' => 'nonpaid']));
         $inputFields = new InputFields();
         $inputFields->setNoShipping(1);
         $this->webProfile->setName('test' . uniqid())->setInputFields($inputFields);
         $webProfileId = $this->webProfile->create($this->paypalClient->context())->getId();
         $this->payment->setExperienceProfileId($webProfileId);
         $this->payment->setIntent("sale")
-            ->setPayer($this->payer)
-            ->setRedirectUrls($this->redirectUrls)
-            ->setTransactions(array($this->transaction));
+        ->setPayer($this->payer)
+        ->setRedirectUrls($this->redirectUrls)
+        ->setTransactions(array($this->transaction));
         
         try {
-            $this->payment->create($this->paypalClient->context());        
+            $this->payment->create($this->paypalClient->context());
         }
-        catch (Exception $ex) {            
+        catch (Exception $ex) {
             throw new Exception($ex->getMessage());
         }
         
@@ -94,18 +94,16 @@ class PaymentController extends Controller
                 break;
             }
         }
-        // You can set a custom data in a session
-        // $request->session()->put('key', 'value');;// We redirect to paypal tp make payment
-        if(isset($redirect_url)) {
-            return redirect($redirect_url);
-        }
         
-        return $this->payment;
+        if(isset($redirect_url))
+            return $redirect_url;
+        else
+            return null;
     }
     
-    protected function getPayPalItems()
+    protected function getPayPalItems($toPay)
     {
-        $items = $this->getItems();
+        $items = $this->getItems($toPay);
         
         foreach ($items as $item) {
             $payPalItem = new Item();
@@ -119,9 +117,9 @@ class PaymentController extends Controller
         return $purchaseItems;
     }
     
-    protected function getTotalAmount()
+    protected function getTotalAmount($toPay)
     {
-        $items = $this->getItems();
+        $items = $this->getItems($toPay);
         $totalAmount = 0.00;
         
         foreach ($items as $item) {
@@ -132,12 +130,16 @@ class PaymentController extends Controller
         return $totalAmount;
     }
     
-    protected function getItems()
+    protected function getItems($toPay)
     {
-        return [
-            ['name' => 'set of tickets', 'quantity' => 1, 'price' => request()->input('amount')],
-
-        ];
+        $request = request();
+        
+        if($toPay == $request->session()->get('toPay') || strpos($request->server('HTTP_REFERER'), '/profile'))
+            return [
+                ['name' => 'set of tickets', 'quantity' => 1, 'price' => $toPay],
+            ];
+            else
+                dd("SESSION ERROR");
     }
     
     public function confirmPayment(Request $request)

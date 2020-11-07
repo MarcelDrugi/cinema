@@ -57,3 +57,12 @@ The key should be automatically inserted into the .env file as 'APP_KEY='. Check
 If you haven't changed the settings, the application should start at: http://127.0.0.1:8000
 
 Of course you can use another server (e.g. Apache 2).
+
+### PayPal
+
+###### If you want to use PayPal (on a sandbox), fill the values of 3 constants in the .env file
+
+    PAYPAL_MODE=sandbox
+    PAYPAL_SANDBOX_CLIENT_ID=
+    PAYPAL_SANDBOX_SECRET=
+
