@@ -56,6 +56,12 @@
 	"Senior": "Senioralne",
 	"School": "Szkolne",
 	"YOUR RESERVATIONS": "TWOJE REZERWACJE",
-	"YOUR DISCOUNTS": "TWOJE ZNIŻKI"
+	"YOUR DISCOUNTS": "TWOJE ZNIŻKI",
+	"pay for": "opłać",
+	"paid": "opłacone",
+	"not paid": "nie opłacone",
+	"DATA CHANGED SUCCESSFULLY": "POMYŚLNIE ZMIENIONO DANE",
+	"change the password": "zmień hasło",
+	"To view this resource you need permissions": "Aby przeglądać ten zasób potrzebne są uprawnienia"
 	
 }

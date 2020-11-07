@@ -60,7 +60,7 @@ Of course you can use another server (e.g. Apache 2).
 
 ### PayPal
 
-###### If you want to use PayPal (on a sandbox), fill the values of 3 constants in the .env file
+###### If you want to use PayPal (on a sandbox), enter values of 3 constants for your sandbox account, in .env file:
 
     PAYPAL_MODE=sandbox
     PAYPAL_SANDBOX_CLIENT_ID=

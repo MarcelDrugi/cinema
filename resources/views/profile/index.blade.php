@@ -26,7 +26,7 @@ function newPass(checkbox) {
 	@if($action)
 		@if($action == "newData")
 			<div class="alert alert-success alert-dismissible" role="alert">
-            	POMYŚLNIE ZMIENIONO DANE
+            	{{ __('DATA CHANGED SUCCESSFULLY') }}
             	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
             		<span aria-hidden="true">&times;</span>
             	</button>
@@ -37,7 +37,7 @@ function newPass(checkbox) {
 		@csrf
 		@method('PUT')
     	<div class="form-group row">
-            <label for="name" class="col-md-4 col-form-label text-md-right">Imię</label>
+            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
 
             <div class="col-md-6">
                 <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') ? old('first_name') : $user->first_name }}" required autocomplete="first_name" autofocus>
@@ -50,7 +50,7 @@ function newPass(checkbox) {
             </div>
         </div>
         <div class="form-group row">
-            <label for="last_name" class="col-md-4 col-form-label text-md-right">Nazwisko</label>
+            <label for="last_name" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
 
             <div class="col-md-6">
                 <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') ? old('last_name') : $user->last_name }}" required autocomplete="last_name" autofocus>
@@ -89,7 +89,7 @@ function newPass(checkbox) {
             </div>
         </div>
         <div class="form-group row">
-            <label for="changePass" class="col-md-4 col-form-label text-md-right">zmień hasło</label>
+            <label for="changePass" class="col-md-4 col-form-label text-md-right">{{ __('change the password') }}</label>
             <input type="checkbox" name="changePass" onchange="newPass(this)">
         </div>
         <div id="newPass" style="display: @if($errors->first('password')) block @else none @endif">
@@ -114,7 +114,7 @@ function newPass(checkbox) {
                 </div>
             </div>
         </div>
-        <button type="submit">wyślij</button>
+        <button type="submit">{{ __('ACCEPT') }}</button>
 	</form>
 	<h2> {{__('YOUR RESERVATIONS') }}: </h2>
 	<div>
@@ -122,13 +122,13 @@ function newPass(checkbox) {
 			<div>
 			{{ $reservation->screening->movie->title }} ({{ __($reservation->screening->term->day()) }} - {{ date('d.m.Y - H:i', strtotime($reservation->screening->term->date_time)) }})
 			@if($reservation->payment_status)
-				<b style="color: green;"> opłacone </b>
+				<b style="color: green;"> {{ __('paid') }} </b>
 			@else
-				<b style="color: red;"> nie opłacone </b>
+				<b style="color: red;"> {{ __('not paid') }} </b>
 				<form action="{{ route('profile.store') }}" method="post">
 					@csrf
 					<input type="hidden" value="{{ $reservation->id }}" name="reservationId">
-					<button type="submit">opłać</button>
+					<button type="submit">{{ __('pay for') }}</button>
 				</form>
 			@endif
 			</div>
