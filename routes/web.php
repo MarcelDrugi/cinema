@@ -31,7 +31,7 @@ Route::resource('/admin', 'App\Http\Controllers\AdminPanelController',
     ]]
 );
 Route::resource('/api-description', 'App\Http\Controllers\ApiDescriptionController');
-Route::get('/order/{id?}', 'App\Http\Controllers\OrderController@index')->name('order.index');
+Route::get('/order/{id}', 'App\Http\Controllers\OrderController@index')->name('order.index');
 Route::post('/order', 'App\Http\Controllers\OrderController@store')->name('order.store');
 Route::resource('/summary', 'App\Http\Controllers\OrderSummaryController',
     ['names' => [
@@ -44,8 +44,6 @@ Route::get('/profile/info/{action?}', 'App\Http\Controllers\ProfileController@in
 Route::post('/profile', 'App\Http\Controllers\ProfileController@store')->name('profile.store');
 Route::put('/profile/{profile}', 'App\Http\Controllers\ProfileController@update')->name('profile.update');
 Route::resource('/repertoire', 'App\Http\Controllers\RepertoireController');
-Route::resource('/signin', 'App\Http\Controllers\SignInController');
-Route::resource('/signup', 'App\Http\Controllers\SignUpController');
 Route::get('/noperm/{role}','App\Http\Controllers\NoPermissionController@index')->name('no-perm');
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -60,4 +58,3 @@ Route::get('logout', function()
  * PayPal
  */
 Route::post('reservation', 'App\Http\Controllers\ReservationController@store')->name('create-reservation');
-Route::post('confirm-paypal-transaction', 'App\Http\Controllers\ReservationController@confirmPayment')->name('confirm-payment');
