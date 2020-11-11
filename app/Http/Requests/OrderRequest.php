@@ -29,6 +29,8 @@ class OrderRequest extends FormRequest
             ],
             'juniorTickets' => ['required'],
             'seniorTickets' => ['required'],
+            'screeningId' => ['required', 'min:1'],
+            'discountId' => ['required', 'min:1'],
         ];
     }
     
