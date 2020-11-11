@@ -14,12 +14,6 @@ class AdminTest extends TestCase
     
     protected $url = '/admin';
     
-    protected function setUp(): void
-    {
-        parent::setUp();
-        //Event::fake();
-    }
-    
     /** @test */
     public function redirectNotLoggedInUser()
     {

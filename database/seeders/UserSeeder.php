@@ -9,31 +9,31 @@ class UserSeeder extends Seeder
 {
     public function run()
     {
-        $customer_user = new User([
+        $customerUser = new User([
             'email' => 'jankowalski@example.com',
             'first_name' => 'Jan',
             'last_name' => 'Kowalski',
             'password' => bcrypt('somepass'),
         ]);
-        $customer_user->assignRole('customer');
-        $customer_user->save();
+        $customerUser->assignRole('customer');
+        $customerUser->save();
         
-        $employee_user = new User([
+        $employeeUser = new User([
             'email' => 'janinamalinowska@example.com',
             'first_name' => 'Janina',
             'last_name' => 'Malinowska',
             'password' => bcrypt('somepass'),
         ]);
-        $employee_user->assignRole('employee');
-        $employee_user->save();
+        $employeeUser->assignRole('employee');
+        $employeeUser->save();
         
-        $admin_user = new User([
+        $adminUser = new User([
             'email' => 'karolnowak@example.com',
             'first_name' => 'Karol',
             'last_name' => 'Nowak',
             'password' => bcrypt('somepass'),
         ]);
-        $admin_user->assignRole('admin');
-        $admin_user->save();
+        $adminUser->assignRole('admin');
+        $adminUser->save();
     }
 }
