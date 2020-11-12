@@ -139,7 +139,7 @@ class PayPalService
                 ['name' => 'set of tickets', 'quantity' => 1, 'price' => $toPay],
             ];
             else
-                dd("SESSION ERROR");
+                abort(404,'Session not found.');
     }
     
     public function confirmPayment(Request $request)

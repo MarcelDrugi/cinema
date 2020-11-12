@@ -54,14 +54,19 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $request = request();
-        $path = $request->file('avatar')->store('avatars', 's3');
+        if(!empty($request->file('avatar'))) {
+            $path = $request->file('avatar')->store('avatars', 's3');
+            $avatar = Storage::disk('s3')->url($path);
+        }
+        else
+            $avatar = null;
         
         $user = User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'avatar' => Storage::disk('s3')->url($path),
+            'avatar' => $avatar,
         ]);
         $user->assignRole('customer');
         $user->save();

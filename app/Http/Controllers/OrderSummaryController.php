@@ -15,8 +15,8 @@ class OrderSummaryController extends Controller
     public function index(Request $request, OrderDetailService $order)
     {
         $referer = $request->server('HTTP_REFERER');
-        if (!strpos($referer,'/order')) 
-            dd("NOT ALLOWED");
+        if (!strpos($referer, '/order')) 
+            abort(400, 'Bad request.');
             
         return view('ordersummary.index', $order->orderContext());
     }

@@ -5,8 +5,10 @@ namespace Tests\Feature;
 use App\Models\Pricing;
 use App\Models\Screening;
 use App\Models\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Event;
 use Tests\TestCase;
 use App\Models\Term;
 use Carbon\Traits\Date;
@@ -17,7 +19,7 @@ class OrderTest extends TestCase
     use RefreshDatabase;
     
     protected $url = '/order';
-    
+
     /** @test */
     public function postRedirectNotLoggedInUser()
     {
@@ -47,57 +49,10 @@ class OrderTest extends TestCase
     }
     
     /**
-     * The POST request should be rejected if it has wrong refferer,
-     * even if the user is logged in and has permissions.
+     * Create user with correct role and records necessary to request.
      * 
-     * @test
      */
-    public function postRejectIfWrongReferrer()
-    {
-        $user = User::factory()->make();
-        $user->assignRole('customer');
-        $user->save();
-        
-        $response = $this->actingAs($user)->post($this->url);
-        $response->assertStatus(302);
-        $response->assertRedirect('/');
-        
-        $this->followingRedirects()
-            ->post($this->url)
-            ->assertStatus(200);
-    }
-    
-    /**
-     * The POST request should be redirected back to '/order' if referrer is correct,
-     * but data in body is incorrect.
-     *
-     * @test
-     */
-    public function postAcceptedIfCorrectReferrer()
-    {
-        $user = User::factory()->make();
-        $user->assignRole('customer');
-        $user->save();
-        
-        $response = $this
-            ->actingAs($user)
-            ->call('POST', $this->url, [], [], [],  ['HTTP_REFERER' => env('APP_URL') . '/order']);
-        $response->assertStatus(302);
-        $response->assertRedirect('/order');
-        
-        $this->followingRedirects()
-            ->post($this->url)
-            ->assertStatus(200);
-    }
-    
-    /**
-     * The POST request should be redirected to '/summary' if referrer is correct,
-     * and data in body is incorrect.
-     * The session should also be modified accordingly.
-     *
-     * @test
-     */
-    public function postRedirectToSummary()
+    protected function createBasicData()
     {
         $user = User::factory()->make();
         $user->assignRole('customer');
@@ -116,12 +71,65 @@ class OrderTest extends TestCase
             'normalTickets' => '2',
             'juniorTickets' => '0',
             'seniorTickets' => '1',
-            'screeningId' => 1,
+            'screeningId' => $screening->id,
         ];
+        
+        return ['user' => $user, 'body' => $body];
+    }
+    
+    /**
+     * The POST request should be rejected if it has wrong refferer,
+     * even if the user is logged in and has permissions.
+     * 
+     * @test
+     */
+    public function postRejectIfWrongReferrer()
+    {
+        $data = $this->createBasicData();
+        
+        $response = $this
+            ->actingAs($data['user'])
+            ->call('POST', $this->url, $data['body']);
+        $response->assertStatus(400);
+    }
+    
+    /**
+     * The POST request should be redirected back to '/order' if referrer is correct,
+     * but data in body is incorrect.
+     *
+     * @test
+     */
+    public function postAcceptedIfCorrectReferrer()
+    {
+        $user = User::factory()->make();
+        $user->assignRole('customer');
+        $user->save();
         
         $response = $this
             ->actingAs($user)
-            ->call('POST', $this->url, $body, [], [],  ['HTTP_REFERER' => env('APP_URL') . '/order']);
+            ->call('POST', $this->url, ['something' => 'bad'], [], [],  ['HTTP_REFERER' => env('APP_URL') . '/order']);
+        $response->assertStatus(302);
+        $response->assertRedirect('/order');
+        
+        $this->followingRedirects()
+            ->post($this->url)
+            ->assertStatus(200);
+    }
+    
+    /**
+     * The POST request should be redirected to '/summary' if referrer is correct,
+     * and data in body is incorrect.
+     * The session should also be modified accordingly.
+     *
+     * @test
+     */
+    public function postRedirectToSummary()
+    {
+        $data = $this->createBasicData();
+
+        $response = $this
+            ->actingAs($data['user'])
+            ->call('POST', $this->url, $data['body'], [], [],  ['HTTP_REFERER' => env('APP_URL') . '/order']);
         $response->assertStatus(302);
         $response->assertRedirect('/summary');
         

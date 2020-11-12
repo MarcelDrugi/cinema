@@ -46,7 +46,7 @@ class ProfileController extends Controller
                 return redirect()->route('homepage.index', ['action' => 'nonpaid']);
         }
             
-            return $request->input('reservationId');
+        return $request->input('reservationId');
     }
 
     public function show($id)

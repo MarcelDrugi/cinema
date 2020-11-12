@@ -18,7 +18,7 @@ class ReservationController extends Controller
     {
         $referer = request()->server('HTTP_REFERER');
         if (!strpos($referer,'/summary'))
-            dd("NOT ALLOWED");
+            abort(404);
         
         $reservationService = new ReservationService(
             session()->get('screeningId'),
