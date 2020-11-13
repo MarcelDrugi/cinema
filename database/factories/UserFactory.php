@@ -23,14 +23,12 @@ class UserFactory extends Factory
     public function configure()
     {
         return $this->afterMaking(function (User $customerUser) {
-            $customer = Role::create(['name' => 'customer']);
-            $customer->save();
             
-            $employee = Role::create(['name' => 'employee']);
-            $employee->save();
+            Role::updateOrCreate(['name' => 'customer']);
             
-            $admin = Role::create(['name' => 'admin']);
-            $admin->save();
+            Role::updateOrCreate(['name' => 'employee']);
+            
+            Role::updateOrCreate(['name' => 'admin']);
         });
     }
 }
