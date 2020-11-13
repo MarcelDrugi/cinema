@@ -18,7 +18,7 @@ class Term extends Model
     
     public function screening()
     {
-        return $this->hasOne('App\Models\Screening');
+        return $this->belongsTo('App\Models\Screening');
     }
     
     public function hall()
@@ -61,6 +61,6 @@ class Term extends Model
     
     public function date()
     {
-        return date('mm:dd', strtotime($this->date_time));
+        return date('m:d', strtotime($this->date_time));
     }
 }
