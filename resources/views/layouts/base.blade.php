@@ -37,6 +37,13 @@
                           	</li>
                       	@endif
                   	@endif
+                  	@if (Auth::user())
+                  		@if (Auth::user()->hasRole("employee"))
+                          	<li class="nav-item">
+                            	<a class="nav-link" href="/movie">{{ __('Employee panel') }}</a>
+                          	</li>
+                      	@endif
+                  	@endif
             	</ul>
             	@if (Auth::user())
             		<div class="ml-auto">

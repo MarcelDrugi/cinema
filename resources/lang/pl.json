@@ -62,6 +62,26 @@
 	"not paid": "nie opłacone",
 	"DATA CHANGED SUCCESSFULLY": "POMYŚLNIE ZMIENIONO DANE",
 	"change the password": "zmień hasło",
-	"To view this resource you need permissions": "Aby przeglądać ten zasób potrzebne są uprawnienia"
+	"To view this resource you need permissions": "Aby przeglądać ten zasób potrzebne są uprawnienia",
+	"Employee panel": "Panel pracownika",
+	"edit movie": "edytuj filmy",
+	"select movie": "wybierz film",
+	"Description" : "Opis",
+	"Year of the premiere": "Rok premiry",
+	"New movie": "Nowość",
+	"Duration": "Czas trwania",
+	"Age limit": "Ograniczenie wiekowe",
+	"EDIT": "EDYTUJ",
+	"FILM EDITED SUCCESSFULLY": "FILM EDYTOWANO POMYŚLNIE",
+	"Poster": "Plakat",
+	"MOVIE DELETED SUCCESSFULLY": "FILM USUNIĘTY POMYŚLNIE",
+	"DELETE": "USUŃ",
+	"create new movie": "dodaj nowy film",
+	"ADD" : "DODAJ",
+	"EDITING MOVIES": "EDYTOWANIE FILMÓW",
+	"Select the video you want to edit / delete": "Wybierz film których zamierzasz edytować / usunąć",
+	"NEW MOVIE ADDED TO THE DATA BASE" : "DODANO NOWY FILM DO BAZY DANYCH",
+	"EDIT ERROR": "BŁĄD EDYCJI",
+	"ERROR WHILE MAKING MOVIE": "BŁĄD OPDCZAS TWORZENIA FILMU"
 	
 }

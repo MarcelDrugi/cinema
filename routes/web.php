@@ -31,6 +31,10 @@ Route::resource('/admin', 'App\Http\Controllers\AdminPanelController',
     ]]
 );
 Route::resource('/api-description', 'App\Http\Controllers\ApiDescriptionController');
+Route::get('/movie/{action?}', 'App\Http\Controllers\MovieController@index')->name('movie.index');
+Route::post('/movie', 'App\Http\Controllers\MovieController@store')->name('movie.store');
+Route::put('/movie', 'App\Http\Controllers\MovieController@update')->name('movie.update');
+Route::put('/movie/delete', 'App\Http\Controllers\MovieController@destroy')->name('movie.destroy');
 Route::get('/order/{id}', 'App\Http\Controllers\OrderController@index')->name('order.index');
 Route::post('/order', 'App\Http\Controllers\OrderController@store')->name('order.store');
 Route::resource('/summary', 'App\Http\Controllers\OrderSummaryController',

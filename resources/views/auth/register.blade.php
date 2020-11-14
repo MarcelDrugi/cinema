@@ -1,11 +1,11 @@
 <script>
-  var loadFile = function(event) {
-  	var output = document.getElementById('output');
+  const loadFile = function(event) {
+  	const output = document.getElementById('currentAvatar');
     output.src = URL.createObjectURL(event.target.files[0]);
     output.style.height = 100;
     output.style.width = 100;
     output.onload = function() {
-      URL.revokeObjectURL(output.src) // free memory
+      URL.revokeObjectURL(output.src)
     }
   };
 </script>
@@ -70,7 +70,7 @@
 
                             <div class="col-md-6">
                                 <input id="avatar" type="file" onchange="loadFile(event)" class="@error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" autofocus>
-								<img id="output"/>
+								<img id="currentAvatar"/>
                                 @error('avatar')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

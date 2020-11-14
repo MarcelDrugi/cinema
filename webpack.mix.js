@@ -16,5 +16,9 @@ mix.js('resources/js/app.js', 'public/js')
 
 mix.scripts([
         'resources/js/order/index.js',
-    ], 'public/js/main.js'
+		'resources/js/movie/index.js',
+	],
+	'public/js/main.js'
 );
+
+mix.less('resources/less/movie/index.less', 'public/css');

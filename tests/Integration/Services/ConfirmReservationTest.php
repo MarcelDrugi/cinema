@@ -17,7 +17,7 @@ class ConfirmReservationTest extends TestCase
         $reservation = Reservation::factory()->create();
         $parameters = [
             'paymentId' => 'abcdefghijk123456789',
-            'payerId' => 'xyz000000',
+            'PayerID' => 'xyz000000',  // unconventional key name imposed by paypal
         ];
         
         $service = new ConfirmReservationService($reservation->id, $parameters);
@@ -27,6 +27,6 @@ class ConfirmReservationTest extends TestCase
         
         $this->assertEquals($reservation->payment_status, true);
         $this->assertEquals($reservation->payment_id, $parameters['paymentId']);
-        $this->assertEquals($reservation->payer_id, $parameters['payerId']);
+        $this->assertEquals($reservation->payer_id, $parameters['PayerID']);
     }
 }

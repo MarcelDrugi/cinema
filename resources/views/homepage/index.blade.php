@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('content')
-	@if($action)
+	@isset($action)
 		@if($action == "logged")
 			<div class="alert alert-success alert-dismissible" role="alert">
             	{{ __('LOG IN SUCCESSFULLY') }}

@@ -19,7 +19,7 @@ class ConfirmReservationService
         $reservation = Reservation::find($this->reservationId);
         $reservation->payment_status = true;
         $reservation->payment_id = $this->parameters['paymentId'];
-        $reservation->payer_id = $this->parameters['payerId'];
+        $reservation->payer_id = $this->parameters['PayerID'];
         $reservation->save();
     }
 }
