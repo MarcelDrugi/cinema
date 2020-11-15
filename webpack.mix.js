@@ -11,14 +11,12 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/js/app.js', 'public/js');
 
 mix.scripts([
         'resources/js/order/index.js',
 		'resources/js/movie/index.js',
+		'resources/js/discount/index.js',
 	],
 	'public/js/main.js'
 );
-
-mix.less('resources/less/movie/index.less', 'public/css');

@@ -82,6 +82,22 @@
 	"Select the video you want to edit / delete": "Wybierz film których zamierzasz edytować / usunąć",
 	"NEW MOVIE ADDED TO THE DATA BASE" : "DODANO NOWY FILM DO BAZY DANYCH",
 	"EDIT ERROR": "BŁĄD EDYCJI",
-	"ERROR WHILE MAKING MOVIE": "BŁĄD OPDCZAS TWORZENIA FILMU"
+	"ERROR WHILE MAKING MOVIE": "BŁĄD OPDCZAS TWORZENIA FILMU",
+	"discounts": "zniżki",
+	"Customers": "Klienci",
+	"select customer": "wybierz klienta",
+	"Enter a new discount coupon": "Wprowadź nowy kupon zniżkowy",
+	"DISCOUNTS": "ZNIŻKI",
+	"Assign a discount to a specific customer": "Przydziel zniżkę konkretnemu klientowi",
+	"value": "wartość",
+	"A NEW DISCOUNT HAS BEEN CREATED": "NOWA ZNIŻKA ZOSTAŁA STWORZONA",
+	"Discount assigned to the customer": "Zniżkę przypisano do klienta",
+	"The discount coupon has not been assigned to any customer" : "Kupon zniżkowy nie został przypisany do żadnego klienta",
+	"code": "kod",
+	"Delete existing discount coupon": "Usuń istniejący kupon zniżkowy",
+	"select discount": "wybierz zniżkę",
+	"Removed discount with code": "Skasowano zniżkę o kodzie",
+	"WARNING! This discount is assigned to the account": "UWAGA! Ta zniżka przypisana jest do konta",
+	"This discount is not assigned to any customer": "Ta zniżka nie jest przypisana do żadnego klienta"
 	
 }

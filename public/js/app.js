@@ -49868,38 +49868,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/less/movie/index.less":
-/*!*****************************************!*\
-  !*** ./resources/less/movie/index.less ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 0:
-/*!***********************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/less/movie/index.less ./resources/sass/app.scss ***!
-  \***********************************************************************************************/
+/*!***********************************!*\
+  !*** multi ./resources/js/app.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/piotr/Pulpit/php_projekty/cinema/cinema/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /home/piotr/Pulpit/php_projekty/cinema/cinema/resources/less/movie/index.less */"./resources/less/movie/index.less");
-module.exports = __webpack_require__(/*! /home/piotr/Pulpit/php_projekty/cinema/cinema/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /home/piotr/Pulpit/php_projekty/cinema/cinema/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })

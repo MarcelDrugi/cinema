@@ -5,6 +5,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Discount extends Model
 {
@@ -21,6 +22,19 @@ class Discount extends Model
     public function user()
     {
         return $this->belongsTo('App\Models\User');
+    }
+    
+    public function randomCode()
+    {
+        while(true) {
+            $code = Str::random(16);
+            $discount = Discount::where('code', $code)->first();
+            if(!$discount) {
+                $this->code = $code;
+                $this->save();
+                break;
+            }    
+        }  
     }
     
     public function save(array $options = array())

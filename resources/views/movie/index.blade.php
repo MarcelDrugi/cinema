@@ -3,8 +3,8 @@
 @section('content')
 	<div>
 		<ul class="nav nav-tabs">
-			<li class="nav-item"><a class="nav-link active" href="{{ route('movie.index')}}">{{ __('edit movie') }}</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Menu 1</a></li>
+			<li class="nav-item"><a class="nav-link active" href="{{ route('movie.index') }}">{{ __('edit movie') }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('discount.index') }}">{{ __('discounts') }}</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Menu 2</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Menu 3</a></li>
 		</ul>
@@ -50,18 +50,18 @@
         </div>
 	@endif
 	@if ($errors->any())
-  <div class="alert alert-danger alert-dismissible">
-    <ul>
-        @foreach ($errors->all() as $error)
-           <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    	<span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-@endif
-	<h3>{{ __('EDITING MOVIES') }} </h3>
+      <div class="alert alert-danger alert-dismissible">
+        <ul>
+            @foreach ($errors->all() as $error)
+               <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        	<span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+	@endif
+	<h2>{{ __('EDITING MOVIES') }} </h2>
 	<div class="editMovie">
     	<div id="editMovieCover" class="movieCover"></div>
     	<form method="post" enctype="multipart/form-data" id="editMovie">
