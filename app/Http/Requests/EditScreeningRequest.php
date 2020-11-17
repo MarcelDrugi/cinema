@@ -64,7 +64,7 @@ class EditScreeningRequest extends FormRequest
                                     $fail(__('This term is not free for the hall.'));
                             }
                             elseif($newTermBegin < $end)
-                            $fail(__('This term is not free for the hall.'));
+                                $fail(__('This term is not free for the hall.'));
                         }
                     }
                 },
