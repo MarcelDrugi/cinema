@@ -18,7 +18,7 @@ class TermFactory extends Factory
             'screening_id' => Screening::factory(),
             'hall_id' => Hall::factory(),
             'pricing_id' => Pricing::factory(),
-            'date_time' => $this->faker->dateTimeThisYear->format('Y-m-d H:i'),
+            'date_time' => $this->faker->dateTimeBetween('now', '+1 years')->format('Y-m-d H:i'),
         ];
     }
 }

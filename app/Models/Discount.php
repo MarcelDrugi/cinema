@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
-
+use Exception;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Validator;
+
 
 class Discount extends Model
 {
@@ -45,16 +47,20 @@ class Discount extends Model
         } 
         else 
         {
-            throw new \Exception("Wrong discount code. Exactly 16 characters are required.", 1);
+            $fail = $this->errors->first();
+            throw new Exception($fail, 0);         
         }
     }
     
     public function isValid()
     {
         $values = $this->getAttributes();
-        $rules = ['code' => 'string|between:16,16'];
+        $rules = [
+            'code' => 'string|between:16,16',
+            'value' => 'numeric|min:0.01|max:0.99',
+        ];
         
-        $v = \Validator::make($values, $rules);
+        $v = Validator::make($values, $rules);
         
         $isValid = !$v->fails();
         $this->errors = $isValid ? new \Illuminate\Support\MessageBag() : $v->messages();

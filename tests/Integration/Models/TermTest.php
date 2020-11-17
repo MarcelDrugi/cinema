@@ -30,8 +30,8 @@ class TermTest extends TestCase
     /** @test */
     public function relationWithPricing()
     {
-        $term = Term::factory()->for(Pricing::factory()->state(['week_day' => 'Friday']))->create([
-            'date_time' => new Carbon('2020-12-25 18:35:00')
+        $term = Term::factory()->for(Pricing::factory()->state(['week_day' => 'Sunday']))->create([
+            'date_time' => new Carbon('2022-12-25 18:35:00')
         ]);
         $this->assertEquals($term->pricing_id, $term->pricing->id);
     }
@@ -39,15 +39,15 @@ class TermTest extends TestCase
     /** @test */
     public function designationOfWeekDay()
     {
-        $term = Term::factory()->create(['date_time' => new Carbon('2020-12-23 18:35:00')]);  //  Wednesday
-        $this->assertEquals('Wednesday', $term->day());
+        $term = Term::factory()->create(['date_time' => new Carbon('2022-12-23 18:35:00')]);  //  Wednesday
+        $this->assertEquals('Friday', $term->day());
     }
     
     /** @test */
     public function designationOfTime()
     {
         $time = '20:15';
-        $term = Term::factory()->create(['date_time' => new Carbon('2020-12-13 ' . $time)]);
+        $term = Term::factory()->create(['date_time' => new Carbon('2022-12-13 ' . $time)]);
         $this->assertEquals($time, $term->time());
     }
     
@@ -56,7 +56,7 @@ class TermTest extends TestCase
     {
         $day = '16';
         $month = '10';
-        $term = Term::factory()->create(['date_time' => new Carbon("2020-$month-$day 18:35:00")]);
+        $term = Term::factory()->create(['date_time' => new Carbon("2022-$month-$day 18:35:00")]);
         $this->assertEquals("{$month}:$day", $term->date());
     }
 }

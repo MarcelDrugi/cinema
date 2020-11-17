@@ -17,7 +17,7 @@ class RemoveDiscountRequest extends FormRequest
                     $id = json_decode($value, true)['id'];
                     
                     if(!filter_var($id, FILTER_VALIDATE_INT))
-                        $fail('id must be an INTEGER');
+                        $fail(__('id must be an INTEGER'));
                 },
             ],
         ];

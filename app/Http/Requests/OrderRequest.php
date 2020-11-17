@@ -15,7 +15,7 @@ class OrderRequest extends FormRequest
                 'required',
                 function($attribute, $value, $fail) {
                     if($value < 0) {
-                        $fail($attribute .' must be positive');
+                        $fail(__('Number of tickets must be positive.'));
                     }
                     else {
                         $id = $this->input('screeningId');

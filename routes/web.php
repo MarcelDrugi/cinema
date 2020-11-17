@@ -55,6 +55,11 @@ Route::get('/profile/info/{action?}', 'App\Http\Controllers\ProfileController@in
 Route::post('/profile', 'App\Http\Controllers\ProfileController@store')->name('profile.store');
 Route::put('/profile/{profile}', 'App\Http\Controllers\ProfileController@update')->name('profile.update');
 Route::resource('/repertoire', 'App\Http\Controllers\RepertoireController');
+
+Route::get('/screening', 'App\Http\Controllers\ScreeningController@index')->name('screening.index');
+Route::post('/screening', 'App\Http\Controllers\ScreeningController@store')->name('screening.store');
+Route::put('/screening', 'App\Http\Controllers\ScreeningController@update')->name('screening.update');
+Route::put('/screening/delete', 'App\Http\Controllers\ScreeningController@destroy')->name('screening.destroy');
 Route::get('/noperm/{role}','App\Http\Controllers\NoPermissionController@index')->name('no-perm');
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

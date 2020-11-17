@@ -5,8 +5,7 @@
 		<ul class="nav nav-tabs">
 			<li class="nav-item"><a class="nav-link active" href="{{ route('movie.index') }}">{{ __('edit movie') }}</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('discount.index') }}">{{ __('discounts') }}</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Menu 2</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Menu 3</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('screening.index') }}">{{ strtolower(__('SCREENINGS')) }}</a></li>
 		</ul>
 	</div>
 	@isset($action)

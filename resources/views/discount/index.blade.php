@@ -1,6 +1,3 @@
-<script>
-
-</script>
 
 @extends('layouts.base')
 
@@ -9,8 +6,7 @@
     	<ul class="nav nav-tabs">
     		<li class="nav-item"><a class="nav-link" href="{{ route('movie.index') }}">{{ __('edit movie') }}</a></li>
             <li class="nav-item"><a class="nav-link active" href="{{ route('discount.index') }}">{{ __('discounts') }}</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Menu 2</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Menu 3</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('screening.index') }}">{{ strtolower(__('SCREENINGS')) }}</a></li>
     	</ul>
     </div>
     @if($newDiscount)
@@ -41,7 +37,7 @@
     		@csrf
            
             <div class="form-group row">
-                <label for="value" class="col-md-4 col-form-label text-md-right">wartosc</label>
+                <label for="value" class="col-md-4 col-form-label text-md-right">{{ __('value') }}: </label>
 
                 <div class="col-md-6">
                     <input id="value" type="text" class="form-control @error('value') is-invalid @enderror" name="value" value="{{ old('value') }}" required autocomplete="value" autofocus>
@@ -60,7 +56,7 @@
             </div>
             
     		<div id="customers" class="form-group row" style="display: none;">
-            	<label for="movie"> {{ __('Customers') }}: </label>
+            	<label for="customerSelect"> {{ __('Customers') }}: </label>
             	<select class="form-control" id="customerSelect" name="customerSelect">
             		<option selected="selected" disabled>{{ __('select customer') }}</option>
             		@foreach($customers as $customer)

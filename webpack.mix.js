@@ -17,6 +17,7 @@ mix.scripts([
         'resources/js/order/index.js',
 		'resources/js/movie/index.js',
 		'resources/js/discount/index.js',
+		'resources/js/screening/index.js',
 	],
 	'public/js/main.js'
 );
