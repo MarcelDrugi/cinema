@@ -186,4 +186,88 @@ class RouteTest extends TestCase
         $response = $this->call('POST', $url, [], [], [],  ['HTTP_REFERER' => 'env("APP_URL") . /summary']);
         $this->assertEquals(404, $response->status());  // The route is correct, but cant create ReservationService()
     }
+    
+    public function testMovieGetRoute()
+    {
+        $url = '/movie';
+        $response = $this->get($url);
+        $this->assertEquals(200, $response->status());
+    }
+    
+    public function testMoviePostRoute()
+    {
+        $url = '/movie';
+        $response = $this->post($url);
+        $this->assertEquals(302, $response->status());
+    }
+    
+    public function testMoviePutRoute()
+    {
+        $url = '/movie';
+        $response = $this->put($url);
+        $this->assertEquals(302, $response->status());
+    }
+    
+    /*
+     * Deleting a record is done with a put request with diferent url.
+     */
+    public function testMovieDeleteRoute()
+    {
+        $url = '/movie/delete';
+        $response = $this->put($url);
+        $this->assertEquals(500, $response->status());  // no key 'id'
+    }
+    
+    public function testScreeningGetRoute()
+    {
+        $url = '/screening';
+        $response = $this->get($url);
+        $this->assertEquals(200, $response->status());
+    }
+    
+    public function testScreeningPostRoute()
+    {
+        $url = '/screening';
+        $response = $this->post($url);
+        $this->assertEquals(302, $response->status());
+    }
+    
+    public function testScreeningPutRoute()
+    {
+        $url = '/screening';
+        $response = $this->put($url);
+        $this->assertEquals(302, $response->status());
+    }
+    
+    /*
+     * Deleting a record is done with a put request with diferent url.
+     */
+    public function testScreeningDeleteRoute()
+    {
+        $url = '/screening/delete';
+        $response = $this->put($url);
+        $this->assertEquals(500, $response->status());  // no key 'id'
+    }
+    
+    public function testDiscountGetRoute()
+    {
+        $url = '/discount';
+        $response = $this->get($url);
+        $this->assertEquals(200, $response->status());
+    }
+    
+    public function testDiscountPostRoute()
+    {
+        $url = '/discount';
+        $response = $this->post($url);
+        $this->assertEquals(302, $response->status());
+    }
+    
+    
+    public function testDiscountDeleteRoute()
+    {
+        $url = '/discount/delete';
+        $response = $this->delete($url);
+        $this->assertEquals(302, $response->status());
+    }
 }

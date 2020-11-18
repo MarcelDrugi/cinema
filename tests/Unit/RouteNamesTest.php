@@ -29,6 +29,23 @@ class RouteNamesTest extends TestCase
         $this->assertEquals(route('adminpanel.store'), $url);
     }
     
+    public function testDiscountRouteName()
+    {
+        $url = env('APP_URL') . '/discount';
+        $this->assertEquals(route('discount.index'), $url);
+        $this->assertEquals(route('discount.store'), $url);
+        $this->assertEquals(route('discount.destroy'), $url . '/delete');
+    }
+    
+    public function testMovieRouteName()
+    {
+        $url = env('APP_URL') . '/movie';
+        $this->assertEquals(route('movie.index'), $url);
+        $this->assertEquals(route('movie.store'), $url);
+        $this->assertEquals(route('movie.update'), $url);
+        $this->assertEquals(route('movie.destroy'), $url . '/delete');
+    }
+    
     public function testOrderGetRouteName()
     {
         $id = 35;
@@ -38,6 +55,15 @@ class RouteNamesTest extends TestCase
     public function testOrderPostRouteName()
     {
         $this->assertEquals(route('order.store'), env('APP_URL') . '/order');
+    }
+    
+    public function testScreeningRouteName()
+    {
+        $url = env('APP_URL') . '/screening';
+        $this->assertEquals(route('screening.index'), $url);
+        $this->assertEquals(route('screening.store'), $url);
+        $this->assertEquals(route('screening.update'), $url);
+        $this->assertEquals(route('screening.destroy'), $url . '/delete');
     }
     
     public function testOrderSummaryRouteName()

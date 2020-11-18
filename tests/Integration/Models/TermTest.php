@@ -8,10 +8,48 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Pricing;
 use App\Models\Term;
 use Carbon\Carbon;
+use Exception;
+use App\Models\Hall;
+use App\Models\Screening;
+use App\Models\Movie;
 
 class TermTest extends TestCase
 {
     use RefreshDatabase;
+    
+    /** @test */
+    public function pastTermsValidations()
+    {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('date_time may not be in the past.');
+        Term::factory()->create(['date_time' => Carbon::now()->addDays(-1)]);
+    }
+    
+    /** @test */
+    public function hallNotFreeInTermValidations()
+    {
+        $date = Carbon::today()->addDays(2)->addHours(19);
+        $movieTime = 100;
+        
+        $hall = Hall::factory()->create();;
+        $movie = Movie::factory()->create(['time' => $movieTime]);
+        $screening1 = Screening::factory()->create(['movie_id' => $movie]);
+        $screening2 = Screening::factory()->create(['movie_id' => $movie]);
+        
+        Term::factory()->create([
+            'screening_id' => $screening1,
+            'hall_id' => $hall,
+            'date_time' => $date,
+        ]);
+        
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('This term is not free.');
+        Term::factory()->create([
+            'screening_id' => $screening2,
+            'hall_id' => $hall,
+            'date_time' => $date->addMinutes(20),
+        ]);
+    }
     
     /** @test */
     public function relationWithScreening()
