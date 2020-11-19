@@ -14,38 +14,24 @@ use App\Models\Term;
 use Carbon\Traits\Date;
 use Carbon\Carbon;
 
-class OrderTest extends TestCase
+class OrderTest extends NoPermissionRedirect
 {
     use RefreshDatabase;
     
     protected $url = '/order';
+    protected $correctRole = 'customer';
+    protected $incorrectRole = 'employee';
 
     /** @test */
     public function postRedirectNotLoggedInUser()
     {
-        $response = $this->post($this->url);
-        $response->assertStatus(302);
-        $response->assertRedirect('/login');
-        
-        $this->followingRedirects()
-            ->post($this->url)
-            ->assertStatus(200);   
+        parent::postRedirectNotLoggedInUser();
     }
     
     /** @test */
     public function postRedirectUserWithoutPermission()
     {
-        $user = User::factory()->make();
-        $user->assignRole('employee');  // Role is created by afterMaking() in 'UserFactory'.
-        $user->save();
-        
-        $response = $this->actingAs($user)->post($this->url);
-        $response->assertStatus(302);
-        $response->assertRedirect('/noperm/customer');
-        
-        $this->followingRedirects()
-            ->post($this->url)
-            ->assertStatus(200);
+        parent::postRedirectUserWithoutPermission();
     }
     
     /**

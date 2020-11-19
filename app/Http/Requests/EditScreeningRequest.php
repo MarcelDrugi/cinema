@@ -55,7 +55,7 @@ class EditScreeningRequest extends FormRequest
                         foreach($terms as $term) {
                             if($term->id == $parsedScreeningData['term']['id'])
                                 continue;
-                                
+                             
                             $begin = Carbon::parse($term->date_time);
                             $end = $begin->copy()->addMinutes($term->screening->movie->time);
                             

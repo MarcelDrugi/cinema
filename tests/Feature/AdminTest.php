@@ -8,38 +8,35 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Event;
 use Tests\TestCase;
 
-class AdminTest extends TestCase
+class AdminTest extends NoPermissionRedirect
 {
     use RefreshDatabase;
     
     protected $url = '/admin';
+    protected $correctRole = 'admin';
+    protected $incorrectRole = 'employee';
     
     /** @test */
-    public function redirectNotLoggedInUser()
+    public function getRedirectNotLoggedInUser()
     {
-        $response = $this->get($this->url);
-        $response->assertStatus(302);
-        $response->assertRedirect('/login');
-        
-        $this->followingRedirects()
-            ->get($this->url)
-            ->assertStatus(200);
+        parent::getRedirectNotLoggedInUser();
     }
     
     /** @test */
-    public function redirectUserWithoutPermission()
+    public function postRedirectNotLoggedInUser()
+    {
+        parent::postRedirectNotLoggedInUser();
+    }
+    
+    public function getRedirectUserWithoutPermission()
     {        
-        $user = User::factory()->make();
-        $user->assignRole('customer');  // Role is created by afterMaking() in 'UserFactory'.
-        $user->save();
-        
-        $response = $this->actingAs($user)->get($this->url);
-        $response->assertStatus(302);
-        $response->assertRedirect('/noperm/admin');
-        
-        $this->followingRedirects()
-            ->get($this->url)
-            ->assertStatus(200);
+        parent::getRedirectUserWithoutPermission();
+    }
+    
+    /** @test */
+    public function postRedirectUserWithoutPermission()
+    {
+        parent::postRedirectUserWithoutPermission();
     }
     
     /** @test */

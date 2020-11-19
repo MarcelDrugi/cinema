@@ -40,7 +40,8 @@ class MovieModifyTest extends TestCase
     }
     
     /** @test */
-    public function deleteMovie() {
+    public function deleteMovie() 
+    {
         $movie = Movie::factory()->create();
         $id = ['id' => $movie->id];
         

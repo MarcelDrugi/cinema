@@ -5,98 +5,49 @@ namespace Tests\Feature;
 use App\Models\Movie;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Support\Facades\Event;
-use Tests\TestCase;
 
-class MovieTest extends TestCase
+class MovieTest extends NoPermissionRedirect
 {
     use RefreshDatabase;
     
     protected $url = '/movie';
+    protected $correctRole = 'employee';
+    protected $incorrectRole = 'customer';
     
     /** @test */
     public function getRedirectNotLoggedInUser()
     {
-        $response = $this->get($this->url);
-        $response->assertStatus(302);
-        $response->assertRedirect('/login');
-        
-        $this->followingRedirects()
-            ->get($this->url)
-            ->assertStatus(200);
+        parent::getRedirectNotLoggedInUser();
     }
     
     /** @test */
     public function postRedirectNotLoggedInUser()
     {
-        $response = $this->post($this->url);
-        $response->assertStatus(302);
-        $response->assertRedirect('/login');
-        
-        $this->followingRedirects()
-            ->get($this->url)
-            ->assertStatus(200);
+        parent::postRedirectNotLoggedInUser();
     }
     
     /** @test */
     public function putRedirectNotLoggedInUser()
     {
-        $response = $this->put($this->url);
-        $response->assertStatus(302);
-        $response->assertRedirect('/login');
-        
-        $this->followingRedirects()
-            ->get($this->url)
-            ->assertStatus(200);
+        parent::putRedirectNotLoggedInUser();
     }
     
     /** @test */
     public function getRedirectUserWithoutPermission()
-    {        
-        $user = User::factory()->make();
-        $user->assignRole('customer');  // Role is created by afterMaking() in 'UserFactory'.
-        $user->save();
-        
-        $response = $this->actingAs($user)->get($this->url);
-        $response->assertStatus(302);
-        $response->assertRedirect('/noperm/employee');
-        
-        $this->followingRedirects()
-            ->get($this->url)
-            ->assertStatus(200);
+    {
+        parent::getRedirectUserWithoutPermission();
     }
     
     /** @test */
     public function postRedirectUserWithoutPermission()
     {
-        $user = User::factory()->make();
-        $user->assignRole('customer');  // Role is created by afterMaking() in 'UserFactory'.
-        $user->save();
-        
-        $response = $this->actingAs($user)->post($this->url);
-        $response->assertStatus(302);
-        $response->assertRedirect('/noperm/employee');
-        
-        $this->followingRedirects()
-            ->get($this->url)
-            ->assertStatus(200);
+        parent::postRedirectUserWithoutPermission();
     }
     
     /** @test */
     public function putRedirectUserWithoutPermission()
     {
-        $user = User::factory()->make();
-        $user->assignRole('customer');  // Role is created by afterMaking() in 'UserFactory'.
-        $user->save();
-        
-        $response = $this->actingAs($user)->put($this->url);
-        $response->assertStatus(302);
-        $response->assertRedirect('/noperm/employee');
-        
-        $this->followingRedirects()
-            ->get($this->url)
-            ->assertStatus(200);
+        parent::putRedirectUserWithoutPermission();
     }
     
     /** @test */

@@ -19,7 +19,15 @@ class DiscountTest extends TestCase
     }
     
     /** @test */
-    public function customCodeValidation()
+    public function codeGenerator()
+    {
+        $discount = new Discount(['value' => 0.2]);
+        $discount->randomCode();
+        $this->assertEquals(16, strlen($discount->code));
+    }
+    
+    /** @test */
+    public function autoGeneratorCallingWhileSaving()
     {
         $discount = Discount::factory()->create();
         $this->assertEquals(16, strlen($discount->code));

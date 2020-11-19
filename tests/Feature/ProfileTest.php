@@ -9,38 +9,24 @@ use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 use App\Models\Reservation;
 
-class ProfileTest extends TestCase
+class ProfileTest extends NoPermissionRedirect
 {
     use RefreshDatabase;
     
     protected $url = '/profile';
+    protected $incorrectRole = 'employee';
+    protected $correctRole = 'customer';
     
-    /** $test */
+    /** @test */
     public function postRedirectNotLoggedInUser()
     {
-        $response = $this->post($this->url);
-        $response->assertStatus(302);
-        $response->assertRedirect('/login');
-        
-        $this->followingRedirects()
-            ->post($this->url)
-            ->assertStatus(200);
+        parent::postRedirectNotLoggedInUser();
     }
     
     /** @test */
     public function postRedirectUserWithoutPermission()
     {
-        $user = User::factory()->make();
-        $user->assignRole('employee');  // Role is created by afterMaking() in 'UserFactory'.
-        $user->save();
-        
-        $response = $this->actingAs($user)->post($this->url);
-        $response->assertStatus(302);
-        $response->assertRedirect('/noperm/customer');
-        
-        $this->followingRedirects()
-        ->post($this->url)
-        ->assertStatus(200);
+        parent::postRedirectUserWithoutPermission();
     }
     
     /**
@@ -82,32 +68,17 @@ class ProfileTest extends TestCase
         $response->assertSessionHas('reservationId', $body['reservationId']);
     }
     
-    /** $test */
+    /** @test */
     public function getRedirectNotLoggedInUser()
     {
-        $response = $this->get($this->url . '/info');
-        $response->assertStatus(302);
-        $response->assertRedirect('/login');
-        
-        $this->followingRedirects()
-            ->get($this->url . '/info')
-            ->assertStatus(200);
+        $this->url .= '/info';
+        parent::getRedirectNotLoggedInUser();
     }
     
     /** @test */
     public function getRedirectUserWithoutPermission()
-    {
-        $user = User::factory()->make();
-        $user->assignRole('employee');
-        $user->save();
-        
-        $response = $this->actingAs($user)->get($this->url . '/info');
-        $response->assertStatus(302);
-        $response->assertRedirect('/noperm/customer');
-        
-        $this->followingRedirects()
-            ->get($this->url . '/info')
-            ->assertStatus(200);
+    {   $this->url .= '/info';
+        parent::getRedirectUserWithoutPermission();
     }
     
     /**
@@ -127,18 +98,11 @@ class ProfileTest extends TestCase
         $response->assertStatus(200);
     }
     
-    /** $test */
+    /** @test */
     public function putRedirectNotLoggedInUser()
     {
-        $id = 9413;
-        
-        $response = $this->put($this->url . "/$id");
-        $response->assertStatus(302);
-        $response->assertRedirect('/login');
-        
-        $this->followingRedirects()
-            ->put($this->url . "/$id")
-            ->assertStatus(200);
+        $this->url .= '/9413';
+        parent::putRedirectNotLoggedInUser();
     }
     
     /** @test */

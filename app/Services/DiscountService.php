@@ -18,7 +18,6 @@ class DiscountService
     {
         $discount = new Discount([
             'value' => $this->data['value'] / 100,
-            
         ]);
         $discount->randomCode();
 
