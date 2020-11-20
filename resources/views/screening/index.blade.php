@@ -7,6 +7,7 @@
     		<li class="nav-item"><a class="nav-link" href="{{ route('movie.index') }}">{{ __('edit movie') }}</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('discount.index') }}">{{ __('discounts') }}</a></li>
             <li class="nav-item"><a class="nav-link active" href="{{ route('screening.index') }}">{{ strtolower(__('SCREENINGS')) }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('modify-pricing.index') }}">{{ strtolower(__('PRICINGS')) }}</a></li>
     	</ul>
     </div>
      @if($newScreening)

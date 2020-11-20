@@ -12,7 +12,7 @@ class PricingFactory extends Factory
     public function definition()
     {
         return [
-            'week_day' => $this->faker->randomElement([
+            'week_day' => $this->faker->unique()->randomElement([
                 'Monday',
                 'Tuesday',
                 'Wednesday',

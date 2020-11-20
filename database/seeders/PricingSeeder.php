@@ -26,7 +26,7 @@ class PricingSeeder extends Seeder
         $tuesday->save();
         
         $wendsday = new Pricing([
-            'week_day' => 'Wendsday',
+            'week_day' => 'Wednesday',
             'normal' => 20,
             'school' => 12,
             'senior' => 16,

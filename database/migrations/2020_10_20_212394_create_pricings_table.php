@@ -16,18 +16,13 @@ class CreatePricingsTable extends Migration
         Schema::create('pricings', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('week_day', 16);
+            $table->string('week_day', 16)->unique();
             $table->float('normal', 6, 2);
             $table->float('school', 6, 2);
             $table->float('senior', 6, 2);
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('pricings');

@@ -18,7 +18,7 @@ class MovieTest extends TestCase
     public function nextSevenDaysScreenings()
     {
         $thisWeekMovies = 3;
-        $nextWeekMovies = 5;
+        $nextWeekMovies = 2;
         
         $movie = Movie::factory()->create();
         

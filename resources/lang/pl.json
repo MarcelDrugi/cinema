@@ -115,13 +115,22 @@
 	"Removed movie screening": "Skasowano seans filmu",
 	"Screening may not be in the past.": "Seansu nie można utworzyć w przeszłości",
 	"Number of tickets must be positive.": "Liczba biletów musi być dodatnia.",
-	"ID must be an INTEGER": "ID musi być typu INTEGER",
+	"ID must be an INTEGER": "ID musi być typu CAŁKOWITEGO",
+	"The ticket price must be an INTEGER": "Cena biletu musi być typu CAŁKOWITEGO",
 	"This term is not free for the hall.": "Termin jest zajęty dla tej sali.",
 	"Wrong date format.": "Błędny format daty.",
 	"Wrong time format.": "Błędny format czasu.",
 	"The date is too far away. Reservations can be made up to a year in advance.": "Data jest zbyt odległa. Rezerwacje można ustawiać maksymalnie na rok do przodu.",
 	"select screening": "wybierz seans",
 	"change hall": "zmień salę",
-	"Screening modified.": "Zmodyfikowano seans."
+	"Screening modified.": "Zmodyfikowano seans.",
+	"PRICINGS" : "CENNIKI",
+	"The value must be one of the days of the week in English.": "Wartość musi być jednym z dni tygodnia w języku angielskim.",
+	"week day": "dzień tygodnia",
+	"One of the price lists has been modified.": "Jeden z cenników został zmodyfikowany",
+	"A new price list has been added.": "Dodano nowy cennik",
+	"One of the price lists has been removed.": "Usunięto jeden z cenników.",
+	"You must specify the prices of all ticket types to create a price list, or delete all prices to delete them. You cannot create a partial price list.": "Musisz określić ceny wszystkich typów biletów, aby stworzyć cennik, albo usunąć wszystkie ceny by go skasować. Nie możesz stworzyć czyęściowego cennika.",
+	"Currency": "Waluta"
 	
 }

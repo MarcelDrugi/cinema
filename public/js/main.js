@@ -291,3 +291,7 @@ const bookedDatesEdit = (event) => {
 	});
 	terms.innerHTML += "</ul>";
 };
+
+const activePricingButton = () => {
+	document.getElementById('updatePricingButton').disabled = false;
+}

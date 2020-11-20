@@ -38,6 +38,8 @@ Route::resource('/discount', 'App\Http\Controllers\DiscountController',
     ]]
 );
 Route::delete('/discount/delete', 'App\Http\Controllers\DiscountController@destroy')->name('discount.destroy');
+Route::resource('/modify-pricing', 'App\Http\Controllers\ModifyPricingController');
+Route::put('/modify-pricing', 'App\Http\Controllers\ModifyPricingController@update')->name('modify-pricing.update');
 Route::get('/movie/{action?}', 'App\Http\Controllers\MovieController@index')->name('movie.index');
 Route::post('/movie', 'App\Http\Controllers\MovieController@store')->name('movie.store');
 Route::put('/movie', 'App\Http\Controllers\MovieController@update')->name('movie.update');

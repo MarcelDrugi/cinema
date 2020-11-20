@@ -23,4 +23,12 @@ class PricingTest extends TestCase
         $pricing = Pricing::orderBy('id', 'desc')->first();
         $this->assertEquals($pricing->terms[0]->id, $term->id);
     }
+    
+    /** @test */
+    public function weekDayValidation()
+    {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('The value must be one of the days of the week in English.');
+        Pricing::factory()->create(['week_day' => 'WrongName']);
+    }
 }
