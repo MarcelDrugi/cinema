@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Screening;
+use App\Models\Information;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,6 +20,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             DiscountSeeder::class,
             ReservationSeeder::class,
+            InformationSeeder::class,
         ]);
     }
 }

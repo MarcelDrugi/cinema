@@ -8,6 +8,7 @@
             <li class="nav-item"><a class="nav-link" href="{{ route('discount.index') }}">{{ __('discounts') }}</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('screening.index') }}">{{ strtolower(__('SCREENINGS')) }}</a></li>
             <li class="nav-item"><a class="nav-link active" href="{{ route('modify-pricing.index') }}">{{ strtolower(__('PRICINGS')) }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('information.index') }}">{{ strtolower(__('public content')) }}</a></li>
 		</ul>
 	</div>
 	@if($pricingCreated)

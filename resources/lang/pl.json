@@ -131,6 +131,20 @@
 	"A new price list has been added.": "Dodano nowy cennik",
 	"One of the price lists has been removed.": "Usunięto jeden z cenników.",
 	"You must specify the prices of all ticket types to create a price list, or delete all prices to delete them. You cannot create a partial price list.": "Musisz określić ceny wszystkich typów biletów, aby stworzyć cennik, albo usunąć wszystkie ceny by go skasować. Nie możesz stworzyć czyęściowego cennika.",
-	"Currency": "Waluta"
+	"Currency": "Waluta",
+	"homepage_slider": "strona domowa - slider",
+	"homepage_top": "strona domowa - góra ",
+	"homepage_bottom": "strona domowa - dół",
+	"repertoire": "repertuar",
+	"pricing": "cennik",
+	"aboute-side": "o nas - boczny",
+	"aboute-bottom": "o nas - dół",
+	"api": "api",
+	"public content": "kontent publiczny",
+	"ENTER CONTENT FOR THE SUBPAGE SECTION": "WPROWADŹ ZAWARTOŚĆ DLA SEKCJI PODSTRON",
+	"select the subpage section": "wybierz sekcję podstrony",
+	"Subpages": "Podstrony",
+	"Enter the content": "Wprowadź zawartość",
+	"Information has been modified": "Informacje zostały zmodyfikowane"
 	
 }

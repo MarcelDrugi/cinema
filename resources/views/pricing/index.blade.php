@@ -3,6 +3,11 @@
 
 @section('content')
 	<h2>{{ __('PRICINGS') }}</h2>
+	<div>
+	@if($info)
+		{!! nl2br(e($info->content)) !!}
+	@endif
+	</div>
 	
 	<table>
     	<tr>
