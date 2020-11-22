@@ -41,13 +41,13 @@ class InformationSeeder extends Seeder
         ]);
         
         Information::create([
-            'place' => 'aboute-bottom',
+            'place' => 'about_bottom',
             'content' => '',
             'max_length' => '310',
         ]);
         
         Information::create([
-            'place' => 'aboute-side',
+            'place' => 'about_side',
             'content' => '',
             'max_length' => '110',
         ]);

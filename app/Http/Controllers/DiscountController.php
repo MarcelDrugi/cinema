@@ -19,47 +19,28 @@ class DiscountController extends Controller
     public function index(Request $request)
     {
         $newDiscount = $request->session()->get('newDiscount');
-        $deletedDiscount = $request->session()->get('deletedDiscount');
         
         return response()->view('discount.index', [
             'discounts' => Discount::orderBy('code')->with(['user'])->get(),
-            'newDiscount' => $newDiscount ? Discount::findOrFail($newDiscount) : null,
-            'deletedDiscount' => $deletedDiscount,
+            'newDiscount' => Discount::find($newDiscount),
+            'deletedDiscount' => $request->session()->get('deletedDiscount'),
             'customers' => User::whereHas('roles', fn($q) => $q->where('name', 'Customer'))->orderBy('last_name')->get()
         ]);
-    }
-
-    public function create()
-    {
-        //
     }
 
     public function store(CreateDiscountRequest $request)
     {
         $service = new DiscountService($request->all());
         $service->createDiscount();
+        
         return redirect()->route('discount.index');
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     public function destroy(RemoveDiscountRequest $request)
     {
         $service = new DiscountService($request->all());
         $service->delDiscount();
+        
         return redirect()->route('discount.index');
     }
 }

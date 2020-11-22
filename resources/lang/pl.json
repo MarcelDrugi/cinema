@@ -137,14 +137,16 @@
 	"homepage_bottom": "strona domowa - dół",
 	"repertoire": "repertuar",
 	"pricing": "cennik",
-	"aboute-side": "o nas - boczny",
-	"aboute-bottom": "o nas - dół",
+	"about-side": "o nas - boczny",
+	"about-bottom": "o nas - dół",
 	"api": "api",
 	"public content": "kontent publiczny",
 	"ENTER CONTENT FOR THE SUBPAGE SECTION": "WPROWADŹ ZAWARTOŚĆ DLA SEKCJI PODSTRON",
 	"select the subpage section": "wybierz sekcję podstrony",
 	"Subpages": "Podstrony",
 	"Enter the content": "Wprowadź zawartość",
-	"Information has been modified": "Informacje zostały zmodyfikowane"
+	"Information has been modified": "Informacje zostały zmodyfikowane",
+	"REPERTOIRE-API DESCRIPTION": "OPIS API Z REPERTUAREM",
+	"Homepage": "Strona główna"
 	
 }

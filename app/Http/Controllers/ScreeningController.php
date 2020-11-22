@@ -19,22 +19,13 @@ class ScreeningController extends Controller
     
     public function index(Request $request)
     {
-        $newScreening = $request->session()->get('newScreening');
-        $deletedScreening = $request->session()->get('deletedScreening');
-        $screeningEdited = $request->session()->get('screeningEdited');
-        
         return response()->view('screening.index', [
             'movies' => Movie::with('screenings', 'screenings.term')->get(),
             'halls' => Hall::with('terms', 'terms.screening.movie')->get(),
-            'newScreening' => $newScreening ? $newScreening : null,
-            'deletedScreening' => $deletedScreening ? $deletedScreening : null,
-            'screeningEdited' => $screeningEdited ? $screeningEdited : null,
+            'newScreening' => $request->session()->get('newScreening'),
+            'deletedScreening' => $request->session()->get('deletedScreening'),
+            'screeningEdited' => $request->session()->get('screeningEdited'),
         ]);
-    }
-
-    public function create()
-    {
-        //
     }
 
     public function store(CreateScreeningRequest $request)
@@ -45,15 +36,6 @@ class ScreeningController extends Controller
         return redirect()->route('screening.index');
     }
 
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
 
     public function update(EditScreeningRequest $request)
     {

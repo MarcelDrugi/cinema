@@ -14,41 +14,17 @@ class AdminPanelController extends Controller
         $this->middleware('auth');
         $this->middleware('role:admin');
     }
+    
     public function index()
     {
-        return response()->view('adminpanel.index', []);
-    }
-
-    public function create()
-    {
-        //
+        return response()->view('adminpanel.index');
     }
 
     public function store(CreateEmployeeRequest $request)
     {
         $employee = new CreateUserService('employee');
         $employee->createUser($request->input());
+        
         return redirect()->route('homepage.index', ['action' => 'new_employee']);
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }

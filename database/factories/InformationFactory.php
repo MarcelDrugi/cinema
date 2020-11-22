@@ -15,16 +15,7 @@ class InformationFactory extends Factory
         $maxContentLength = $this->faker->numberBetween(30, 450);
         
         return [
-            'place' => $this->faker->unique()->randomElement([
-                'homepage_slider',
-                'homepage_top',
-                'homepage_bottom',
-                'repertoire',
-                'pricing',
-                'aboute-side',
-                'aboute-bottom',
-                'api',
-            ]),
+            'place' => $this->faker->unique()->randomElement(Information::$availablePlaces),
             'max_length' => $maxContentLength,
             'content' => $this->faker->text($maxContentLength), 
         ];

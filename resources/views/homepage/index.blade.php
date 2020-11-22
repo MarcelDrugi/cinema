@@ -49,4 +49,15 @@
         	<img src="{{ $m->poster }}">
     	@endforeach
     </div>
+        @if($info_top)
+    		{{ $info_top->content }} <br>
+    	@endif
+    	@if($info_slider)
+    		{{ $info_slider->content }} <br>
+    	@endif
+    	@if($info_bottom)
+    		{{ $info_bottom->content }}
+    	@endif
+    <div>
+    </div>
 @endsection

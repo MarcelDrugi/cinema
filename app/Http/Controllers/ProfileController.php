@@ -29,11 +29,6 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request, PayPalService $paypal)
     {
         $reservation = Reservation::findOrFail($request->input('reservationId'));
@@ -49,25 +44,11 @@ class ProfileController extends Controller
         return $request->input('reservationId');
     }
 
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
     public function update(UpdateUserRequest $request, $id)
     {
         $update = new UpdateUserService($id);
         $update->updateUser($request->all());
+        
         return redirect()->route('profile.index', ['action' => 'newData']);
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }

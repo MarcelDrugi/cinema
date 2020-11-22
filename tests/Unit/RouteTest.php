@@ -218,6 +218,13 @@ class RouteTest extends TestCase
         $this->assertEquals(500, $response->status());  // no key 'id'
     }
     
+    public function testMovieRequestRoute()
+    {
+        $url = '/movie';
+        $response = $this->delete($url);
+        $this->assertEquals(405, $response->status());
+    }
+    
     public function testScreeningGetRoute()
     {
         $url = '/screening';
@@ -269,5 +276,19 @@ class RouteTest extends TestCase
         $url = '/discount/delete';
         $response = $this->delete($url);
         $this->assertEquals(302, $response->status());
+    }
+    
+    public function testDiscountPutRoute()
+    {
+        $url = '/discount';
+        $response = $this->put($url);
+        $this->assertEquals(405, $response->status());
+    }
+    
+    public function testDiscountPatchRoute()
+    {
+        $url = '/discount';
+        $response = $this->patch($url);
+        $this->assertEquals(405, $response->status());
     }
 }

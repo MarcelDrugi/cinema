@@ -21,45 +21,24 @@ class OrderController extends Controller
         $screening = Screening::findOrFail($id);
         $freeTickets = $screening->term->hall->capacity - $screening->viewers;
         $discounts = Discount::where('user_id', Auth::user()->id)->get();
+        
         return view('order.index', [
             'screening' => $screening,
             'freeTickets' => $freeTickets,
             'discounts' => $discounts,
         ]);
     }
-
-    public function create()
-    {
-        //
-    }
-
+    
     public function store(OrderRequest $request)
     {
         $referer = $request->server('HTTP_REFERER');
+        
         if (!strpos($referer, '/order'))
             abort(400, 'Bad request.');
+        
         $order = new OrderService($request->all());
         $order->toPay();
+        
         return redirect()->route('summary.index');
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }

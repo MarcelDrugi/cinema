@@ -20,6 +20,9 @@
         	<div class="collapse navbar-collapse">
         		<ul class="navbar-nav">
                 	<li class="nav-item">
+                  		<a class="nav-link" href="/">{{ __('Homepage') }}</a>
+                  	</li>
+                  	<li class="nav-item">
                   		<a class="nav-link" href="/repertoire">{{ __('Repertoire') }}</a>
                   	</li>
                   	<li class="nav-item">

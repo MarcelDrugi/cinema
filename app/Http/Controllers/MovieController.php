@@ -21,32 +21,19 @@ class MovieController extends Controller
         return response()->view('movie.index', ['movies' => Movie::all(), 'action' => $action]);
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(CreateMovieRequest $request)
     {
         $service = new CreateMovieService($request->all());
         $service->createMovie();
+        
         return redirect()->route('movie.index', ['action' => 'newMovie']);
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
     }
 
     public function update(EditMovieRequest $request)
     {
         $service = new MovieService($request->all());
         $service->updateMovie();
+        
         return redirect()->route('movie.index', ['action' => 'movieEdited']);
         
     }
@@ -55,6 +42,7 @@ class MovieController extends Controller
     {
         $service = new MovieService($request->all());
         $service->deleteMovie();
+        
         return redirect()->route('movie.index', ['action' => 'movieDeleted']);
     }
 }

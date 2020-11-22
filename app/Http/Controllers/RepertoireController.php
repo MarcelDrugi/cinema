@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Information;
 use App\Models\Movie;
 use App\Services\RepertoireService;
 use Illuminate\Http\Request;
@@ -13,42 +14,13 @@ class RepertoireController extends Controller
     public function index()
     {
         $s = new RepertoireService();
-        $movies = Movie::has('sevenDaysScreenings')->get();
+        
         return view('repertoire.index', [
-            'movies' => $movies,
+            'movies' => Movie::has('sevenDaysScreenings')->get(),
             'weekDays' => $s->weekDays(),
             'today' => Carbon::today()->format('d/m'),
             'lastDay' => Carbon::today()->addDay(7)->format('d/m'),
+            'info' => Information::where('place', 'repertoire')->first(),
         ]);
-    }
-
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }

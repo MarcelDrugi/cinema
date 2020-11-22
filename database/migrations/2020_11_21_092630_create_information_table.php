@@ -22,8 +22,8 @@ class CreateInformationTable extends Migration
                 'homepage_bottom',
                 'repertoire',
                 'pricing',
-                'aboute-side',
-                'aboute-bottom',
+                'about_side',
+                'about_bottom',
                 'api',
             ])->unique();
             $table->text('content');

@@ -1,7 +1,10 @@
 @extends('layouts.base')
 
 @section('content')
-	<h1> {{ __('Our repertoire for the next 7 days') }} ({{ $today }} - {{ $lastDay }}): </h1>
+	<h2> {{ __('Our repertoire for the next 7 days') }} ({{ $today }} - {{ $lastDay }}): </h2>
+	@if($info)
+		{{ $info->content }} <br>
+	@endif
     <div>
     	<table class="table table-dark">
     		<thead>

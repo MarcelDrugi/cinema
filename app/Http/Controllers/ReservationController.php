@@ -18,7 +18,7 @@ class ReservationController extends Controller
     {
         $referer = request()->server('HTTP_REFERER');
         if (!strpos($referer,'/summary'))
-            abort(404);
+            abort(400, 'Invalid redirection.');
         
         $reservationService = new ReservationService(
             session()->get('screeningId'),
@@ -35,9 +35,6 @@ class ReservationController extends Controller
         if($redirect_url = $paypal->createPayment(request()->input('toPay')))
             return redirect($redirect_url);
         else
-            return redirect()->route('homepage.index', ['action' => 'nonpaid']);
-       
-        //return session()->get('sumOfTickets');
-        
+            return redirect()->route('homepage.index', ['action' => 'nonpaid']);  
     }
 }
