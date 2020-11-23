@@ -103,8 +103,8 @@ class NoPermissionRedirect extends TestCase
         $response->assertRedirect('/noperm/employee');
         
         $this->followingRedirects()
-        ->put($this->url)
-        ->assertStatus(200);
+            ->put($this->url)
+            ->assertStatus(200);
     }
     
     public function deleteRedirectUserWithoutPermission()

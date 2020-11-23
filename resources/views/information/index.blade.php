@@ -4,7 +4,7 @@ const fillContent = (event) => {
 	const info = JSON.parse(event.target.value);
 	document.getElementById('enterContent').style.display = 'block';
 	
-	content.value = info.content;
+	document.getElementById('content').value = info.content;
 	range = info.max_length;
 }
 

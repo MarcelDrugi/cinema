@@ -25,6 +25,12 @@ class Screening extends Model
     {
         return $this->hasOne('App\Models\Term');
     }
+    
+    public function future()
+    {
+        return $this->hasOne('App\Models\Term')
+            ->where('date_time', '>', Carbon::now());
+    }
 
     public function sevenDaysTerm()
     {

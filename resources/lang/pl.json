@@ -146,7 +146,18 @@
 	"Subpages": "Podstrony",
 	"Enter the content": "Wprowadź zawartość",
 	"Information has been modified": "Informacje zostały zmodyfikowane",
-	"REPERTOIRE-API DESCRIPTION": "OPIS API Z REPERTUAREM",
-	"Homepage": "Strona główna"
+	"REPERTOIRE-API DESCRIPTION": "API Z REPERTUAREM",
+	"Homepage": "Strona główna",
+	"You can use 2 endpoints to download information about the screening schedule and description of movies.": "Do pobrania informacji o harmonogramie seansów i opisów filmów możesz skorzystać z 2 endpointów.",
+	"no filter": "brak filtra",
+	"Filter": "Filtr",
+	"Action": "Działanie",
+	"Example": "Przykład",
+	"Filters screenings by movie title.": "Filtruje seanse po tytule filmu.",
+	"Screenings from the next 7 days.": "Seanse z najbliższych 7 dni.",
+	"All future screenings in the database.": "Wszystkie przyszłe seanse zapisane w bazie danych.",
+	"Screenings on a specific single day.": "Seanse z konkretnego pojedynczego dnia.",
+	"This endpoint does not support filters.": "Ten endpoint nie obsługuje filtrów",
+	"Returns information about the selected movie.": "Zwraca informacje o podanym filmie."
 	
 }

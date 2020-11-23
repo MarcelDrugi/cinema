@@ -10,7 +10,7 @@ class MovieSeeder extends Seeder
     public function run()
     {
         $movie1 = new Movie([
-            'title' => 'Przeminęło z wiatem',
+            'title' => 'Przeminęło z wiatrem',
             'description' => <<<EOD
             Ekranizacja powieści Margaret Mitchell. Beztroska i bogata Scarlett O Hara wikła się w 
             burzliwy związek z Rhettem Butlerem.

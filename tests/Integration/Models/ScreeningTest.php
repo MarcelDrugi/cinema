@@ -31,13 +31,23 @@ class ScreeningTest extends TestCase
     }
     
     /** @test */
-    public function sevenDaysTerm()
+    public function sevenDaysTermExist()
     {
         Term::factory()->create([
             'date_time' => Carbon::tomorrow(),
         ]);
-        $screening = Screening::orderBy('id', 'desc')->first();    
-        $this->assertNotNull($screening);
+        $screening = Screening::orderBy('id', 'desc')->first();
+        $this->assertNotNull($screening->sevenDaysTerm);
+    }
+    
+    /** @test */
+    public function sevenDaysTermNotExist()
+    {
+        Term::factory()->create([
+            'date_time' => Carbon::today()->addDays(9),
+        ]);
+        $screening = Screening::orderBy('id', 'desc')->first();
+        $this->assertNull($screening->sevenDaysTerm);
     }
     
     /** @test */
