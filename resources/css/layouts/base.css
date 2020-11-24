@@ -1,14 +1,3 @@
-
-.editMovie {
-  position: relative;
-}
-.movieCover {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-}
-
 body {
   overflow-x: hidden;
 }

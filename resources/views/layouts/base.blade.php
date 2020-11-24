@@ -1,3 +1,22 @@
+
+<script>
+
+const showHero = () => {
+	const hero = document.getElementsByClassName('jumbotron')[0];
+
+	if (hero.style.display == '' || hero.style.display == 'none') {
+		hero.style.display = 'block';
+		hero.classList.add('jumbotron-full');
+	}
+	else {
+		hero.style.display = 'none';
+		hero.classList.remove('jumbotron-full');
+	}
+	
+};
+
+</script>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,6 +35,7 @@
 	</head>
 
     <body>
+    <!--
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         	<div class="collapse navbar-collapse">
         		<ul class="navbar-nav">
@@ -71,8 +91,15 @@
             	@endif
         	</div>
         </nav>
-        
-    	<section class="section">
+         -->
+		<div class="hamburger" onclick="showHero()"></div>
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">Fluid jumbotron</h1>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          </div>
+        </div>
+    	<section class="section" id="basicSection" >
     		@yield('content')
     	</section>
     </body>

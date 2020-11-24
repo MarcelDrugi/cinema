@@ -1,6 +1,8 @@
+
 @extends('layouts.base')
 
 @section('content')
+<div id="shape"></div>
 	@isset($action)
 		@if($action == "logged")
 			<div class="alert alert-success alert-dismissible" role="alert">
