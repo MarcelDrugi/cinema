@@ -15,6 +15,18 @@ const showHero = () => {
 	
 };
 
+const standartBackground = (id) => {
+	const background = document.getElementsByClassName('heroBackground' + id)[0];
+	background.classList.remove('heroBackground' + id);
+	background.classList.add('heroBackground');
+}
+
+const newBackground = (id) => {
+	const background = document.getElementsByClassName('heroBackground')[0];
+	background.classList.remove('heroBackground');
+	background.classList.add('heroBackground' + id);
+}
+
 </script>
 
 <!DOCTYPE html>
@@ -94,10 +106,62 @@ const showHero = () => {
          -->
 		<div class="hamburger" onclick="showHero()"></div>
         <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-            <h1 class="display-4">Fluid jumbotron</h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-          </div>
+        	<div class="heroBackground"></div>
+			<div class="container">
+            	<h1 class="display-4">Fluid jumbotron</h1>
+            	<p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            	<ul class="navbar-nav">
+                	<li class="nav-item">
+                  		<a class="nav-link" onmouseenter="newBackground(1)" onmouseleave="standartBackground(1)" href="/">{{ __('Homepage') }}</a>
+                  	</li>
+                  	<li class="nav-item">
+                  		<a class="nav-link" onmouseenter="newBackground(2)" onmouseleave="standartBackground(2)" href="/repertoire">{{ __('Repertoire') }}</a>
+                  	</li>
+                  	<li class="nav-item">
+                    	<a class="nav-link" onmouseenter="newBackground(3)" onmouseleave="standartBackground(3)" href="/pricing">{{ __('Pricing') }}</a>
+                  	</li>
+                  	<li class="nav-item">
+                    	<a class="nav-link" onmouseenter="newBackground(4)" onmouseleave="standartBackground(4)" href="/about">{{ __('About') }}</a>
+                  	</li>
+                  	<li class="nav-item">
+                    	<a class="nav-link" href="/api-description">{{ __('API with repertoire') }}</a>
+                  	</li>
+				</ul>
+              	@if (Auth::user())
+              		@if (Auth::user()->hasRole("admin"))
+                      	<li class="nav-item">
+                        	<a class="nav-link" href="/admin">{{ __('Administration panel') }}</a>
+                      	</li>
+                  	@endif
+              	@endif
+              	@if (Auth::user())
+              		@if (Auth::user()->hasRole("employee"))
+                      	<li class="nav-item">
+                        	<a class="nav-link" href="/movie">{{ __('Employee panel') }}</a>
+                      	</li>
+                  	@endif
+              	@endif
+              	@if (Auth::user())
+            		<div>
+            			@if(Auth::user()->hasRole("customer"))
+            				<a class="btn btn-outline-success" href="{{ route('profile.index') }}"> {{ __('edit profile') }}</a>
+            			@endif
+            			@if(Auth::user()->avatar)
+            				<img src="{{ Auth::user()->avatar }}" width="70" height="70">
+            			@else
+            				<img src="{{ asset('images/no-avatar.png') }}" width="70" height="70">
+            			@endif
+            			{{ Auth::user()->first_name }}
+            			{{ Auth::user()->last_name }}
+            			<a class="btn btn-outline-success" href="{{ route('logout') }}">{{ __('sign out') }}</a>
+            		</div>
+        		@else
+            		<div class="heroButtons">
+                    	<a class="btn btn-outline-secondary" href="/login">{{ __('sign in') }}</a>
+                    	<a class="btn btn-outline-secondary" href="/register">{{ __('sign up') }}</a>
+            		</div>
+        		@endif
+			</div>
         </div>
     	<section class="section" id="basicSection" >
     		@yield('content')

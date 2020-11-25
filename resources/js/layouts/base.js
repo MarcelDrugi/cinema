@@ -10,7 +10,7 @@ const randomNumber  = (full, negative) => {
 const opacityAnimation = (dot, opacity, deg) => {
 	if (opacity > 0) {
 	
-    	opacity -= .04;
+    	opacity -= .03;
     	if(deg < 0){
     		deg -= 4;
     	}
@@ -65,7 +65,7 @@ const bar = (event) => {
 		}
 		dot.style.transform = 'rotate(' + deg + 'deg)';
 		//dot.style.zIndex = '-1';
-		dot.style.opacity = 0.4
+		dot.style.opacity = 0.3
 	
 		dot.style.left = (event.clientX + resize()) + 'px';
 		dot.style.top = top + 'px';

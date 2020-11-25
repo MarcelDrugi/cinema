@@ -1,4 +1,8 @@
 @basicColor: rgb(186, 189, 182);
+@heroColor: hsl(180, 2%, 90%);
+@navLinkColor: hsl(182, 25%, 39%);// hsl(183, 51%, 39%);
+@navLinkHoverColor: hsl(184, 62%, 19%);
+@nav: rgb(46, 52, 54);
 
 body {
 	overflow-x: hidden;
@@ -7,17 +11,115 @@ body {
 .section {
 	width: 100%;
 	height: 100%;
-	position: relative;
 	background-color: @basicColor;
 }
 
 .jumbotron {
 	display: none;
+	position: relative;
+	background-color: @heroColor;
+	margin-bottom: 0px !important;
 }
 
 .jumbotron-full {
 	animation: showHero .6s;
 	height: 100%;
+	position: relative;
+}
+
+.jumbotron h1 {
+	font-size: 3.9vw;
+	z-index: 2;
+}
+
+.jumbotron p {
+	font-size: 1.4vw;
+	z-index: 2;
+}
+
+.jumbotron ul {
+	margin-top: 6%;
+	background-color: @heroColor;
+	z-index: 3;
+}
+
+.jumbotron li {
+	font-size: 1.8vw;
+	z-index: 2;
+	margin-bottom: 1.5%;
+	a {
+		color: @navLinkColor;
+		font-weight: 600;
+		display: inline;
+		background-color: @heroColor;
+		border-radius: 40%;
+	}
+}
+
+.jumbotron li a:hover {
+	display: inline;
+	color: @navLinkHoverColor;
+	font-weight: 800;
+	margin-left: 2%;
+	background-color: @heroColor;
+	border-radius: 40%;
+	border: 3px outset @navLinkHoverColor;
+	padding: 1%;
+}
+
+.jumbotron .heroButtons {
+	margin-top: 3%;
+}
+
+.jumbotron .btn {
+	position: relative;
+	margin-top: 1%;
+	margin-right: 1%;
+	z-index: 22;
+	font-size: 1.8vw;
+	font-weight: 500;
+}
+
+.heroBackground {
+	background-image: url("/images/godfather.png");
+	animation: showBackground 3s;
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	opacity: 0.18;
+	position: absolute;
+	width: 100%;
+	right: 0;
+	left: auto;
+	bottom: 0;
+	top: auto;
+	height: 100%;
+	z-index: 1;
+}
+
+.heroBackground1 {
+	.heroBackground;
+	background-image: url("/images/homepage.png");
+	animation: showBackgroundBis 2s;
+}
+
+.heroBackground2 {
+	.heroBackground;
+	background-image: url("/images/rep.png");
+	animation: showBackgroundBack 2s;
+	opacity: 0.4;
+}
+
+.heroBackground3 {
+	.heroBackground;
+	background-image: url("/images/tickets.png");
+	animation: showBackgroundBis 2s;
+}
+
+.heroBackground4 {
+	.heroBackground;
+	background-image: url("/images/about.png");
+	animation: showBackgroundBack 2s;
+	opacity: 0.4;
 }
 
 .hamburger {
@@ -41,5 +143,20 @@ body {
 @keyframes showHero {
     0% { height: 0%; }
     100% { height: 100%; }
+}
+
+@keyframes showBackground {
+    0% { opacity: 0; }
+    100% { opacity: 0.18; }
+}
+
+@keyframes showBackgroundBis {
+    0% { opacity: 0; }
+    100% { opacity: 0.18; }
+}
+
+@keyframes showBackgroundBack {
+    0% { opacity: 0; }
+    100% { opacity: 0.4; }
 }
 
