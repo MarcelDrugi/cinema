@@ -3,6 +3,8 @@
 @navLinkColor: hsl(182, 25%, 39%);// hsl(183, 51%, 39%);
 @navLinkHoverColor: hsl(184, 62%, 19%);
 @nav: rgb(46, 52, 54);
+@notCustomerColor: hsl(0, 48%, 56%);
+@notCustomerColorHover: hsl(0, 83%, 23%);
 
 body {
 	overflow-x: hidden;
@@ -30,29 +32,56 @@ body {
 .jumbotron h1 {
 	font-size: 3.9vw;
 	z-index: 2;
+	@media (orientation:portrait) {
+		margin-top: 10vh;
+        text-align: center;
+		font-size: 6.5vw;
+    }
 }
 
 .jumbotron p {
 	font-size: 1.4vw;
 	z-index: 2;
+	@media (orientation:portrait) {
+		margin-top: 1vh;
+        text-align: center;
+		font-size: 2.8vw;
+    }
 }
 
 .jumbotron ul {
 	margin-top: 6%;
 	background-color: @heroColor;
 	z-index: 3;
+	@media (orientation:portrait) {
+        text-align: center;
+		margin-top: 6vh;
+    }
 }
 
 .jumbotron li {
 	font-size: 1.8vw;
 	z-index: 2;
 	margin-bottom: 1.5%;
+	@media (orientation:portrait) {
+		margin-top: 1vh;
+        text-align: center;
+		font-size: 3.1vw;
+    }
 	a {
 		color: @navLinkColor;
 		font-weight: 600;
 		display: inline;
 		background-color: @heroColor;
 		border-radius: 40%;
+		
+		@media (orientation:portrait) {
+			border-radius: 0px;
+    	}
+	}
+	
+	.notCustomer {
+		color: @notCustomerColor;
 	}
 }
 
@@ -60,11 +89,15 @@ body {
 	display: inline;
 	color: @navLinkHoverColor;
 	font-weight: 800;
-	margin-left: 2%;
+	padding-left: 1%;
 	background-color: @heroColor;
 	border-radius: 40%;
 	border: 3px outset @navLinkHoverColor;
 	padding: 1%;
+	
+	.notCustomer {
+		color: @notCustomerColorHover;
+	}
 }
 
 .jumbotron .heroButtons {
@@ -78,14 +111,35 @@ body {
 	z-index: 22;
 	font-size: 1.8vw;
 	font-weight: 500;
+	border: 2px solid;
+	
+	@media (orientation:portrait) {
+		margin-top: 2vh;
+        text-align: center;
+		font-size: 3.3vw;
+		display: block;
+		width: 40vw;
+		margin-left: auto;
+		margin-right: auto;
+    }
+}
+
+.jumbotron .container {
+	margin-left: 20vw;
+	margin-right: 20vw;
+	width: 60vw;
+	
+	@media (orientation:portrait) {
+        text-align: center;
+    }
 }
 
 .heroBackground {
-	background-image: url("/images/godfather.png");
+	background-image: url("/images/godfather2.png");
 	animation: showBackground 3s;
 	background-position: right bottom;
 	background-repeat: no-repeat;
-	opacity: 0.18;
+	opacity: 0.2;
 	position: absolute;
 	width: 100%;
 	right: 0;
@@ -99,45 +153,146 @@ body {
 .heroBackground1 {
 	.heroBackground;
 	background-image: url("/images/homepage.png");
-	animation: showBackgroundBis 2s;
+	animation: showBackgroundBis 1.7s;
 }
 
 .heroBackground2 {
 	.heroBackground;
 	background-image: url("/images/rep.png");
-	animation: showBackgroundBack 2s;
+	animation: showBackgroundBack 1.7s;
 	opacity: 0.4;
 }
 
 .heroBackground3 {
 	.heroBackground;
 	background-image: url("/images/tickets.png");
-	animation: showBackgroundBis 2s;
+	animation: showBackgroundBack 1.7s;
+	opacity: 0.4;
 }
 
 .heroBackground4 {
 	.heroBackground;
 	background-image: url("/images/about.png");
-	animation: showBackgroundBack 2s;
+	animation: showBackgroundBack 1.7s;
 	opacity: 0.4;
+}
+
+.heroBackground5 {
+	.heroBackground;
+	background-image: url("/images/api.png");
+	animation: showBackgroundBack 1.7s;
+	opacity: 0.4;
+}
+
+.heroBackground6 {
+	.heroBackground;
+	background-image: url("/images/tools.png");
+	animation: showBackgroundBis 1.7s;
 }
 
 .hamburger {
 	position: absolute;
 	z-index: 2;
-	margin-left: 94%;
-	margin-top: 2%;
+	right: 4.5vw;
+	top: 5vh;
 	background-image: url("/images/hamburger.svg");
 	background-position: center;
 	background-repeat: no-repeat;
-	width: 40px;
-	height: 40px;
+	min-width: 40px;
+	min-height: 40px;
+	height: 4vh;
+	width: 3vw;
 }
 
 .hamburger:hover {
 	cursor: pointer;
 	transform: scale(1.1, 1.1);
 }
+
+.userInfo {
+	position: fixed;
+	right: 2vw;
+	top: 13vh;
+	text-align: center;
+	z-index: 2;
+	width: 8vw
+}
+
+.userInfo .avatar {
+	text-align: center;
+}
+
+.userInfo .avatar img {
+	width: 5vw;
+	height: 5vw;
+	border: 3px inset @navLinkHoverColor;
+	border-radius: 2.5vw;
+	padding: 5px
+}
+
+.userInfo .names {
+	font-size: 1vw;
+	font-weight: 600;
+}
+
+.userInfo .btn {
+	font-size: 1vw;
+	font-weight: 600;
+	margin-top: 1vh;
+	width: 100%;
+}
+
+.downTriangle {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 10vw solid transparent;
+	border-right: 3vw solid transparent;
+	border-bottom: 63vh solid @navLinkColor;
+	transform: skew(-15deg);
+	
+	animation: downTriangleDown .6s;
+}
+
+.downTriangleTransformed {
+	.downTriangle;
+	
+	border-left: 10vw solid transparent;
+	border-right: 0px solid transparent;
+	border-bottom: 75vh solid @navLinkColor;
+	transform: skew(0deg);
+	
+	animation: downTriangleUp .6s;
+}
+
+.topTriangle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 3vw solid transparent;
+	border-right: 10vw solid transparent;
+	border-top: 63vh solid @navLinkColor;
+	transform: skew(-5deg);
+	
+	animation: topTriangleDown .6s;
+}
+
+.topTriangleTransformed {
+	.topTriangle;
+	
+	left: 0;
+	border-left: 0vw solid transparent;
+	border-right: 10vw solid transparent;
+	border-top: 75vh solid @navLinkColor;
+	transform: skew(0deg);
+	
+	animation: topTriangleUp .6s;
+}
+
 
 
 @keyframes showHero {
@@ -147,16 +302,80 @@ body {
 
 @keyframes showBackground {
     0% { opacity: 0; }
-    100% { opacity: 0.18; }
+    100% { opacity: 0.2; }
 }
 
 @keyframes showBackgroundBis {
     0% { opacity: 0; }
-    100% { opacity: 0.18; }
+    100% { opacity: 0.2; }
 }
 
 @keyframes showBackgroundBack {
     0% { opacity: 0; }
     100% { opacity: 0.4; }
+}
+
+@keyframes downTriangleUp {
+	0% { 
+		border-left: 10vw solid transparent;
+		border-right: 3vw solid transparent;
+		border-bottom: 63vh solid @navLinkColor;
+		transform: skew(-15deg);
+	}
+    100% { 
+		border-left: 10vw solid transparent;
+		border-right: 0px solid transparent;
+		border-bottom: 75vh solid @navLinkColor;
+		transform: skew(0deg);
+	}
+}
+
+@keyframes downTriangleDown {
+	0% { 
+		border-left: 10vw solid transparent;
+		border-right: 0px solid transparent;
+		border-bottom: 75vh solid @navLinkColor;
+		transform: skew(0deg);
+	}
+	100% { 
+		border-left: 10vw solid transparent;
+		border-right: 3vw solid transparent;
+		border-bottom: 63vh solid @navLinkColor;
+		transform: skew(-15deg);
+	}
+}
+
+@keyframes topTriangleUp {
+	0% {
+		left: 0; 
+		border-left: 3vw solid transparent;
+		border-right: 10vw solid transparent;
+		border-top: 63vh solid @navLinkColor;
+		transform: skew(-5deg);
+	}
+    100% {
+		left: 0;
+		border-left: 0vw solid transparent;
+		border-right: 10vw solid transparent;
+		border-top: 75vh solid @navLinkColor;
+		transform: skew(0deg);
+	}
+}
+
+@keyframes topTriangleDown {
+	0% {
+		left: 0;
+		border-left: 0vw solid transparent;
+		border-right: 10vw solid transparent;
+		border-top: 75vh solid @navLinkColor;
+		transform: skew(0deg);
+	}
+	100% {
+		left: 0; 
+		border-left: 3vw solid transparent;
+		border-right: 10vw solid transparent;
+		border-top: 63vh solid @navLinkColor;
+		transform: skew(-5deg);
+	}
 }
 

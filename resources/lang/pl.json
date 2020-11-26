@@ -34,7 +34,7 @@
 	"About": "O nas",
 	"API with repertoire": "API z repertuarem",
 	"Administration panel": "Panel administracyjny",
-	"edit profile":"edytuj profil",
+	"your profile":"twój profil",
 	"sign out": "wyloguj",
 	"sign in": "zaloguj się",
 	"sign up": "załóż konto",
@@ -158,6 +158,8 @@
 	"All future screenings in the database.": "Wszystkie przyszłe seanse zapisane w bazie danych.",
 	"Screenings on a specific single day.": "Seanse z konkretnego pojedynczego dnia.",
 	"This endpoint does not support filters.": "Ten endpoint nie obsługuje filtrów",
-	"Returns information about the selected movie.": "Zwraca informacje o podanym filmie."
+	"Returns information about the selected movie.": "Zwraca informacje o podanym filmie.",
+	"The most important, loudest and best movies ever. A classic of world cinema in remastered quality.": "Najważniejsze, najgłośniejsze i najlepsze filmy w historii. Klasyka światowego kina w zremasterowanych wersjach.",
+	"": ""
 	
 }

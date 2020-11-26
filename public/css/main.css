@@ -33,19 +33,46 @@ body {
   font-size: 3.9vw;
   z-index: 2;
 }
+@media (orientation: portrait) {
+  .jumbotron h1 {
+    margin-top: 10vh;
+    text-align: center;
+    font-size: 6.5vw;
+  }
+}
 .jumbotron p {
   font-size: 1.4vw;
   z-index: 2;
+}
+@media (orientation: portrait) {
+  .jumbotron p {
+    margin-top: 1vh;
+    text-align: center;
+    font-size: 2.8vw;
+  }
 }
 .jumbotron ul {
   margin-top: 6%;
   background-color: hsl(180, 2%, 90%);
   z-index: 3;
 }
+@media (orientation: portrait) {
+  .jumbotron ul {
+    text-align: center;
+    margin-top: 6vh;
+  }
+}
 .jumbotron li {
   font-size: 1.8vw;
   z-index: 2;
   margin-bottom: 1.5%;
+}
+@media (orientation: portrait) {
+  .jumbotron li {
+    margin-top: 1vh;
+    text-align: center;
+    font-size: 3.1vw;
+  }
 }
 .jumbotron li a {
   color: hsl(182, 25%, 39%);
@@ -54,15 +81,26 @@ body {
   background-color: hsl(180, 2%, 90%);
   border-radius: 40%;
 }
+@media (orientation: portrait) {
+  .jumbotron li a {
+    border-radius: 0px;
+  }
+}
+.jumbotron li .notCustomer {
+  color: hsl(0, 48%, 56%);
+}
 .jumbotron li a:hover {
   display: inline;
   color: hsl(184, 62%, 19%);
   font-weight: 800;
-  margin-left: 2%;
+  padding-left: 1%;
   background-color: hsl(180, 2%, 90%);
   border-radius: 40%;
   border: 3px outset hsl(184, 62%, 19%);
   padding: 1%;
+}
+.jumbotron li a:hover .notCustomer {
+  color: hsl(0, 83%, 23%);
 }
 .jumbotron .heroButtons {
   margin-top: 3%;
@@ -74,14 +112,36 @@ body {
   z-index: 22;
   font-size: 1.8vw;
   font-weight: 500;
+  border: 2px solid;
+}
+@media (orientation: portrait) {
+  .jumbotron .btn {
+    margin-top: 2vh;
+    text-align: center;
+    font-size: 3.3vw;
+    display: block;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.jumbotron .container {
+  margin-left: 20vw;
+  margin-right: 20vw;
+  width: 60vw;
+}
+@media (orientation: portrait) {
+  .jumbotron .container {
+    text-align: center;
+  }
 }
 .heroBackground {
-  background-image: url("/images/godfather.png");
+  background-image: url("/images/godfather2.png");
   -webkit-animation: showBackground 3s;
           animation: showBackground 3s;
   background-position: right bottom;
   background-repeat: no-repeat;
-  opacity: 0.18;
+  opacity: 0.2;
   position: absolute;
   width: 100%;
   right: 0;
@@ -92,12 +152,12 @@ body {
   z-index: 1;
 }
 .heroBackground1 {
-  background-image: url("/images/godfather.png");
+  background-image: url("/images/godfather2.png");
   -webkit-animation: showBackground 3s;
           animation: showBackground 3s;
   background-position: right bottom;
   background-repeat: no-repeat;
-  opacity: 0.18;
+  opacity: 0.2;
   position: absolute;
   width: 100%;
   right: 0;
@@ -107,16 +167,16 @@ body {
   height: 100%;
   z-index: 1;
   background-image: url("/images/homepage.png");
-  -webkit-animation: showBackgroundBis 2s;
-          animation: showBackgroundBis 2s;
+  -webkit-animation: showBackgroundBis 1.7s;
+          animation: showBackgroundBis 1.7s;
 }
 .heroBackground2 {
-  background-image: url("/images/godfather.png");
+  background-image: url("/images/godfather2.png");
   -webkit-animation: showBackground 3s;
           animation: showBackground 3s;
   background-position: right bottom;
   background-repeat: no-repeat;
-  opacity: 0.18;
+  opacity: 0.2;
   position: absolute;
   width: 100%;
   right: 0;
@@ -126,17 +186,17 @@ body {
   height: 100%;
   z-index: 1;
   background-image: url("/images/rep.png");
-  -webkit-animation: showBackgroundBack 2s;
-          animation: showBackgroundBack 2s;
+  -webkit-animation: showBackgroundBack 1.7s;
+          animation: showBackgroundBack 1.7s;
   opacity: 0.4;
 }
 .heroBackground3 {
-  background-image: url("/images/godfather.png");
+  background-image: url("/images/godfather2.png");
   -webkit-animation: showBackground 3s;
           animation: showBackground 3s;
   background-position: right bottom;
   background-repeat: no-repeat;
-  opacity: 0.18;
+  opacity: 0.2;
   position: absolute;
   width: 100%;
   right: 0;
@@ -146,16 +206,17 @@ body {
   height: 100%;
   z-index: 1;
   background-image: url("/images/tickets.png");
-  -webkit-animation: showBackgroundBis 2s;
-          animation: showBackgroundBis 2s;
+  -webkit-animation: showBackgroundBack 1.7s;
+          animation: showBackgroundBack 1.7s;
+  opacity: 0.4;
 }
 .heroBackground4 {
-  background-image: url("/images/godfather.png");
+  background-image: url("/images/godfather2.png");
   -webkit-animation: showBackground 3s;
           animation: showBackground 3s;
   background-position: right bottom;
   background-repeat: no-repeat;
-  opacity: 0.18;
+  opacity: 0.2;
   position: absolute;
   width: 100%;
   right: 0;
@@ -165,24 +226,155 @@ body {
   height: 100%;
   z-index: 1;
   background-image: url("/images/about.png");
-  -webkit-animation: showBackgroundBack 2s;
-          animation: showBackgroundBack 2s;
+  -webkit-animation: showBackgroundBack 1.7s;
+          animation: showBackgroundBack 1.7s;
   opacity: 0.4;
+}
+.heroBackground5 {
+  background-image: url("/images/godfather2.png");
+  -webkit-animation: showBackground 3s;
+          animation: showBackground 3s;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  left: auto;
+  bottom: 0;
+  top: auto;
+  height: 100%;
+  z-index: 1;
+  background-image: url("/images/api.png");
+  -webkit-animation: showBackgroundBack 1.7s;
+          animation: showBackgroundBack 1.7s;
+  opacity: 0.4;
+}
+.heroBackground6 {
+  background-image: url("/images/godfather2.png");
+  -webkit-animation: showBackground 3s;
+          animation: showBackground 3s;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  left: auto;
+  bottom: 0;
+  top: auto;
+  height: 100%;
+  z-index: 1;
+  background-image: url("/images/tools.png");
+  -webkit-animation: showBackgroundBis 1.7s;
+          animation: showBackgroundBis 1.7s;
 }
 .hamburger {
   position: absolute;
   z-index: 2;
-  margin-left: 94%;
-  margin-top: 2%;
+  right: 4.5vw;
+  top: 5vh;
   background-image: url("/images/hamburger.svg");
   background-position: center;
   background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  height: 4vh;
+  width: 3vw;
 }
 .hamburger:hover {
   cursor: pointer;
   transform: scale(1.1, 1.1);
+}
+.userInfo {
+  position: fixed;
+  right: 2vw;
+  top: 13vh;
+  text-align: center;
+  z-index: 2;
+  width: 8vw;
+}
+.userInfo .avatar {
+  text-align: center;
+}
+.userInfo .avatar img {
+  width: 5vw;
+  height: 5vw;
+  border: 3px inset hsl(184, 62%, 19%);
+  border-radius: 2.5vw;
+  padding: 5px;
+}
+.userInfo .names {
+  font-size: 1vw;
+  font-weight: 600;
+}
+.userInfo .btn {
+  font-size: 1vw;
+  font-weight: 600;
+  margin-top: 1vh;
+  width: 100%;
+}
+.downTriangle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 10vw solid transparent;
+  border-right: 3vw solid transparent;
+  border-bottom: 63vh solid hsl(182, 25%, 39%);
+  transform: skew(-15deg);
+  -webkit-animation: downTriangleDown 0.6s;
+          animation: downTriangleDown 0.6s;
+}
+.downTriangleTransformed {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-right: 3vw solid transparent;
+  border-bottom: 63vh solid hsl(182, 25%, 39%);
+  transform: skew(-15deg);
+  -webkit-animation: downTriangleDown 0.6s;
+          animation: downTriangleDown 0.6s;
+  border-left: 10vw solid transparent;
+  border-right: 0px solid transparent;
+  border-bottom: 75vh solid hsl(182, 25%, 39%);
+  transform: skew(0deg);
+  -webkit-animation: downTriangleUp 0.6s;
+          animation: downTriangleUp 0.6s;
+}
+.topTriangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 3vw solid transparent;
+  border-right: 10vw solid transparent;
+  border-top: 63vh solid hsl(182, 25%, 39%);
+  transform: skew(-5deg);
+  -webkit-animation: topTriangleDown 0.6s;
+          animation: topTriangleDown 0.6s;
+}
+.topTriangleTransformed {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 3vw solid transparent;
+  border-top: 63vh solid hsl(182, 25%, 39%);
+  transform: skew(-5deg);
+  -webkit-animation: topTriangleDown 0.6s;
+          animation: topTriangleDown 0.6s;
+  left: 0;
+  border-left: 0vw solid transparent;
+  border-right: 10vw solid transparent;
+  border-top: 75vh solid hsl(182, 25%, 39%);
+  transform: skew(0deg);
+  -webkit-animation: topTriangleUp 0.6s;
+          animation: topTriangleUp 0.6s;
 }
 @-webkit-keyframes showHero {
   0% {
@@ -205,7 +397,7 @@ body {
     opacity: 0;
   }
   100% {
-    opacity: 0.18;
+    opacity: 0.2;
   }
 }
 @keyframes showBackground {
@@ -213,7 +405,7 @@ body {
     opacity: 0;
   }
   100% {
-    opacity: 0.18;
+    opacity: 0.2;
   }
 }
 @-webkit-keyframes showBackgroundBis {
@@ -221,7 +413,7 @@ body {
     opacity: 0;
   }
   100% {
-    opacity: 0.18;
+    opacity: 0.2;
   }
 }
 @keyframes showBackgroundBis {
@@ -229,7 +421,7 @@ body {
     opacity: 0;
   }
   100% {
-    opacity: 0.18;
+    opacity: 0.2;
   }
 }
 @-webkit-keyframes showBackgroundBack {
@@ -246,5 +438,125 @@ body {
   }
   100% {
     opacity: 0.4;
+  }
+}
+@-webkit-keyframes downTriangleUp {
+  0% {
+    border-left: 10vw solid transparent;
+    border-right: 3vw solid transparent;
+    border-bottom: 63vh solid hsl(182, 25%, 39%);
+    transform: skew(-15deg);
+  }
+  100% {
+    border-left: 10vw solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 75vh solid hsl(182, 25%, 39%);
+    transform: skew(0deg);
+  }
+}
+@keyframes downTriangleUp {
+  0% {
+    border-left: 10vw solid transparent;
+    border-right: 3vw solid transparent;
+    border-bottom: 63vh solid hsl(182, 25%, 39%);
+    transform: skew(-15deg);
+  }
+  100% {
+    border-left: 10vw solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 75vh solid hsl(182, 25%, 39%);
+    transform: skew(0deg);
+  }
+}
+@-webkit-keyframes downTriangleDown {
+  0% {
+    border-left: 10vw solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 75vh solid hsl(182, 25%, 39%);
+    transform: skew(0deg);
+  }
+  100% {
+    border-left: 10vw solid transparent;
+    border-right: 3vw solid transparent;
+    border-bottom: 63vh solid hsl(182, 25%, 39%);
+    transform: skew(-15deg);
+  }
+}
+@keyframes downTriangleDown {
+  0% {
+    border-left: 10vw solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 75vh solid hsl(182, 25%, 39%);
+    transform: skew(0deg);
+  }
+  100% {
+    border-left: 10vw solid transparent;
+    border-right: 3vw solid transparent;
+    border-bottom: 63vh solid hsl(182, 25%, 39%);
+    transform: skew(-15deg);
+  }
+}
+@-webkit-keyframes topTriangleUp {
+  0% {
+    left: 0;
+    border-left: 3vw solid transparent;
+    border-right: 10vw solid transparent;
+    border-top: 63vh solid hsl(182, 25%, 39%);
+    transform: skew(-5deg);
+  }
+  100% {
+    left: 0;
+    border-left: 0vw solid transparent;
+    border-right: 10vw solid transparent;
+    border-top: 75vh solid hsl(182, 25%, 39%);
+    transform: skew(0deg);
+  }
+}
+@keyframes topTriangleUp {
+  0% {
+    left: 0;
+    border-left: 3vw solid transparent;
+    border-right: 10vw solid transparent;
+    border-top: 63vh solid hsl(182, 25%, 39%);
+    transform: skew(-5deg);
+  }
+  100% {
+    left: 0;
+    border-left: 0vw solid transparent;
+    border-right: 10vw solid transparent;
+    border-top: 75vh solid hsl(182, 25%, 39%);
+    transform: skew(0deg);
+  }
+}
+@-webkit-keyframes topTriangleDown {
+  0% {
+    left: 0;
+    border-left: 0vw solid transparent;
+    border-right: 10vw solid transparent;
+    border-top: 75vh solid hsl(182, 25%, 39%);
+    transform: skew(0deg);
+  }
+  100% {
+    left: 0;
+    border-left: 3vw solid transparent;
+    border-right: 10vw solid transparent;
+    border-top: 63vh solid hsl(182, 25%, 39%);
+    transform: skew(-5deg);
+  }
+}
+@keyframes topTriangleDown {
+  0% {
+    left: 0;
+    border-left: 0vw solid transparent;
+    border-right: 10vw solid transparent;
+    border-top: 75vh solid hsl(182, 25%, 39%);
+    transform: skew(0deg);
+  }
+  100% {
+    left: 0;
+    border-left: 3vw solid transparent;
+    border-right: 10vw solid transparent;
+    border-top: 63vh solid hsl(182, 25%, 39%);
+    transform: skew(-5deg);
   }
 }
