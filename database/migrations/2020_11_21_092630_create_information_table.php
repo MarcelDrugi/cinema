@@ -26,7 +26,7 @@ class CreateInformationTable extends Migration
                 'about_bottom',
                 'api',
             ])->unique();
-            $table->text('content');
+            $table->text('content')->nullable();
             $table->smallInteger('max_length');
         });
     }

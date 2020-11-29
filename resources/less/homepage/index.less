@@ -1,0 +1,1121 @@
+@sliderWidth: 55vw;
+@portraitSliderWidth: 82vw;
+@contentBackgroundColor: hsl(182, 25%, 39%);
+@basicFontColor: hsl(220, 14%, 92%);
+@shadow: hsl(180, 0%, 39%);
+@neonColorBegin: hsl(93, 98%, 82%);
+@neonColorEnd: hsl(95, 93%, 95%);
+
+@font-face {
+  font-family: neon;
+  src: url("/fonts/mexcellent3d.ttf");
+}
+
+.homepageTopContent {
+	position: relative;
+	font-size: 1.2vw;
+	color: @basicFontColor;
+	width: 55vw;
+	margin-left: 5vw;
+	margin-top: 4vh;
+	z-index: 1;
+	
+	@media (orientation:portrait) {
+		margin-top: 19vh;
+		width: 82vw;
+		margin-left: 9vw;
+		font-size: 2.2vw;
+	}
+}
+
+.homepageTopContent .background {
+	position: absolute;
+	background-color: @contentBackgroundColor;
+	opacity: 0.85;
+	width: 110%;
+	height: 110%;
+	top: -5%;
+	left: -5%;
+	border-radius: 3vw;
+	z-index: -1;
+	box-shadow: -0.25vw 0.25vw 0.2vw 0.2vw @shadow;
+	background-size: 16vw 16vh;
+}
+
+.tapeBackground {
+	position: absolute;
+	width: 29vw;
+	height: 29vh;
+	left: 0;
+	top: 8vh;
+	opacity: 0.65;
+	
+	@media (orientation:portrait) {
+		width: 60vw;
+		height: 34vw;
+	}
+}
+
+.slidingName {
+	position: absolute;
+	font-family: neon;
+	overflow: hidden;
+	height: 3vw;
+	width: 14vw;
+	font-size: 2.3vw;
+	margin-left: 70vw;
+	top: 8vh;
+	z-index: 2;
+	color: hsl(93, 52%, 53%);
+	white-space: nowrap;
+	border-right: 0.3vw solid transparent;
+	animation: glow 12s ease-in-out infinite alternate, blinkSlow 12s ease-in-out infinite alternate;
+	
+	@media (orientation:portrait) {
+		left: 0px;
+	    right: 0px;
+	    margin-left: auto;
+	    margin-right: auto;
+		top: 28vh;
+		font-size: 4.5vw;
+		height: 6vw;
+		width: 28vw;
+		animation: verticalGlow 12s ease-in-out infinite alternate, blinkSlow 12s ease-in-out infinite alternate;
+	}
+}
+
+.posterRadio {
+	position: relative;
+	width: 10vw;
+	text-align: center;
+	margin-top: 6vh;
+	z-index: 2;
+	left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+
+	input[type='radio']{
+		height: 1.5vw;
+		width: 1.5vw;
+		-webkit-appearance: none;
+		border-radius: 1vw;
+		background-color: @basicFontColor;
+		border: 2px solid @contentBackgroundColor;
+	}
+	
+	input[type='radio']:checked{
+		height: 1.5vw;
+		width: 1.5vw;
+	    -webkit-appearance: none;
+	    background-color: @contentBackgroundColor;
+	}
+	
+	@media (orientation:portrait) {
+		margin-top: 10vh;
+	}
+}
+
+.posterRadio .radioCover {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+.slider {
+	position: relative;
+	width: @sliderWidth;
+	height: 55vh;
+	left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 2vh;
+	overflow: hidden;
+	background-color: blue;
+	z-index: 2;
+	border-radius: 2vw;
+	box-shadow: -0.38vw 0.35vw 0.3vw 0.3vw @shadow;
+	
+	@media (orientation:portrait) {
+		width: @portraitSliderWidth;
+		height: 46vw;
+		margin-top: 3vh;
+	}
+}
+
+.sliderInfo {
+	position: relative;
+	z-index: 2;
+	width: 70vw;
+	left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 4vh;
+	margin-bottom: 4vh;
+	font-size: 0.9vw;
+	color: @basicFontColor;
+	
+	a {
+		color:  @basicFontColor;
+		font-size: 1.3vw;
+		font-weight: 900;
+	}
+	
+	@media (orientation:portrait) {
+		width: @portraitSliderWidth;
+		font-size: 2vw;
+		
+		a {
+			font-size: 2.4vw;
+		}
+	}
+}
+
+.sliderInfoBackground {
+	position: absolute;
+	background-color: @contentBackgroundColor;
+	opacity: 0.85;
+	width: 110%;
+	height: 110%;
+	top: -5%;
+	left: -5%;
+	border-radius: 3vw;
+	z-index: -1;
+	box-shadow: -0.31vw 0.30vw 0.27vw 0.26vw @shadow;
+}
+
+.homepageBottomInfo {
+	.sliderInfo;
+	font-size: 0.8vw;
+}
+
+.rightArrowStatic {
+	position: absolute;
+	background-color: transparent;
+	border: 0px;
+	margin-top: 28vh;
+	right: 18vw;
+	z-index: 3;
+	opacity: 0.7;
+	
+	img {
+		width: 10vw;
+		height: 5vh;
+	}
+	
+	@media (orientation:portrait) {
+		margin-top: 23vw;
+		right: 5vw;
+		
+		img {
+			width: 10vw;
+			height: 3vh;
+		}
+	}
+}
+
+.rightArrow {
+	.rightArrowStatic;
+	opacity: 1;
+	animation: arrowResize 2s infinite;
+}
+
+.leftArrowStatic {
+	position: absolute;
+	background-color: transparent;
+	border: 0px;
+	margin-top: 29vh;
+	left: 18vw;
+	z-index: 3;
+	opacity: 0.7;
+	
+	img {
+		width: 10vw;
+		height: 5vh;
+	}
+	
+	@media (orientation:portrait) {
+		margin-top: 23vw;
+		left: 5vw;
+		
+		img {
+			width: 10vw;
+			height: 3vh;
+		}
+	}
+}
+
+.leftArrow {
+	.leftArrowStatic;
+	opacity: 1;
+	animation: arrowResize 2s infinite;
+}
+
+.poster {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	
+	img  {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.movieTitle {
+	position: absolute;
+	z-index: 3;
+	bottom: 0;
+	font-size: 2vw;
+	margin-bottom: 2vh;
+	margin-left: 3vw;
+	
+	a {
+		color: @basicFontColor;
+	}
+	
+	a:hover {
+		font-weight: 700;
+		text-decoration: none;
+	}
+	
+	@media (orientation:portrait) {
+		font-size: 3.8vw;
+	}
+}
+
+.titleBackground {
+	position: absolute;
+	width: 100%;
+	height: 11vh;
+	bottom: 0;
+	opacity: 0.6;
+	background-color: @contentBackgroundColor;
+	
+	@media (orientation:portrait) {
+		height: 28%;
+	}
+}
+
+.rightShownPoster {
+	.poster;
+	animation: rightShowPoster 2s;
+	margin-left: 0;
+}
+
+.leftShownPoster {
+	.poster;
+	margin-left: 0;
+	animation: leftShowPoster 2s;
+}
+
+.slider .movieTitle {
+	position: absolute;
+}
+
+.leftHiddenPoster {
+	margin-left: -@sliderWidth;
+	animation: leftHidePoster 2s;
+}
+
+.rightHiddenPoster {
+	margin-left: @sliderWidth;
+	animation: rightHidePoster 2s;
+}
+
+.beginHiddenPoster {
+	.poster;
+	margin-left: -@sliderWidth;
+}
+
+@keyframes leftHidePoster {
+  0% {
+		margin-left: 0;
+  }
+  100% {
+		margin-left: -@sliderWidth;
+  }
+}
+
+@keyframes rightHidePoster {
+  0% {
+		margin-left: 0;
+  }
+  100% {
+		margin-left: @sliderWidth;
+  }
+}
+
+@keyframes rightShowPoster {
+  0% {
+		margin-left: -@sliderWidth;
+  }
+  100% {
+		margin-left: 0;
+  }
+}
+
+@keyframes leftShowPoster {
+  0% {
+		margin-left: @sliderWidth;
+  }
+  100% {
+		margin-left: 0;
+  }
+}
+
+@keyframes arrowResize {
+	0% {
+		transform: scaleX(1);
+	}
+	50% {
+		transform: scaleX(1.2);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+@keyframes verticalGlow {
+	0% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 0;
+		overflow: hidden;
+	}
+	
+	1% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 1.5vw;
+		overflow: hidden;
+	}
+	
+	2% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 3.5vw;
+		overflow: hidden;
+	}
+	
+	3% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 6.5vw;
+		overflow: hidden;
+	}
+	4% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 8vw;
+		overflow: hidden;
+	}
+	
+	5% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 10vw;
+		overflow: hidden;
+	}
+	
+	6% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 12vw;
+		overflow: hidden;
+	}
+	
+	7% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 14vw;
+		overflow: hidden;
+	}
+	
+	8% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 15.5vw;
+		overflow: hidden;
+	}
+	
+	9% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 17.5vw;
+		overflow: hidden;
+	}
+	
+	10% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 19vw;
+		overflow: hidden;
+	}
+	
+	11% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 21vw;
+		overflow: hidden;
+	}
+	
+	12% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 23vw;
+		overflow: hidden;
+	}
+	
+	13% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 25vw;
+		overflow: hidden;
+	}
+	
+	14% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 26.5vw;
+		overflow: hidden;
+	}
+	
+	15.6% {
+		text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 28vw;
+		overflow: hidden;	
+	}
+	
+	30% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 28vw;
+		overflow: hidden;
+	}
+	
+ 	30.1% {
+		text-shadow: 
+			0 0 1vw white,
+			0 0 1.5vw white,
+			0 0 2vw @neonColorBegin,
+			0 0 2.5vw @neonColorBegin,
+			0 0 3vw @neonColorBegin,
+			0 0 3.5vw @neonColorBegin,
+			0 0 4vw @neonColorBegin;
+			
+		overflow: visible;
+	}
+  
+	40% {
+		text-shadow: 
+			0 0 1vw white,
+			0 0 1.5vw @neonColorEnd,
+			0 0 2vw@neonColorEnd,
+			0 0 2.5vw @neonColorEnd,
+			0 0 3vw @neonColorEnd,
+			0 0 2.5vw @neonColorEnd,
+			0 0 4vw @neonColorEnd;
+			
+		overflow: visible;
+	}
+	
+	50% {
+		text-shadow: 
+			0 0 1vw white,
+			0 0 1.5vw white,
+			0 0 2vw @neonColorBegin,
+			0 0 2.5vw @neonColorBegin,
+			0 0 3vw @neonColorBegin,
+			0 0 3.5vw @neonColorBegin,
+			0 0 4vw @neonColorBegin;
+			
+		overflow: visible;
+	}
+  
+	60% {
+		text-shadow: 
+			0 0 1vw white,
+			0 0 1.5vw @neonColorEnd,
+			0 0 2vw@neonColorEnd,
+			0 0 2.5vw @neonColorEnd,
+			0 0 3vw @neonColorEnd,
+			0 0 2.5vw @neonColorEnd,
+			0 0 4vw @neonColorEnd;
+			
+		overflow: visible;
+	}
+	
+	70% {
+		text-shadow: 
+			0 0 1vw white,
+			0 0 1.5vw white,
+			0 0 2vw @neonColorBegin,
+			0 0 2.5vw @neonColorBegin,
+			0 0 3vw @neonColorBegin,
+			0 0 3.5vw @neonColorBegin,
+			0 0 4vw @neonColorBegin;
+			
+		overflow: visible;
+	}
+  
+	80% {
+		text-shadow: 
+			0 0 1vw white,
+			0 0 1.5vw @neonColorEnd,
+			0 0 2vw@neonColorEnd,
+			0 0 2.5vw @neonColorEnd,
+			0 0 3vw @neonColorEnd,
+			0 0 2.5vw @neonColorEnd,
+			0 0 4vw @neonColorEnd;
+			
+		overflow: visible;
+	}
+	
+	90% {
+		text-shadow: 
+			0 0 1vw white,
+			0 0 1.5vw white,
+			0 0 2vw @neonColorBegin,
+			0 0 2.5vw @neonColorBegin,
+			0 0 3vw @neonColorBegin,
+			0 0 3.5vw @neonColorBegin,
+			0 0 4vw @neonColorBegin;
+			
+		overflow: visible;
+	}
+  
+	100% {
+		text-shadow: 
+			0 0 1vw white,
+			0 0 1.5vw @neonColorEnd,
+			0 0 2vw@neonColorEnd,
+			0 0 2.5vw @neonColorEnd,
+			0 0 3vw @neonColorEnd,
+			0 0 2.5vw @neonColorEnd,
+			0 0 4vw @neonColorEnd;
+			
+		overflow: visible;
+	}
+}
+
+@keyframes glow {
+	0% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 0;
+		overflow: hidden;
+	}
+	
+	1% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 1vw;
+		overflow: hidden;
+	}
+	
+	2% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 2vw;
+		overflow: hidden;
+	}
+	
+	3% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 3vw;
+		overflow: hidden;
+	}
+	4% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 4vw;
+		overflow: hidden;
+	}
+	
+	5% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 5vw;
+		overflow: hidden;
+	}
+	
+	6% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 6vw;
+		overflow: hidden;
+	}
+	
+	7% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 7vw;
+		overflow: hidden;
+	}
+	
+	8% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 8vw;
+		overflow: hidden;
+	}
+	
+	9% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 9vw;
+		overflow: hidden;
+	}
+	
+	10% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 10vw;
+		overflow: hidden;
+	}
+	
+	11% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 11vw;
+		overflow: hidden;
+	}
+	
+	12% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 12vw;
+		overflow: hidden;
+	}
+	
+	13% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 13vw;
+		overflow: hidden;
+	}
+	
+	14% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 14vw;
+		overflow: hidden;
+	}
+	
+	15.6% {
+		text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 14vw;
+		overflow: hidden;	
+	}
+	
+	30% {
+	    text-shadow: 
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0 0,
+			0 0;
+		color: @contentBackgroundColor;
+		width: 14vw;
+		overflow: hidden;
+	}
+	
+ 	30.1% {
+		text-shadow: 
+			0 0 1vw white,
+			0 0 1.5vw white,
+			0 0 2vw @neonColorBegin,
+			0 0 2.5vw @neonColorBegin,
+			0 0 3vw @neonColorBegin,
+			0 0 3.5vw @neonColorBegin,
+			0 0 4vw @neonColorBegin;
+			
+		overflow: visible;
+	}
+  
+	40% {
+		text-shadow: 
+			0 0 1vw white,
+			0 0 1.5vw @neonColorEnd,
+			0 0 2vw@neonColorEnd,
+			0 0 2.5vw @neonColorEnd,
+			0 0 3vw @neonColorEnd,
+			0 0 2.5vw @neonColorEnd,
+			0 0 4vw @neonColorEnd;
+			
+		overflow: visible;
+	}
+	
+	50% {
+		text-shadow: 
+			0 0 1vw white,
+			0 0 1.5vw white,
+			0 0 2vw @neonColorBegin,
+			0 0 2.5vw @neonColorBegin,
+			0 0 3vw @neonColorBegin,
+			0 0 3.5vw @neonColorBegin,
+			0 0 4vw @neonColorBegin;
+			
+		overflow: visible;
+	}
+  
+	60% {
+		text-shadow: 
+			0 0 1vw white,
+			0 0 1.5vw @neonColorEnd,
+			0 0 2vw@neonColorEnd,
+			0 0 2.5vw @neonColorEnd,
+			0 0 3vw @neonColorEnd,
+			0 0 2.5vw @neonColorEnd,
+			0 0 4vw @neonColorEnd;
+			
+		overflow: visible;
+	}
+	
+	70% {
+		text-shadow: 
+			0 0 1vw white,
+			0 0 1.5vw white,
+			0 0 2vw @neonColorBegin,
+			0 0 2.5vw @neonColorBegin,
+			0 0 3vw @neonColorBegin,
+			0 0 3.5vw @neonColorBegin,
+			0 0 4vw @neonColorBegin;
+			
+		overflow: visible;
+	}
+  
+	80% {
+		text-shadow: 
+			0 0 1vw white,
+			0 0 1.5vw @neonColorEnd,
+			0 0 2vw@neonColorEnd,
+			0 0 2.5vw @neonColorEnd,
+			0 0 3vw @neonColorEnd,
+			0 0 2.5vw @neonColorEnd,
+			0 0 4vw @neonColorEnd;
+			
+		overflow: visible;
+	}
+	
+	90% {
+		text-shadow: 
+			0 0 1vw white,
+			0 0 1.5vw white,
+			0 0 2vw @neonColorBegin,
+			0 0 2.5vw @neonColorBegin,
+			0 0 3vw @neonColorBegin,
+			0 0 3.5vw @neonColorBegin,
+			0 0 4vw @neonColorBegin;
+			
+		overflow: visible;
+	}
+  
+	100% {
+		text-shadow: 
+			0 0 1vw white,
+			0 0 1.5vw @neonColorEnd,
+			0 0 2vw@neonColorEnd,
+			0 0 2.5vw @neonColorEnd,
+			0 0 3vw @neonColorEnd,
+			0 0 2.5vw @neonColorEnd,
+			0 0 4vw @neonColorEnd;
+			
+		overflow: visible;
+	}
+}
+
+@keyframes blinkSlow {
+	
+	0% {
+		border-right: 0.3vw solid black;
+	}
+	
+	2.5% {
+		border-right: 0.3vw solid transparent;
+	}
+	
+	5% {
+		border-right: 0.3vw solid black;
+	}
+	
+	7.5% {
+		border-right: 0.3vw solid transparent;
+	}
+	
+	10% {
+		border-right: 0.3vw solid black;
+	}
+	
+	12.5% {
+		border-right: 0.3vw solid transparent;
+	}
+	
+	15% {
+		border-right: 0.3vw solid black;
+	}
+	
+	17.5% {
+		border-right: 0.3vw solid transparent;
+	}
+	
+	20% {
+		border-right: 0.3vw solid black;
+	}
+	
+	22.5% {
+		border-right: 0.3vw solid transparent;
+	}
+	
+	25% {
+		border-right: 0.3vw solid black;
+	}
+	
+	27.5% {
+		border-right: 0.3vw solid transparent;
+	}
+	100% {
+		border-right: 0.3vw solid transparent;
+	}
+}
+

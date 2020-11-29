@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         	</div>
         	<div id="enterContent" style="display: none;">
         		<h4>{{ __('Enter the content') }}:</h4>
-        		<textarea class="form-control" id="content" name="content"> </textarea>
+        		<textarea class="form-control" id="content" name="content" value=""> </textarea>
         		<button type="submit">{{ __('ACCEPT') }}</button>
         	</div>
     	</form>

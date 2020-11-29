@@ -2,7 +2,6 @@
 @extends('layouts.base')
 
 @section('content')
-<div id="shape"></div>
 	@isset($action)
 		@if($action == "logged")
 			<div class="alert alert-success alert-dismissible" role="alert">
@@ -43,23 +42,63 @@
             </div>
 		@endif
 	@endif
-	<h1>Witaj na stronie głównej</h1>
-    <div>
+    @if($info_top)
+    	@if($info_top->content)
+    		<div class="homepageTopContent">
+    			<div class="background"></div>
+    			{!! $info_top->content !!}
+    		</div>
+    	@endif
+	@endif
+	<div class="slidingName"> {{ __('CINEMA CLASSICS') }} </div>
+	<img src="{{ asset('images/tape.png') }}" class="tapeBackground">
+	<div class="posterRadio">
+		<div class="radioCover"></div>
+		@foreach ($movies as $m)
+    		@if( $loop->index == 0)
+        		<input type="radio" id="posterMark{{ $loop->index }}" name="poster" checked >
+            @else
+        		<input type="radio" id="posterMark{{ $loop->index }}" name="poster">
+        	@endif
+        @endforeach
+	</div>
+	<button onclick="nextPoster()" class="rightArrow"><img src="{{ asset('images/arrow_right.png') }}"></button>
+	<button disabled onclick="previousPoster()" class="leftArrowStatic"><img src="{{ asset('images/arrow_left.png') }}"></button>
+	<div class="slider">
     	@foreach ($movies as $m)
-        	<p>tytuł: {{ $m->title }}</p>
-        	<p>plakat:</p>
-        	<img src="{{ $m->poster }}">
+        	@if( $loop->index == 0)
+        		<div class="poster poster{{ $loop->index }}">
+        			<div class="titleBackground"></div>
+        			<div class="movieTitle">
+						<a href="#">{{ $m->title }} ({{$m->published}})</a>
+        			</div>
+            		<img src="{{ $m->poster }}">
+            	</div>
+        	@else
+            	<div class="beginHiddenPoster poster{{ $loop->index }}">
+            	<div class="titleBackground"></div>
+            		<div class="movieTitle">
+						<a href="#">{{ $m->title }} ({{$m->published}})</a>
+        			</div>
+            		<img src="{{ $m->poster }}">
+            	</div>
+        	@endif
     	@endforeach
-    </div>
-        @if($info_top)
-    		{{ $info_top->content }} <br>
-    	@endif
-    	@if($info_slider)
-    		{{ $info_slider->content }} <br>
-    	@endif
-    	@if($info_bottom)
-    		{{ $info_bottom->content }}
-    	@endif
-    <div>
-    </div>
+	</div>
+	@if($info_slider)
+		@if($info_slider->content)
+    		<div class="sliderInfo">
+    			<div class="sliderInfoBackground"></div>
+    			{!!  $info_slider->content !!}
+    		</div>
+		@endif
+	@endif
+	@if($info_bottom)
+		@if($info_slider->content)
+			<div class="homepageBottomInfo">
+				<div class="sliderInfoBackground"></div>
+				{!!  $info_bottom->content !!}
+			</div>
+		@endif
+	@endif
 @endsection

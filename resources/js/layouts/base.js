@@ -41,7 +41,7 @@ const bar = (event) => {
 	const name = dotId.toString();
 	
 	const top = event.pageY + resize();
-	if(top + 100 < document.documentElement.scrollHeight) {
+	if(top + 117 < document.documentElement.scrollHeight) {
 	
 		let singleDot = document.createElement('div');
 		singleDot.setAttribute('id', name);
@@ -73,6 +73,57 @@ const bar = (event) => {
 		
 		disappearDot(name, deg);
 	}
+};
+
+const showHero = () => {
+	const hero = document.getElementsByClassName('jumbotron')[0];
+
+	if (hero.style.display == '' || hero.style.display == 'none') {
+		hero.style.display = 'block';
+		hero.classList.add('jumbotron-full');
+	}
+	else {
+		hero.style.display = 'none';
+		hero.classList.remove('jumbotron-full');
+	}
+	
+};
+
+var triangleAnimation = false;
+
+const standartBackground = (id) => {
+	triangleAnimation = false;
+	
+	const background = document.getElementsByClassName('heroBackground' + id)[0];
+	background.classList.remove('heroBackground' + id);
+	background.classList.add('heroBackground');
+	setTimeout(function() {
+		if(!triangleAnimation){
+			const downTriangle = document.getElementsByClassName('downTriangleTransformed')[0];
+			downTriangle.classList.remove('downTriangleTransformed');
+			downTriangle.classList.add('downTriangle');
+			
+			const topTriangle = document.getElementsByClassName('topTriangleTransformed')[0];
+			topTriangle.classList.remove('topTriangleTransformed');
+			topTriangle.classList.add('topTriangle');
+		}
+	}, 380);
+};
+
+const newBackground = (id) => {
+	triangleAnimation = true;
+	
+	const background = document.getElementsByClassName('heroBackground')[0];
+	background.classList.remove('heroBackground');
+	background.classList.add('heroBackground' + id);
+	
+	const downTriangle = document.getElementsByClassName('downTriangle')[0];
+	downTriangle.classList.remove('downTriangle');
+	downTriangle.classList.add('downTriangleTransformed');
+	
+	const topTriangle = document.getElementsByClassName('topTriangle')[0];
+	topTriangle.classList.remove('topTriangle');
+	topTriangle.classList.add('topTriangleTransformed');
 };
 
 window.addEventListener("mousemove", bar);

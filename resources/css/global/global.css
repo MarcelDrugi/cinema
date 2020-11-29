@@ -1,0 +1,35 @@
+.alert {
+  width: 60vw;
+  margin-top: 4vh;
+  font-size: 1.1vw;
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  -webkit-animation: alertMove 1s;
+          animation: alertMove 1s;
+}
+@media (orientation: portrait) {
+  .alert {
+    position: absolute;
+    margin-top: 15vh;
+    font-size: 2vw;
+  }
+}
+@-webkit-keyframes alertMove {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes alertMove {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}

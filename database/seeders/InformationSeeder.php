@@ -13,7 +13,7 @@ class InformationSeeder extends Seeder
         Information::create([
             'place' => 'homepage_slider',
             'content' => '',
-            'max_length' => '130',
+            'max_length' => '330',
         ]);
         
         Information::create([

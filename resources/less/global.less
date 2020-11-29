@@ -1,0 +1,27 @@
+
+.alert {
+	width: 60vw;
+	margin-top: 4vh;
+	font-size: 1.1vw;
+	left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+	text-align: center;
+	animation: alertMove 1s;
+	
+	@media (orientation:portrait) {
+		position: absolute;
+		margin-top: 15vh;
+		font-size: 2vw;
+	}
+}
+
+@keyframes alertMove {
+	0% {
+		transform: translateX(-100vw);
+	}
+	100% {
+		transform: translateX(0vw);
+	}
+}

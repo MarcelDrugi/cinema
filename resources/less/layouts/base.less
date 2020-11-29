@@ -1,19 +1,51 @@
 @basicColor: rgb(186, 189, 182);
 @heroColor: hsl(180, 2%, 90%);
-@navLinkColor: hsl(182, 25%, 39%);// hsl(183, 51%, 39%);
+@navLinkColor: hsl(182, 25%, 39%);
 @navLinkHoverColor: hsl(184, 62%, 19%);
 @nav: rgb(46, 52, 54);
 @notCustomerColor: hsl(0, 48%, 56%);
 @notCustomerColorHover: hsl(0, 83%, 23%);
+@footerColor: hsl(180, 7%, 85%);
+@profileButtonHover: rgb(234, 172, 37);
+
+
+html {
+	min-height: 100%;
+	height: 100%;
+}
 
 body {
 	overflow-x: hidden;
+	background-color: rgb(237, 212, 0);
+	min-height: 100%;
+	height: 100%;
 }
 
 .section {
+	position: relative;
 	width: 100%;
-	height: 100%;
+	min-height: 93%;
 	background-color: @basicColor;
+	overflow: auto;
+	@media (orientation: portrait) {
+		min-height: 96%;
+	}
+}
+
+.footer {
+	height: 7%;
+	width: 100%;
+	bottom: 0px;
+	font-size: 0.75vw;
+	color: @footerColor;
+	a {
+		color: @footerColor;
+	}
+	
+	@media (orientation:portrait) {
+		font-size: 1.7vw;
+		height: 4%;
+	}
 }
 
 .jumbotron {
@@ -33,7 +65,7 @@ body {
 	font-size: 3.9vw;
 	z-index: 2;
 	@media (orientation:portrait) {
-		margin-top: 10vh;
+		margin-top: 13vh;
         text-align: center;
 		font-size: 6.5vw;
     }
@@ -62,7 +94,7 @@ body {
 .jumbotron li {
 	font-size: 1.8vw;
 	z-index: 2;
-	margin-bottom: 1.5%;
+	margin-bottom: 1.8%;
 	@media (orientation:portrait) {
 		margin-top: 1vh;
         text-align: center;
@@ -215,7 +247,17 @@ body {
 	top: 13vh;
 	text-align: center;
 	z-index: 2;
-	width: 8vw
+	width: 8vw;
+	
+	@media (orientation:portrait) {
+		top: 1vh;
+		left: 0px;
+	    right: 0px;
+	    margin-left: auto;
+	    margin-right: auto;
+		width: 20vw;
+		z-index: 4;
+	}
 }
 
 .userInfo .avatar {
@@ -227,12 +269,22 @@ body {
 	height: 5vw;
 	border: 3px inset @navLinkHoverColor;
 	border-radius: 2.5vw;
-	padding: 5px
+	padding: 5px;
+	
+	@media (orientation:portrait) {
+		width: 4vh;
+		height: 4vh;
+		border-radius: 2.5vh;
+	}
 }
 
 .userInfo .names {
 	font-size: 1vw;
 	font-weight: 600;
+	
+	@media (orientation:portrait) {
+		font-size: 2.5vw;
+	}
 }
 
 .userInfo .btn {
@@ -240,6 +292,24 @@ body {
 	font-weight: 600;
 	margin-top: 1vh;
 	width: 100%;
+	
+	@media (orientation:portrait) {
+		font-size: 2vw;
+	}
+}
+
+.userInfo .btn-success {
+	background-color: @navLinkColor;
+	border: 1px solid @navLinkColor;
+}
+
+.userInfo .btn-success:hover {
+	background-color: @navLinkHoverColor;
+}
+
+.userInfo .btn-warning:hover {
+	background-color: @profileButtonHover;
+	border: 1px solid @profileButtonHover;
 }
 
 .downTriangle {
@@ -253,7 +323,7 @@ body {
 	border-bottom: 63vh solid @navLinkColor;
 	transform: skew(-15deg);
 	
-	animation: downTriangleDown .6s;
+	animation: downTriangleDown .7s;
 }
 
 .downTriangleTransformed {
@@ -264,7 +334,7 @@ body {
 	border-bottom: 75vh solid @navLinkColor;
 	transform: skew(0deg);
 	
-	animation: downTriangleUp .6s;
+	animation: downTriangleUp .7s;
 }
 
 .topTriangle {
@@ -278,7 +348,7 @@ body {
 	border-top: 63vh solid @navLinkColor;
 	transform: skew(-5deg);
 	
-	animation: topTriangleDown .6s;
+	animation: topTriangleDown .7s;
 }
 
 .topTriangleTransformed {
@@ -290,10 +360,14 @@ body {
 	border-top: 75vh solid @navLinkColor;
 	transform: skew(0deg);
 	
-	animation: topTriangleUp .6s;
+	animation: topTriangleUp .7s;
 }
 
-
+.git {
+	width: 1.5vw;
+	height: 1.5vw;
+	margin-right: 2%;
+}
 
 @keyframes showHero {
     0% { height: 0%; }
@@ -346,7 +420,7 @@ body {
 }
 
 @keyframes topTriangleUp {
-	0% {
+	 0% {
 		left: 0; 
 		border-left: 3vw solid transparent;
 		border-right: 10vw solid transparent;

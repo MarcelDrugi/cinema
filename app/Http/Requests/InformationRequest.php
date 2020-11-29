@@ -23,7 +23,6 @@ class InformationRequest extends FormRequest
             
             'content' => [
                 'bail',
-                'required',
                 function($attribute, $value, $fail) {
                     $place = json_decode($this->infoSelect, true)['place'];
                     

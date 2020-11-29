@@ -338,7 +338,7 @@ const bar = (event) => {
 	const name = dotId.toString();
 	
 	const top = event.pageY + resize();
-	if(top + 100 < document.documentElement.scrollHeight) {
+	if(top + 117 < document.documentElement.scrollHeight) {
 	
 		let singleDot = document.createElement('div');
 		singleDot.setAttribute('id', name);
@@ -372,4 +372,122 @@ const bar = (event) => {
 	}
 };
 
+const showHero = () => {
+	const hero = document.getElementsByClassName('jumbotron')[0];
+
+	if (hero.style.display == '' || hero.style.display == 'none') {
+		hero.style.display = 'block';
+		hero.classList.add('jumbotron-full');
+	}
+	else {
+		hero.style.display = 'none';
+		hero.classList.remove('jumbotron-full');
+	}
+	
+};
+
+var triangleAnimation = false;
+
+const standartBackground = (id) => {
+	triangleAnimation = false;
+	
+	const background = document.getElementsByClassName('heroBackground' + id)[0];
+	background.classList.remove('heroBackground' + id);
+	background.classList.add('heroBackground');
+	setTimeout(function() {
+		if(!triangleAnimation){
+			const downTriangle = document.getElementsByClassName('downTriangleTransformed')[0];
+			downTriangle.classList.remove('downTriangleTransformed');
+			downTriangle.classList.add('downTriangle');
+			
+			const topTriangle = document.getElementsByClassName('topTriangleTransformed')[0];
+			topTriangle.classList.remove('topTriangleTransformed');
+			topTriangle.classList.add('topTriangle');
+		}
+	}, 380);
+};
+
+const newBackground = (id) => {
+	triangleAnimation = true;
+	
+	const background = document.getElementsByClassName('heroBackground')[0];
+	background.classList.remove('heroBackground');
+	background.classList.add('heroBackground' + id);
+	
+	const downTriangle = document.getElementsByClassName('downTriangle')[0];
+	downTriangle.classList.remove('downTriangle');
+	downTriangle.classList.add('downTriangleTransformed');
+	
+	const topTriangle = document.getElementsByClassName('topTriangle')[0];
+	topTriangle.classList.remove('topTriangle');
+	topTriangle.classList.add('topTriangleTransformed');
+};
+
 window.addEventListener("mousemove", bar);
+
+
+var posterId = 0;
+
+const nextPoster = () => {
+	
+	if(!document.getElementsByClassName('poster' + (posterId + 2))[0]) {
+		const button = document.getElementsByClassName('rightArrow')[0];
+		button.disabled = true;
+		button.classList.remove('rightArrow');
+		button.classList.add('rightArrowStatic');
+		
+	}
+	
+	if(document.getElementsByClassName('poster' + (posterId + 1))[0]) {
+    	const poster = document.getElementsByClassName('poster' + posterId)[0];
+    	if(poster) {
+    		poster.classList.add('rightHiddenPoster');
+    		document.getElementById('posterMark' + posterId).checked = false;
+    		document.getElementById('posterMark' + (posterId + 1)).checked = true;
+    	}
+    	
+		posterId += 1;
+		const newPoster = document.getElementsByClassName('poster' + posterId)[0];
+		newPoster.classList.remove('beginHiddenPoster');
+		newPoster.classList.remove('leftHiddenPoster');
+		newPoster.classList.remove('leftShownPoster');
+		newPoster.classList.add('rightShownPoster');
+	}
+	
+	const button = document.getElementsByClassName('leftArrowStatic')[0];
+	if(button) {
+    	button.disabled = false;
+    	button.classList.remove('leftArrowStatic');
+    	button.classList.add('leftArrow');
+    }
+}
+
+const previousPoster = () => {
+
+	if(!document.getElementsByClassName('poster' + (posterId - 2))[0]) {
+		const button = document.getElementsByClassName('leftArrow')[0];
+		button.disabled = true;
+		button.classList.remove('leftArrow');
+		button.classList.add('leftArrowStatic');
+	}
+
+	if(document.getElementsByClassName('poster' + (posterId - 1))[0]) {
+    	const poster = document.getElementsByClassName('poster' + posterId)[0];
+    	if(poster) {
+    		poster.classList.add('leftHiddenPoster');
+    		document.getElementById('posterMark' + posterId).checked = false;
+    		document.getElementById('posterMark' + (posterId - 1)).checked = true;
+    	}
+		posterId -= 1;
+		const newPoster = document.getElementsByClassName('poster' + posterId)[0];
+		newPoster.classList.remove('rightHiddenPoster');
+		newPoster.classList.add('leftShownPoster');
+	}
+	
+	const button = document.getElementsByClassName('rightArrowStatic')[0];
+	if(button) {
+    	button.disabled = false;
+    	button.classList.remove('rightArrowStatic');
+    	button.classList.add('rightArrow');
+    }
+}

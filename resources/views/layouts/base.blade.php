@@ -1,50 +1,3 @@
-
-<script>
-
-const showHero = () => {
-	const hero = document.getElementsByClassName('jumbotron')[0];
-
-	if (hero.style.display == '' || hero.style.display == 'none') {
-		hero.style.display = 'block';
-		hero.classList.add('jumbotron-full');
-	}
-	else {
-		hero.style.display = 'none';
-		hero.classList.remove('jumbotron-full');
-	}
-	
-};
-
-const standartBackground = (id) => {
-	const background = document.getElementsByClassName('heroBackground' + id)[0];
-	background.classList.remove('heroBackground' + id);
-	background.classList.add('heroBackground');
-	
-	const downTriangle = document.getElementsByClassName('downTriangleTransformed')[0];
-	downTriangle.classList.remove('downTriangleTransformed');
-	downTriangle.classList.add('downTriangle');
-	
-	const topTriangle = document.getElementsByClassName('topTriangleTransformed')[0];
-	topTriangle.classList.remove('topTriangleTransformed');
-	topTriangle.classList.add('topTriangle');
-}
-
-const newBackground = (id) => {
-	const background = document.getElementsByClassName('heroBackground')[0];
-	background.classList.remove('heroBackground');
-	background.classList.add('heroBackground' + id);
-	
-	const downTriangle = document.getElementsByClassName('downTriangle')[0];
-	downTriangle.classList.remove('downTriangle');
-	downTriangle.classList.add('downTriangleTransformed');
-	
-	const topTriangle = document.getElementsByClassName('topTriangle')[0];
-	topTriangle.classList.remove('topTriangle');
-	topTriangle.classList.add('topTriangleTransformed');
-}
-
-</script>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -63,63 +16,6 @@ const newBackground = (id) => {
 	</head>
 
     <body>
-    <!--
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        	<div class="collapse navbar-collapse">
-        		<ul class="navbar-nav">
-                	<li class="nav-item">
-                  		<a class="nav-link" href="/">{{ __('Homepage') }}</a>
-                  	</li>
-                  	<li class="nav-item">
-                  		<a class="nav-link" href="/repertoire">{{ __('Repertoire') }}</a>
-                  	</li>
-                  	<li class="nav-item">
-                    	<a class="nav-link" href="/pricing">{{ __('Pricing') }}</a>
-                  	</li>
-                  	<li class="nav-item">
-                    	<a class="nav-link" href="/about">{{ __('About') }}</a>
-                  	</li>
-                  	<li class="nav-item">
-                    	<a class="nav-link" href="/api-description">{{ __('API with repertoire') }}</a>
-                  	</li>
-                  	@if (Auth::user())
-                  		@if (Auth::user()->hasRole("admin"))
-                          	<li class="nav-item">
-                            	<a class="nav-link" href="/admin">{{ __('Administration panel') }}</a>
-                          	</li>
-                      	@endif
-                  	@endif
-                  	@if (Auth::user())
-                  		@if (Auth::user()->hasRole("employee"))
-                          	<li class="nav-item">
-                            	<a class="nav-link" href="/movie">{{ __('Employee panel') }}</a>
-                          	</li>
-                      	@endif
-                  	@endif
-            	</ul>
-            	@if (Auth::user())
-            		<div class="ml-auto">
-            			@if(Auth::user()->hasRole("customer"))
-            				<a class="btn btn-outline-success" href="{{ route('profile.index') }}"> {{ __('edit profile') }}</a>
-            			@endif
-            			@if(Auth::user()->avatar)
-            				<img src="{{ Auth::user()->avatar }}" width="70" height="70">
-            			@else
-            				<img src="{{ asset('images/no-avatar.png') }}" width="70" height="70">
-            			@endif
-            			{{ Auth::user()->first_name }}
-            			{{ Auth::user()->last_name }}
-            			<a class="btn btn-outline-success" href="{{ route('logout') }}">{{ __('sign out') }}</a>
-            		</div>
-            	@else
-            		<div class="ml-auto">
-                    	<a class="btn btn-outline-success" href="/login">{{ __('sign in') }}</a>
-                    	<a class="btn btn-outline-success" href="/register">{{ __('sign up') }}</a>
-            		</div>
-            	@endif
-        	</div>
-        </nav>
-         -->
 		<div class="hamburger" onclick="showHero()"></div>
 		@if(Auth::user())
     		<div class="userInfo">
@@ -189,5 +85,14 @@ const newBackground = (id) => {
     	<section class="section" id="basicSection" >
     		@yield('content')
     	</section>
+    	<footer class="footer py-4 bg-dark">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm text-center"> Created by <b>Piotr Mazur</b> </div>
+					<div class="col-sm text-center"> <b>piotr.a.mazur@wp.pl</b> </div>
+					<div class="col-sm text-center"><a href="https://github.com/MarcelDrugi/cinema"> <img class="git" src="{{ asset('images/gh.png') }}">github.com/MarcelDrugi/cinema</a> </div>
+				</div>
+			</div>
+		</footer>
     </body>
 </html>
