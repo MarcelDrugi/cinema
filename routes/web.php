@@ -32,10 +32,11 @@ Route::resource('/admin', 'App\Http\Controllers\AdminPanelController',
         'store' => 'adminpanel.store',
     ]]
 );
-Route::resource('/api-description', 'App\Http\Controllers\ApiDescriptionController');
 
 Route::resource('/discount', 'App\Http\Controllers\DiscountController');
 Route::delete('/discount/delete', 'App\Http\Controllers\DiscountController@destroy')->name('discount.destroy');
+
+Route::get('/detail/{id}', 'App\Http\Controllers\MovieDetailController@index')->name('moviedetail.index');
 
 Route::resource('/information', 'App\Http\Controllers\InformationController');
 Route::put('/information', 'App\Http\Controllers\InformationController@update')->name('information.update');

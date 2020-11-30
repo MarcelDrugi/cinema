@@ -70,7 +70,7 @@
         		<div class="poster poster{{ $loop->index }}">
         			<div class="titleBackground"></div>
         			<div class="movieTitle">
-						<a href="#">{{ $m->title }} ({{$m->published}})</a>
+						<a href="{{ route('moviedetail.index', ['id' => $m->id]) }}">{{ $m->title }} ({{$m->published}})</a>
         			</div>
             		<img src="{{ $m->poster }}">
             	</div>

@@ -5,6 +5,7 @@
 @shadow: hsl(180, 0%, 39%);
 @neonColorBegin: hsl(93, 98%, 82%);
 @neonColorEnd: hsl(95, 93%, 95%);
+@neonTextColor: hsl(93, 52%, 53%);
 
 @font-face {
   font-family: neon;
@@ -66,7 +67,7 @@
 	margin-left: 70vw;
 	top: 8vh;
 	z-index: 2;
-	color: hsl(93, 52%, 53%);
+	color: @neonTextColor;
 	white-space: nowrap;
 	border-right: 0.3vw solid transparent;
 	animation: glow 12s ease-in-out infinite alternate, blinkSlow 12s ease-in-out infinite alternate;

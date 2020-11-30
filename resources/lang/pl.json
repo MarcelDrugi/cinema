@@ -160,6 +160,10 @@
 	"This endpoint does not support filters.": "Ten endpoint nie obsługuje filtrów",
 	"Returns information about the selected movie.": "Zwraca informacje o podanym filmie.",
 	"The most important, loudest and best movies ever. A classic of world cinema in remastered quality.": "Najważniejsze, najgłośniejsze i najlepsze filmy w historii. Klasyka światowego kina w zremasterowanych wersjach.",
-	"": ""
+	"Screenings of this movie in the coming week": "Seanse tego filmu w nadchodzącym tygodniu",
+	"To buy tickets, go to the tab": "Aby zakupić bilety przejdź do zakładki",
+	"years old": "lat",
+	"movie published": "film z roku"
+	
 	
 }

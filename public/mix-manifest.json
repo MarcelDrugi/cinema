@@ -4,6 +4,7 @@
     "/../resources/css/layouts/base.css": "/../resources/css/layouts/base.css",
     "/../resources/css/homepage/index.css": "/../resources/css/homepage/index.css",
     "/../resources/css/global/global.css": "/../resources/css/global/global.css",
+    "/../resources/css/detail/index.css": "/../resources/css/detail/index.css",
     "/css/app.css": "/css/app.css",
     "/css/main.css": "/css/main.css"
 }
