@@ -3,6 +3,7 @@ html {
   height: 100%;
 }
 body {
+  position: relative;
   overflow-x: hidden;
   background-color: #edd400;
   min-height: 100%;
@@ -10,10 +11,10 @@ body {
 }
 .section {
   position: relative;
+  overflow-x: hidden;
   width: 100%;
   min-height: 93%;
   background-color: #babdb6;
-  overflow: auto;
 }
 @media (orientation: portrait) {
   .section {
@@ -100,14 +101,6 @@ body {
   background-color: hsl(180, 2%, 90%);
   border-radius: 40%;
 }
-@media (orientation: portrait) {
-  .jumbotron li a {
-    border-radius: 0px;
-  }
-}
-.jumbotron li .notCustomer {
-  color: hsl(0, 48%, 56%);
-}
 .jumbotron li a:hover {
   display: inline;
   color: hsl(184, 62%, 19%);
@@ -120,6 +113,14 @@ body {
 }
 .jumbotron li a:hover .notCustomer {
   color: hsl(0, 83%, 23%);
+}
+@media (orientation: portrait) {
+  .jumbotron li a {
+    border-radius: 0px;
+  }
+}
+.jumbotron li .notCustomer {
+  color: hsl(0, 48%, 56%);
 }
 .jumbotron .heroButtons {
   margin-top: 3%;

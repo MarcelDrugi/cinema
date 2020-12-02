@@ -42,7 +42,7 @@
 	}
 	
 	@media (orientation:portrait) {
-		top: 14vh;
+		top: 24vh;
 		width: 90vw;
 		height: 50.5vw;
 	}
@@ -60,7 +60,7 @@
 	z-index: 2;
 	
 	@media (orientation:portrait) {
-		margin-top: 20vh;
+		margin-top: 28vh;
 		font-size: 4.5vw;
 	}
 }
@@ -157,6 +157,10 @@
 		color: black;
 		box-shadow: -0.3vw 0.3vw 0.2vw 0.2vw @shadowColor;
 		
+		.centerElement {
+			text-align: center;
+		}
+		
 		@media (orientation:portrait) {
 			font-size: 2vw;
 		}
@@ -166,9 +170,13 @@
 		margin-left: 50px;
 	}
 	
+	.table>tbody>tr>th {
+		border-top: none;
+	}
+	
 	@media (orientation:portrait) {
 			width: 90vw;
-		}
+	}
 }
 
 .detailTableDescription {
@@ -220,7 +228,7 @@
 	    margin-right: auto;
 		width: 80vw;
 		font-size: 6vw;
-		top: 5vh;
+		top: 16vh;
 	}
 }
 

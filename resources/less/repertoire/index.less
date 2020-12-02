@@ -1,0 +1,213 @@
+@shadowColor: hsl(180, 0%, 39%);
+@backgroundColor: hsl(182, 25%, 39%);
+@basicFontColor: hsl(220, 14%, 92%);
+@seletedDayColor: hsl(47, 87%, 61%);
+
+
+.dayButtons {
+	position: relative;
+	z-index: 2;
+	text-align: center;
+	margin-top: 7vh;
+	
+	@media (orientation:portrait) {
+		margin-top: 4vh;
+	}
+}
+
+.repertoireBtn {
+	font-size: 1vw;
+	width: 6.5vw;
+	border-radius: 1vw;
+	color: black;
+	opacity: 0.8;
+	border: 0.2vw solid black;
+	background-color: @backgroundColor;
+
+	&:hover {
+		opacity: 1;
+		color: @seletedDayColor;
+	}
+	
+	@media (orientation:portrait) {
+		font-size: 1.9vw;
+		width: 12.5vw;
+	}
+}
+
+.activeRepertoireBtn {
+	.repertoireBtn;
+	background-color: @seletedDayColor;
+}
+
+.repertoireTable {
+	position: relative;
+	z-index: 2;
+	width: 80vw;
+	top: 6vh;
+	left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+	margin-bottom: 9vh;
+
+	table {
+		background-color: @backgroundColor;
+		font-size: 1vw;
+		margin-top: 3vh;
+		border-radius: 2vw;
+		opacity: 0.8;
+		color: black;
+		box-shadow: -0.3vw 0.3vw 0.2vw 0.2vw @shadowColor;
+		animation: repertoireShow 2s;
+		
+		.centerElement {
+			text-align: center;
+		}
+		
+		a {
+			border: 0.1vw solid black;
+			&:hover {
+				color: @seletedDayColor;
+			}
+		}
+		
+		@media (orientation:portrait) {
+			font-size: 1.8vw;
+			animation: repertoireShow 1.5s;
+		}
+	}
+	
+	.table>tbody>tr>th {
+		border-top: none;
+	}
+	
+	@media (orientation:portrait) {
+		top: 2vh;
+		width: 90vw;
+	}
+}
+
+.repertoireTableTitle {
+	font-size: 2.2vw;
+	font-weight: 600;
+	margin-left: 2vw;
+	animation: repertoireTableTitleShow 1.2s;
+	
+	@media (orientation:portrait) {
+		text-align: center;
+		font-size: 5vw;
+		width: 60vw;
+		left: 0px;
+	    right: 0px;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+}
+
+.repertoireTitle {
+	position: relative;
+	z-index: 2;
+	font-size: 2.6vw;
+	width: 62vw;
+	margin-left: 5vw;
+	margin-top: 4vh;
+	
+	@media (orientation:portrait) {
+		text-align: center;
+		left: 0px;
+	    right: 0px;
+	    margin-left: auto;
+	    margin-right: auto;
+		width: 75vw;
+		font-size: 5vw;
+		margin-top: 16vh;
+		font-weight: 600;
+	}
+}
+
+
+.repertoireContent {
+	position: relative;
+	font-size: 1.2vw;
+	color: @basicFontColor;
+	width: 55vw;
+	margin-left: 5vw;
+	margin-top: 4vh;
+	z-index: 1;
+	
+	a {
+		color: @basicFontColor;
+		font-weight: 900;
+	}
+	
+	@media (orientation:portrait) {
+		margin-top: 19vh;
+		width: 82vw;
+		margin-left: 9vw;
+		font-size: 2.2vw;
+	}
+}
+
+.repertoireContent .background {
+	position: absolute;
+	background-color: @backgroundColor;
+	opacity: 0.85;
+	width: 110%;
+	height: 110%;
+	top: -5%;
+	left: -5%;
+	border-radius: 3vw;
+	z-index: -1;
+	box-shadow: -0.25vw 0.25vw 0.2vw 0.2vw @shadowColor;
+	background-size: 16vw 16vh;
+}
+
+.repertoireImageBackground {
+	position: absolute;
+	width: 20vw;
+	height: 19vw;
+	margin-top: 11vh;
+	margin-left: 72vw;
+	
+	img {
+		height: 100%;
+		width: 100%;
+	}
+	
+	@media (orientation:portrait) {
+		width: 45vw;
+		height: 42vw;
+		left: 0px;
+	    right: 0px;
+	    margin-left: auto;
+	    margin-right: auto;
+		top: 12vh;
+	}
+}
+
+.repertoireImageBackgroundNun {
+	.repertoireImageBackground;
+	width: 12vw;
+	height: 11vh;
+	margin-top: 55vh;
+	margin-left: auto;
+	right: -1vw;
+	
+	@media (orientation:portrait) {
+		display: none;
+	}
+}
+
+@keyframes repertoireShow {
+	0% { opacity: 0; }
+	
+	100% { opacity: 0.8; }
+}
+
+@keyframes repertoireTableTitleShow {
+	0% { transform: translateX(-40vw); }
+	
+	100% { transform: translateX(0vw); }
+}
+

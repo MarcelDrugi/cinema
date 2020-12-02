@@ -31,7 +31,7 @@ class InformationSeeder extends Seeder
         Information::create([
             'place' => 'repertoire',
             'content' => '',
-            'max_length' => '220',
+            'max_length' => '410',
         ]);
         
         Information::create([

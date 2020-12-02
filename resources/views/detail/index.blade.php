@@ -34,24 +34,24 @@
 		</div>
     	<table class="table table-striped">
         	<tr>
-            	<th>{{ __('week day') }}</th>
-            	<th>{{ '08 - 10' }}</th>
-            	<th>{{ '10 - 12' }}</th>
-            	<th>{{ '12 - 14' }}</th>
-            	<th>{{ '14 - 16' }}</th>
-            	<th>{{ '16 - 18' }}</th>
-            	<th>{{ '18 - 20' }}</th>
-            	<th>{{ '20 - 22' }}</th>
-            	<th>{{ '22 - 00' }}</th>
+            	<th></th>
+            	<th class="centerElement">{{ '08 - 10' }}</th>
+            	<th class="centerElement">{{ '10 - 12' }}</th>
+            	<th class="centerElement">{{ '12 - 14' }}</th>
+            	<th class="centerElement">{{ '14 - 16' }}</th>
+            	<th class="centerElement">{{ '16 - 18' }}</th>
+            	<th class="centerElement">{{ '18 - 20' }}</th>
+            	<th class="centerElement">{{ '20 - 22' }}</th>
+            	<th class="centerElement">{{ '22 - 00' }}</th>
             </tr>
         	@foreach($termsWithDays as $day => $hours)
         		<tr>
-        		<td>{{ __($day) }}</td>
+        		<td><b>&nbsp;&nbsp;{{ __($day) }}</b></td>
             		@foreach($hours as $hour => $terms)
             			@if(empty($terms))
             				<td></td>
             			@else
-            				<td>
+            				<td class="centerElement">
                     			@foreach($terms as $term)
                     				{{ date('H:i', strtotime($term->date_time)) }}<br>
                     			@endforeach

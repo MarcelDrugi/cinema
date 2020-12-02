@@ -15,6 +15,7 @@ html {
 }
 
 body {
+	position: relative;
 	overflow-x: hidden;
 	background-color: rgb(237, 212, 0);
 	min-height: 100%;
@@ -23,10 +24,10 @@ body {
 
 .section {
 	position: relative;
+	overflow-x: hidden;
 	width: 100%;
 	min-height: 93%;
 	background-color: @basicColor;
-	overflow: auto;
 	@media (orientation: portrait) {
 		min-height: 96%;
 	}
@@ -107,6 +108,21 @@ body {
 		background-color: @heroColor;
 		border-radius: 40%;
 		
+		&:hover {
+			display: inline;
+			color: @navLinkHoverColor;
+			font-weight: 800;
+			padding-left: 1%;
+			background-color: @heroColor;
+			border-radius: 40%;
+			border: 3px outset @navLinkHoverColor;
+			padding: 1%;
+			
+			.notCustomer {
+				color: @notCustomerColorHover;
+			}
+		}
+		
 		@media (orientation:portrait) {
 			border-radius: 0px;
     	}
@@ -114,21 +130,6 @@ body {
 	
 	.notCustomer {
 		color: @notCustomerColor;
-	}
-}
-
-.jumbotron li a:hover {
-	display: inline;
-	color: @navLinkHoverColor;
-	font-weight: 800;
-	padding-left: 1%;
-	background-color: @heroColor;
-	border-radius: 40%;
-	border: 3px outset @navLinkHoverColor;
-	padding: 1%;
-	
-	.notCustomer {
-		color: @notCustomerColorHover;
 	}
 }
 
@@ -234,11 +235,11 @@ body {
 	min-height: 40px;
 	height: 4vh;
 	width: 3vw;
-}
-
-.hamburger:hover {
-	cursor: pointer;
-	transform: scale(1.1, 1.1);
+	
+	&:hover {
+		cursor: pointer;
+		transform: scale(1.1, 1.1);
+	}
 }
 
 .userInfo {
@@ -301,10 +302,10 @@ body {
 .userInfo .btn-success {
 	background-color: @navLinkColor;
 	border: 1px solid @navLinkColor;
-}
-
-.userInfo .btn-success:hover {
-	background-color: @navLinkHoverColor;
+	
+	&:hover {
+		background-color: @navLinkHoverColor;
+	}
 }
 
 .userInfo .btn-warning:hover {

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Movie;
 use App\Models\Term;
-use App\Services\PricingService;
+use App\Services\RepertoireService;
 
 class MovieDetailController extends Controller
 {
@@ -17,7 +17,8 @@ class MovieDetailController extends Controller
                 )
             )->orderBy('date_time')->get();
         
-        $weekDays = PricingService::$weekDays;
+        $service = new RepertoireService();
+        $weekDays = $service->weekDays();
         
         $termsWithDays = array();
         

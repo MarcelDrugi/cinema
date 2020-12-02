@@ -14,6 +14,7 @@ html {
   height: 100%;
 }
 body {
+  position: relative;
   overflow-x: hidden;
   background-color: #edd400;
   min-height: 100%;
@@ -21,10 +22,10 @@ body {
 }
 .section {
   position: relative;
+  overflow-x: hidden;
   width: 100%;
   min-height: 93%;
   background-color: #babdb6;
-  overflow: auto;
 }
 @media (orientation: portrait) {
   .section {
@@ -111,14 +112,6 @@ body {
   background-color: hsl(180, 2%, 90%);
   border-radius: 40%;
 }
-@media (orientation: portrait) {
-  .jumbotron li a {
-    border-radius: 0px;
-  }
-}
-.jumbotron li .notCustomer {
-  color: hsl(0, 48%, 56%);
-}
 .jumbotron li a:hover {
   display: inline;
   color: hsl(184, 62%, 19%);
@@ -131,6 +124,14 @@ body {
 }
 .jumbotron li a:hover .notCustomer {
   color: hsl(0, 83%, 23%);
+}
+@media (orientation: portrait) {
+  .jumbotron li a {
+    border-radius: 0px;
+  }
+}
+.jumbotron li .notCustomer {
+  color: hsl(0, 48%, 56%);
 }
 .jumbotron .heroButtons {
   margin-top: 3%;
@@ -2217,7 +2218,7 @@ body {
 }
 @media (orientation: portrait) {
   .detailPoster {
-    top: 14vh;
+    top: 24vh;
     width: 90vw;
     height: 50.5vw;
   }
@@ -2235,7 +2236,7 @@ body {
 }
 @media (orientation: portrait) {
   .detailTitle {
-    margin-top: 20vh;
+    margin-top: 28vh;
     font-size: 4.5vw;
   }
 }
@@ -2366,6 +2367,9 @@ body {
   color: black;
   box-shadow: -0.3vw 0.3vw 0.2vw 0.2vw hsl(0, 0%, 39%);
 }
+.detailTermTable table .centerElement {
+  text-align: center;
+}
 @media (orientation: portrait) {
   .detailTermTable table {
     font-size: 2vw;
@@ -2373,6 +2377,9 @@ body {
 }
 .detailTermTable th {
   margin-left: 50px;
+}
+.detailTermTable .table > tbody > tr > th {
+  border-top: none;
 }
 @media (orientation: portrait) {
   .detailTermTable {
@@ -2454,7 +2461,7 @@ body {
     margin-right: auto;
     width: 80vw;
     font-size: 6vw;
-    top: 5vh;
+    top: 16vh;
   }
 }
 .detailCameraBackground {
@@ -2494,5 +2501,262 @@ body {
   }
   100% {
     text-shadow: 0 0 1vw white, 0 0 1.8vw white, 0 0 2.2vw hsl(93, 98%, 82%), 0 0 2.7vw hsl(93, 98%, 82%), 0 0 3.3vw hsl(93, 98%, 82%), 0 0 3.8vw hsl(93, 98%, 82%), 0 0 4.4vw hsl(93, 98%, 82%);
+  }
+}
+
+.dayButtons {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 7vh;
+}
+@media (orientation: portrait) {
+  .dayButtons {
+    margin-top: 4vh;
+  }
+}
+.repertoireBtn {
+  font-size: 1vw;
+  width: 6.5vw;
+  border-radius: 1vw;
+  color: black;
+  opacity: 0.8;
+  border: 0.2vw solid black;
+  background-color: hsl(182, 25%, 39%);
+}
+.repertoireBtn:hover {
+  opacity: 1;
+  color: hsl(47, 87%, 61%);
+}
+@media (orientation: portrait) {
+  .repertoireBtn {
+    font-size: 1.9vw;
+    width: 12.5vw;
+  }
+}
+.activeRepertoireBtn {
+  font-size: 1vw;
+  width: 6.5vw;
+  border-radius: 1vw;
+  color: black;
+  opacity: 0.8;
+  border: 0.2vw solid black;
+  background-color: hsl(182, 25%, 39%);
+  background-color: hsl(47, 87%, 61%);
+}
+.activeRepertoireBtn:hover {
+  opacity: 1;
+  color: hsl(47, 87%, 61%);
+}
+@media (orientation: portrait) {
+  .activeRepertoireBtn {
+    font-size: 1.9vw;
+    width: 12.5vw;
+  }
+}
+.repertoireTable {
+  position: relative;
+  z-index: 2;
+  width: 80vw;
+  top: 6vh;
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 9vh;
+}
+.repertoireTable table {
+  background-color: hsl(182, 25%, 39%);
+  font-size: 1vw;
+  margin-top: 3vh;
+  border-radius: 2vw;
+  opacity: 0.8;
+  color: black;
+  box-shadow: -0.3vw 0.3vw 0.2vw 0.2vw hsl(0, 0%, 39%);
+  -webkit-animation: repertoireShow 2s;
+          animation: repertoireShow 2s;
+}
+.repertoireTable table .centerElement {
+  text-align: center;
+}
+.repertoireTable table a {
+  border: 0.1vw solid black;
+}
+.repertoireTable table a:hover {
+  color: hsl(47, 87%, 61%);
+}
+@media (orientation: portrait) {
+  .repertoireTable table {
+    font-size: 1.8vw;
+    -webkit-animation: repertoireShow 1.5s;
+            animation: repertoireShow 1.5s;
+  }
+}
+.repertoireTable .table > tbody > tr > th {
+  border-top: none;
+}
+@media (orientation: portrait) {
+  .repertoireTable {
+    top: 2vh;
+    width: 90vw;
+  }
+}
+.repertoireTableTitle {
+  font-size: 2.2vw;
+  font-weight: 600;
+  margin-left: 2vw;
+  -webkit-animation: repertoireTableTitleShow 1.2s;
+          animation: repertoireTableTitleShow 1.2s;
+}
+@media (orientation: portrait) {
+  .repertoireTableTitle {
+    text-align: center;
+    font-size: 5vw;
+    width: 60vw;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.repertoireTitle {
+  position: relative;
+  z-index: 2;
+  font-size: 2.6vw;
+  width: 62vw;
+  margin-left: 5vw;
+  margin-top: 4vh;
+}
+@media (orientation: portrait) {
+  .repertoireTitle {
+    text-align: center;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75vw;
+    font-size: 5vw;
+    margin-top: 16vh;
+    font-weight: 600;
+  }
+}
+.repertoireContent {
+  position: relative;
+  font-size: 1.2vw;
+  color: hsl(220, 14%, 92%);
+  width: 55vw;
+  margin-left: 5vw;
+  margin-top: 4vh;
+  z-index: 1;
+}
+.repertoireContent a {
+  color: hsl(220, 14%, 92%);
+  font-weight: 900;
+}
+@media (orientation: portrait) {
+  .repertoireContent {
+    margin-top: 19vh;
+    width: 82vw;
+    margin-left: 9vw;
+    font-size: 2.2vw;
+  }
+}
+.repertoireContent .background {
+  position: absolute;
+  background-color: hsl(182, 25%, 39%);
+  opacity: 0.85;
+  width: 110%;
+  height: 110%;
+  top: -5%;
+  left: -5%;
+  border-radius: 3vw;
+  z-index: -1;
+  box-shadow: -0.25vw 0.25vw 0.2vw 0.2vw hsl(0, 0%, 39%);
+  background-size: 16vw 16vh;
+}
+.repertoireImageBackground {
+  position: absolute;
+  width: 20vw;
+  height: 19vw;
+  margin-top: 11vh;
+  margin-left: 72vw;
+}
+.repertoireImageBackground img {
+  height: 100%;
+  width: 100%;
+}
+@media (orientation: portrait) {
+  .repertoireImageBackground {
+    width: 45vw;
+    height: 42vw;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 12vh;
+  }
+}
+.repertoireImageBackgroundNun {
+  position: absolute;
+  width: 20vw;
+  height: 19vw;
+  margin-top: 11vh;
+  margin-left: 72vw;
+  width: 12vw;
+  height: 11vh;
+  margin-top: 55vh;
+  margin-left: auto;
+  right: -1vw;
+}
+.repertoireImageBackgroundNun img {
+  height: 100%;
+  width: 100%;
+}
+@media (orientation: portrait) {
+  .repertoireImageBackgroundNun {
+    width: 45vw;
+    height: 42vw;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 12vh;
+  }
+}
+@media (orientation: portrait) {
+  .repertoireImageBackgroundNun {
+    display: none;
+  }
+}
+@-webkit-keyframes repertoireShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+@keyframes repertoireShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+@-webkit-keyframes repertoireTableTitleShow {
+  0% {
+    transform: translateX(-40vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes repertoireTableTitleShow {
+  0% {
+    transform: translateX(-40vw);
+  }
+  100% {
+    transform: translateX(0vw);
   }
 }

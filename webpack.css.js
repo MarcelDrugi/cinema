@@ -7,13 +7,15 @@ mix.less('resources/less/discount/index.less', '../resources/css/discount')
 		.less('resources/less/layouts/base.less', '../resources/css/layouts')
 		.less('resources/less/homepage/index.less', '../resources/css/homepage')
 		.less('resources/less/global.less', '../resources/css/global')
-		.less('resources/less/detail/index.less', '../resources/css/detail').combine([
+		.less('resources/less/detail/index.less', '../resources/css/detail')
+		.less('resources/less/repertoire/index.less', '../resources/css/repertoire').combine([
 	    'resources/css/discount/index.css',
 		'resources/css/movie/index.css',
 	    'resources/css/layouts/base.css',
 		'resources/css/homepage/index.css',
 		'resources/css/global/global.css',
 		'resources/css/detail/index.css',
+		'resources/css/repertoire/index.css',
 	],
 	'public/css/main.css'
 );

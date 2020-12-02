@@ -33,7 +33,7 @@
 }
 @media (orientation: portrait) {
   .detailPoster {
-    top: 14vh;
+    top: 24vh;
     width: 90vw;
     height: 50.5vw;
   }
@@ -51,7 +51,7 @@
 }
 @media (orientation: portrait) {
   .detailTitle {
-    margin-top: 20vh;
+    margin-top: 28vh;
     font-size: 4.5vw;
   }
 }
@@ -182,6 +182,9 @@
   color: black;
   box-shadow: -0.3vw 0.3vw 0.2vw 0.2vw hsl(0, 0%, 39%);
 }
+.detailTermTable table .centerElement {
+  text-align: center;
+}
 @media (orientation: portrait) {
   .detailTermTable table {
     font-size: 2vw;
@@ -189,6 +192,9 @@
 }
 .detailTermTable th {
   margin-left: 50px;
+}
+.detailTermTable .table > tbody > tr > th {
+  border-top: none;
 }
 @media (orientation: portrait) {
   .detailTermTable {
@@ -270,7 +276,7 @@
     margin-right: auto;
     width: 80vw;
     font-size: 6vw;
-    top: 5vh;
+    top: 16vh;
   }
 }
 .detailCameraBackground {

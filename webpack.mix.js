@@ -21,6 +21,7 @@ mix.scripts([
 		'resources/js/modifypricing/index.js',
 		'resources/js/layouts/base.js',
 		'resources/js/homepage/index.js',
+		'resources/js/repertoire/index.js',
 	],
 	'public/js/main.js'
 );
