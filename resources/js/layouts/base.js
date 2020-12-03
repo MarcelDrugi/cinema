@@ -25,7 +25,7 @@ const opacityAnimation = (dot, opacity, deg) => {
 		}, 16);
 	}
 	else {
-		dot.style.display = 'none';
+		dot.remove();
 	}
 };
 

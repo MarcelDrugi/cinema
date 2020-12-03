@@ -42,7 +42,7 @@
             </tr>
         	@foreach($movies as $title => $hours)
         		<tr>
-        		<td><b>&nbsp;&nbsp;{{ __($title) }}</b></td>
+        		<td><b>&nbsp;&nbsp;<a href="{{route('moviedetail.index', ['id'=> $allMovies->where('title', $title)->first()->id])}}">{{ $title }}</a></b></td>
             		@foreach($hours as $hour => $terms)
             			@if(empty($terms))
             				<td></td>

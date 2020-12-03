@@ -73,10 +73,16 @@
 .repertoireTable table .centerElement {
   text-align: center;
 }
-.repertoireTable table a {
+.repertoireTable table .centerElement a {
   border: 0.1vw solid black;
 }
-.repertoireTable table a:hover {
+.repertoireTable table .centerElement a:hover {
+  color: hsl(47, 87%, 61%);
+}
+.repertoireTable table b a {
+  color: hsl(220, 14%, 92%);
+}
+.repertoireTable table b a:hover {
   color: hsl(47, 87%, 61%);
 }
 @media (orientation: portrait) {

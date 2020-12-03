@@ -1,3 +1,9 @@
+.horizontalCenter {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .orderTitle {
   position: relative;
   z-index: 1;
@@ -26,13 +32,13 @@
 }
 @media (orientation: portrait) {
   .orderNumberOfTickets {
-    text-align: center;
-    font-size: 3.5vw;
-    width: 80vw;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    font-size: 3.5vw;
+    width: 80vw;
     margin-top: 1vh;
   }
 }
@@ -76,11 +82,11 @@
 }
 @media (orientation: portrait) {
   .orderInputs .col .orderLeftInput {
-    width: 80vw;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+    width: 80vw;
     font-size: 3vw;
   }
 }
@@ -108,11 +114,11 @@
 }
 @media (orientation: portrait) {
   .orderInputs .col .orderRightInput {
-    width: 60vw;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+    width: 60vw;
     font-size: 3vw;
   }
 }
@@ -195,11 +201,11 @@
 }
 @media (orientation: portrait) {
   .orderToPay {
-    width: 60vw;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+    width: 60vw;
     font-size: 3.2vw;
     margin-bottom: 12vh;
   }
@@ -217,10 +223,10 @@
 }
 @media (orientation: portrait) {
   .orderBackgroundImg {
-    bottom: 0;
-    right: 0;
+    left: 0px;
+    right: 0px;
     margin-left: auto;
-    margin-top: auto;
+    margin-right: auto;
     width: 40vw;
     height: 25.6vw;
   }

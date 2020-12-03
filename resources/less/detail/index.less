@@ -9,30 +9,32 @@
   src: url("/fonts/mexcellent3d.ttf");
 }
 
-
-.movieDetail {
-	position: relative;
-	width: 80%;
+.horizontalCenter {
 	left: 0px;
     right: 0px;
     margin-left: auto;
-    margin-right: auto;
+	margin-right: auto;
+}
+
+.movieDetail {
+	.horizontalCenter;
+	
+	position: relative;
+	width: 80%;
 	margin-top: 13vh;
 	margin-bottom: 5vh;
 	z-index: 1;
 }
 
 .detailPoster {
+	.horizontalCenter;
+	
 	position: relative;
 	overflow: hidden;
 	z-index: 2;
 	width: 55vw;
 	height: 55vh;
 	top: 8vh;
-	left: 0px;
-    right: 0px;
-    margin-left: auto;
-    margin-right: auto;
 	border-radius: 2vw;
 	box-shadow: -0.38vw 0.35vw 0.3vw 0.3vw @shadowColor;
 	
@@ -49,14 +51,12 @@
 }
 
 .detailTitle {
+	.horizontalCenter;
+	
 	position: relative;
 	text-align: center;
 	font-size: 3vw;
 	width: 70vw;
-	left: 0px;
-    right: 0px;
-    margin-left: auto;
-    margin-right: auto;
 	z-index: 2;
 	
 	@media (orientation:portrait) {
@@ -66,15 +66,13 @@
 }
 
 .detailDescription {
+	.horizontalCenter;
+	
 	position: relative;
 	overflow: hidden;
 	margin-top: 2vh;
 	padding-bottom: 2vh;
 	width: 70vw;
-	left: 0px;
-    right: 0px;
-    margin-left: auto;
-    margin-right: auto;
 	z-index: 2;
 	font-size: 1.2vw;
 	
@@ -139,12 +137,10 @@
 
 
 .detailTermTable {
+	.horizontalCenter;
+	
 	position: relative;
 	width: 80vw;
-	left: 0px;
-    right: 0px;
-    margin-left: auto;
-    margin-right: auto;
 	margin-top: 5vh;
 	z-index: 1;
 
@@ -186,10 +182,8 @@
 	margin-left: 0;
 	
 	@media (orientation:portrait) {
-		left: 0px;
-	    right: 0px;
-	    margin-left: auto;
-	    margin-right: auto;
+		.horizontalCenter;
+		
 		width: 55vw;
 	}
 }
@@ -221,11 +215,9 @@
 	animation: detailGlow 1s ease-in-out infinite alternate;
 	
 	@media (orientation:portrait) {
+		.horizontalCenter;
+		
 		word-wrap: normal;
-		left: 0px;
-	    right: 0px;
-	    margin-left: auto;
-	    margin-right: auto;
 		width: 80vw;
 		font-size: 6vw;
 		top: 16vh;
@@ -246,10 +238,8 @@
 	}
 	
 	@media (orientation:portrait) {
-		left: 0px;
-	    right: 0px;
-	    margin-left: auto;
-	    margin-right: auto;
+		.horizontalCenter;
+		
 		top: 50vh;
 		height: 70vw;
 		width: 61vw;

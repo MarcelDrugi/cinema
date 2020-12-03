@@ -1,3 +1,9 @@
+.horizontalCenter {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .summaryTitle {
   position: relative;
   z-index: 1;
@@ -29,13 +35,13 @@
 }
 @media (orientation: portrait) {
   .summaryPrice {
-    text-align: center;
-    font-size: 3.5vw;
-    width: 80vw;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    font-size: 3.5vw;
+    width: 80vw;
     margin-top: 4vh;
   }
 }
@@ -53,13 +59,13 @@
 }
 @media (orientation: portrait) {
   .summaryNumberOfTickets {
-    text-align: center;
-    font-size: 3.5vw;
-    width: 80vw;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    font-size: 3.5vw;
+    width: 80vw;
     margin-top: 2vh;
   }
 }
@@ -93,12 +99,12 @@
 }
 @media (orientation: portrait) {
   .summaryPayPalBackground {
-    width: 51vw;
-    height: 15vw;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+    width: 51vw;
+    height: 15vw;
     margin-top: 8vh;
   }
 }

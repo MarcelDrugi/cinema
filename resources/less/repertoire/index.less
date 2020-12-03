@@ -65,8 +65,15 @@
 			text-align: center;
 		}
 		
-		a {
+		.centerElement a {
 			border: 0.1vw solid black;
+			&:hover {
+				color: @seletedDayColor;
+			}
+		}
+		
+		b a {
+			color: @basicFontColor;
 			&:hover {
 				color: @seletedDayColor;
 			}

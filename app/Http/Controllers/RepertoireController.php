@@ -59,6 +59,7 @@ class RepertoireController extends Controller
         
         return view('repertoire.index', [
             'termsWithDays' => $termsWithDays,
+            'allMovies' => $movies,
             'info' => Information::where('place', 'repertoire')->first(),
             'dates' => $dates,
         ]);

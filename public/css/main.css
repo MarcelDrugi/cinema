@@ -2187,28 +2187,34 @@ body {
   font-family: neon;
   src: url("/fonts/mexcellent3d.ttf");
 }
-.movieDetail {
-  position: relative;
-  width: 80%;
+.horizontalCenter {
   left: 0px;
   right: 0px;
   margin-left: auto;
   margin-right: auto;
+}
+.movieDetail {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 80%;
   margin-top: 13vh;
   margin-bottom: 5vh;
   z-index: 1;
 }
 .detailPoster {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   overflow: hidden;
   z-index: 2;
   width: 55vw;
   height: 55vh;
   top: 8vh;
-  left: 0px;
-  right: 0px;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 2vw;
   box-shadow: -0.38vw 0.35vw 0.3vw 0.3vw hsl(0, 0%, 39%);
 }
@@ -2224,14 +2230,14 @@ body {
   }
 }
 .detailTitle {
-  position: relative;
-  text-align: center;
-  font-size: 3vw;
-  width: 70vw;
   left: 0px;
   right: 0px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  text-align: center;
+  font-size: 3vw;
+  width: 70vw;
   z-index: 2;
 }
 @media (orientation: portrait) {
@@ -2241,15 +2247,15 @@ body {
   }
 }
 .detailDescription {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   overflow: hidden;
   margin-top: 2vh;
   padding-bottom: 2vh;
   width: 70vw;
-  left: 0px;
-  right: 0px;
-  margin-left: auto;
-  margin-right: auto;
   z-index: 2;
   font-size: 1.2vw;
 }
@@ -2349,12 +2355,12 @@ body {
   }
 }
 .detailTermTable {
-  position: relative;
-  width: 80vw;
   left: 0px;
   right: 0px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  width: 80vw;
   margin-top: 5vh;
   z-index: 1;
 }
@@ -2454,11 +2460,11 @@ body {
 }
 @media (orientation: portrait) {
   .detailNeonTitle {
-    word-wrap: normal;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+    word-wrap: normal;
     width: 80vw;
     font-size: 6vw;
     top: 16vh;
@@ -2579,10 +2585,16 @@ body {
 .repertoireTable table .centerElement {
   text-align: center;
 }
-.repertoireTable table a {
+.repertoireTable table .centerElement a {
   border: 0.1vw solid black;
 }
-.repertoireTable table a:hover {
+.repertoireTable table .centerElement a:hover {
+  color: hsl(47, 87%, 61%);
+}
+.repertoireTable table b a {
+  color: hsl(220, 14%, 92%);
+}
+.repertoireTable table b a:hover {
   color: hsl(47, 87%, 61%);
 }
 @media (orientation: portrait) {
@@ -2761,6 +2773,12 @@ body {
   }
 }
 
+.horizontalCenter {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .orderTitle {
   position: relative;
   z-index: 1;
@@ -2789,13 +2807,13 @@ body {
 }
 @media (orientation: portrait) {
   .orderNumberOfTickets {
-    text-align: center;
-    font-size: 3.5vw;
-    width: 80vw;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    font-size: 3.5vw;
+    width: 80vw;
     margin-top: 1vh;
   }
 }
@@ -2839,11 +2857,11 @@ body {
 }
 @media (orientation: portrait) {
   .orderInputs .col .orderLeftInput {
-    width: 80vw;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+    width: 80vw;
     font-size: 3vw;
   }
 }
@@ -2871,11 +2889,11 @@ body {
 }
 @media (orientation: portrait) {
   .orderInputs .col .orderRightInput {
-    width: 60vw;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+    width: 60vw;
     font-size: 3vw;
   }
 }
@@ -2958,11 +2976,11 @@ body {
 }
 @media (orientation: portrait) {
   .orderToPay {
-    width: 60vw;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+    width: 60vw;
     font-size: 3.2vw;
     margin-bottom: 12vh;
   }
@@ -2980,10 +2998,10 @@ body {
 }
 @media (orientation: portrait) {
   .orderBackgroundImg {
-    bottom: 0;
-    right: 0;
+    left: 0px;
+    right: 0px;
     margin-left: auto;
-    margin-top: auto;
+    margin-right: auto;
     width: 40vw;
     height: 25.6vw;
   }
@@ -3000,6 +3018,12 @@ body {
   width: 100%;
 }
 
+.horizontalCenter {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .summaryTitle {
   position: relative;
   z-index: 1;
@@ -3031,13 +3055,13 @@ body {
 }
 @media (orientation: portrait) {
   .summaryPrice {
-    text-align: center;
-    font-size: 3.5vw;
-    width: 80vw;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    font-size: 3.5vw;
+    width: 80vw;
     margin-top: 4vh;
   }
 }
@@ -3055,13 +3079,13 @@ body {
 }
 @media (orientation: portrait) {
   .summaryNumberOfTickets {
-    text-align: center;
-    font-size: 3.5vw;
-    width: 80vw;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    font-size: 3.5vw;
+    width: 80vw;
     margin-top: 2vh;
   }
 }
@@ -3095,12 +3119,12 @@ body {
 }
 @media (orientation: portrait) {
   .summaryPayPalBackground {
-    width: 51vw;
-    height: 15vw;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+    width: 51vw;
+    height: 15vw;
     margin-top: 8vh;
   }
 }

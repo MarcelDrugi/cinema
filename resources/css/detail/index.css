@@ -2,28 +2,34 @@
   font-family: neon;
   src: url("/fonts/mexcellent3d.ttf");
 }
-.movieDetail {
-  position: relative;
-  width: 80%;
+.horizontalCenter {
   left: 0px;
   right: 0px;
   margin-left: auto;
   margin-right: auto;
+}
+.movieDetail {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 80%;
   margin-top: 13vh;
   margin-bottom: 5vh;
   z-index: 1;
 }
 .detailPoster {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   overflow: hidden;
   z-index: 2;
   width: 55vw;
   height: 55vh;
   top: 8vh;
-  left: 0px;
-  right: 0px;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 2vw;
   box-shadow: -0.38vw 0.35vw 0.3vw 0.3vw hsl(0, 0%, 39%);
 }
@@ -39,14 +45,14 @@
   }
 }
 .detailTitle {
-  position: relative;
-  text-align: center;
-  font-size: 3vw;
-  width: 70vw;
   left: 0px;
   right: 0px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  text-align: center;
+  font-size: 3vw;
+  width: 70vw;
   z-index: 2;
 }
 @media (orientation: portrait) {
@@ -56,15 +62,15 @@
   }
 }
 .detailDescription {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   overflow: hidden;
   margin-top: 2vh;
   padding-bottom: 2vh;
   width: 70vw;
-  left: 0px;
-  right: 0px;
-  margin-left: auto;
-  margin-right: auto;
   z-index: 2;
   font-size: 1.2vw;
 }
@@ -164,12 +170,12 @@
   }
 }
 .detailTermTable {
-  position: relative;
-  width: 80vw;
   left: 0px;
   right: 0px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  width: 80vw;
   margin-top: 5vh;
   z-index: 1;
 }
@@ -269,11 +275,11 @@
 }
 @media (orientation: portrait) {
   .detailNeonTitle {
-    word-wrap: normal;
     left: 0px;
     right: 0px;
     margin-left: auto;
     margin-right: auto;
+    word-wrap: normal;
     width: 80vw;
     font-size: 6vw;
     top: 16vh;
