@@ -25,7 +25,8 @@ class Information extends Model
         'homepage_bottom',
         'repertoire',
         'pricing',
-        'about_side',
+        'about_left',
+        'about_right',
         'about_bottom',
         'api',
     ];

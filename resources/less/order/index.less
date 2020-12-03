@@ -1,0 +1,244 @@
+@shadowColor: hsl(180, 0%, 39%);
+@backgroundColor: hsl(182, 25%, 39%);
+@noDiscountLabel: hsl(270, 55%, 21%);
+@basicFontColor: hsl(220, 14%, 92%);
+@priceColor: hsl(347, 45%, 45%);
+@numberOfTicketscolor: green;
+
+
+.orderTitle {
+	position: relative;
+	z-index: 1;
+	font-size: 2.7vw;
+	margin-top: 2vh;
+	margin-left: 2vw;
+	width: 88vw;
+	
+	@media (orientation:portrait) {
+		margin-top: 16vh;
+		font-size: 4.5vw;
+		text-align: center;
+		width: 80vw;
+		margin-left: 10vw;
+	}
+}
+
+.orderNumberOfTickets {
+	position: relative;
+	z-index: 1;
+	font-size: 1.8vw;
+	margin-left: 2vw;
+	
+	b {
+		color: @numberOfTicketscolor;
+	}
+	
+	@media (orientation:portrait) {
+		text-align: center;
+		font-size: 3.5vw;
+		width: 80vw;
+		left: 0px;
+	    right: 0px;
+	    margin-left: auto;
+	    margin-right: auto;
+		margin-top: 1vh;
+	}
+}
+
+.orderInputs {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	text-align: center;
+	margin-top: 9vh;
+	color: @basicFontColor;
+	
+	.col {
+		font-size: 1.2vw;
+		.orderLeftInput {
+			position: relative;
+			width: 30vw;
+			right: 5vw;
+			margin-left: auto;
+			text-align: center;
+			
+			.custom-control {
+				text-align: left;
+				margin-left: 6vw;
+				
+				@media (orientation:portrait) {
+					margin-left: 15vw;
+				}
+			}
+			
+			.noDiscountLabel {
+				color: @noDiscountLabel;
+				font-weight: 700;
+				margin-bottom: 2vh;
+				
+				@media (orientation:portrait) {
+					margin-bottom: 1vh;
+					margin-top: 2vh;
+				}
+			}
+			
+			@media (orientation:portrait) {
+				width: 80vw;
+				left: 0px;
+			    right: 0px;
+			    margin-left: auto;
+			    margin-right: auto;
+				font-size: 3vw;
+			}
+		}
+		
+		.orderRightInput {
+			position: relative;
+			width: 30vw;
+			left: 5vw;
+			margin-right: auto;
+			text-align: center;
+			
+			label {
+				width: 7vw;
+				text-align: right;
+				margin-right: 1vw;
+				
+				@media (orientation:portrait) {
+					width: 15vw;
+					margin-right: 3vw;
+					font-size: 3vw;
+				}
+			}
+			
+			input[type='text'] {
+				width: 8vw;
+			}
+			
+			@media (orientation:portrait) {
+				width: 60vw;
+				left: 0px;
+			    right: 0px;
+			    margin-left: auto;
+			    margin-right: auto;
+				font-size: 3vw;
+			}
+		}
+		
+		.btn-dark {
+			font-size: 1vw;
+			
+			@media (orientation:portrait) {
+				font-size: 2.5vw;
+			}
+		}
+		
+		.btn-secondary {
+			@media (orientation:portrait) {
+				font-size: 2vw;
+				width: 5vw;
+				height: 5vw;
+			}
+		}
+		
+		@media (orientation:portrait) {
+			margin-bottom: 4vh;
+			font-size: 3vw;
+		}
+	}
+	
+	.noDiscountInfo {
+		font-size: 1.8vw;
+		text-align: center;
+	}
+	
+	@media (orientation:portrait) {
+		display: block;
+		margin-top: 4vh;
+	}
+}
+
+
+.orderInputBackground {
+	position: absolute;
+	width: 100%;
+	height: 106%;
+	margin-top: -2%;
+	z-index: -1;
+	opacity: 0.8;
+	background-color: @backgroundColor;
+	border-radius: 2vw;
+	box-shadow: -0.38vw 0.35vw 0.3vw 0.3vw @shadowColor;
+	
+	@media (orientation:portrait) {
+		height: 108%;
+	}
+}
+
+.orderToPay {
+	position: relative;
+	z-index: 2;
+	text-align: center;
+	font-size: 2vw;
+	width: 28vw;
+	margin-left: 15vw;
+	margin-top: 5vh;
+	
+	.price {
+		color: @priceColor;
+	}
+	
+	.orderToPayBackground {
+		.orderInputBackground;
+		height: 100%;
+		margin-top: 0;
+	}
+	
+	@media (orientation:portrait) {
+		width: 60vw;
+		left: 0px;
+	    right: 0px;
+	    margin-left: auto;
+	    margin-right: auto;
+		font-size: 3.2vw;
+		margin-bottom: 12vh;
+	}
+}
+
+.orderBackgroundImg {
+	position: absolute;
+	width: 28vw;
+	height: 15.6vw;
+	top: 60vh;
+	left: 53vw;
+	
+	img {
+		height: 100%;
+		width: 100%;
+	}
+	
+	@media (orientation:portrait) {
+		bottom: 0;
+		right: 0;
+		margin-left: auto;
+		margin-top: auto;
+		width: 40vw;
+		height: 25.6vw;
+	}
+}
+
+.orderBackgroundImg2 {
+	position: absolute;
+	width: 24vw;
+	height: 27vw;
+	bottom: 0;
+	left: 0;
+	
+	img {
+		height: 100%;
+		width: 100%;
+	}
+}
+
+		
+

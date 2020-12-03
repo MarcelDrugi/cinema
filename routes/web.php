@@ -33,6 +33,8 @@ Route::resource('/admin', 'App\Http\Controllers\AdminPanelController',
     ]]
 );
 
+Route::resource('/api-description', 'App\Http\Controllers\ApiDescriptionController');
+
 Route::resource('/discount', 'App\Http\Controllers\DiscountController');
 Route::delete('/discount/delete', 'App\Http\Controllers\DiscountController@destroy')->name('discount.destroy');
 

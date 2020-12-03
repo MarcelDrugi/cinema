@@ -404,7 +404,7 @@ const standartBackground = (id) => {
 			topTriangle.classList.remove('topTriangleTransformed');
 			topTriangle.classList.add('topTriangle');
 		}
-	}, 380);
+	}, 700);
 };
 
 const newBackground = (id) => {

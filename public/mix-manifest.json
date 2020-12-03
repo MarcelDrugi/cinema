@@ -6,6 +6,9 @@
     "/../resources/css/global/global.css": "/../resources/css/global/global.css",
     "/../resources/css/detail/index.css": "/../resources/css/detail/index.css",
     "/../resources/css/repertoire/index.css": "/../resources/css/repertoire/index.css",
+    "/../resources/css/order/index.css": "/../resources/css/order/index.css",
+    "/../resources/css/ordersummary/index.css": "/../resources/css/ordersummary/index.css",
+    "/../resources/css/about/index.css": "/../resources/css/about/index.css",
     "/css/app.css": "/css/app.css",
     "/css/main.css": "/css/main.css"
 }

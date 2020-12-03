@@ -32,6 +32,7 @@
 	"Repertoire": "Repertuar",
 	"Pricing": "Ceny biletów",
 	"About": "O nas",
+	"About our cinema": "O naszym kinie",
 	"API with repertoire": "API z repertuarem",
 	"Administration panel": "Panel administracyjny",
 	"your profile":"twój profil",
@@ -137,8 +138,9 @@
 	"homepage_bottom": "strona domowa - dół",
 	"repertoire": "repertuar",
 	"pricing": "cennik",
-	"about-side": "o nas - boczny",
-	"about-bottom": "o nas - dół",
+	"about_side": "o nas - boczny",
+	"about_right": "o nas - z prawej",
+	"about_left": "o nas - z lewej",
 	"api": "api",
 	"public content": "kontent publiczny",
 	"ENTER CONTENT FOR THE SUBPAGE SECTION": "WPROWADŹ ZAWARTOŚĆ DLA SEKCJI PODSTRON",
@@ -164,7 +166,9 @@
 	"To buy tickets, go to the tab": "Aby zakupić bilety przejdź do zakładki",
 	"years old": "lat",
 	"movie published": "film z roku",
-	"Content is too long.": "Kontent jest zbyt długi."
+	"Content is too long.": "Kontent jest zbyt długi.",
+	"You don't have any discounts.": "Nie posiadasz niżek.",
+	"Pay Now": "Zapłać"
 	
 	
 }

@@ -1,0 +1,173 @@
+@shadowColor: hsl(180, 0%, 39%);
+@backgroundColor: hsl(182, 25%, 39%);
+@noDiscountLabel: hsl(270, 55%, 21%);
+@basicFontColor: hsl(220, 14%, 92%);
+@priceColor: hsl(347, 45%, 45%);
+@numberOfTicketscolor: hsl(143, 63%, 53%);
+
+
+.summaryTitle {
+	position: relative;
+	z-index: 1;
+	font-size: 2.7vw;
+	margin-top: 2vh;
+	margin-left: 3vw;
+	width: 75vw;
+	
+	@media (orientation:portrait) {
+		margin-top: 18vh;
+		font-size: 5vw;
+		text-align: center;
+		font-weight: 700;
+		width: 80vw;
+		margin-left: 10vw;
+	}
+}
+
+.summaryPrice {
+	position: relative;
+	z-index: 1;
+	font-size: 1.6vw;
+	margin-left: 3vw;
+	margin-top: 4vh;
+	width: 35vw;
+	
+	b {
+		color: @priceColor;
+	}
+	
+	@media (orientation:portrait) {
+		text-align: center;
+		font-size: 3.5vw;
+		width: 80vw;
+		left: 0px;
+	    right: 0px;
+	    margin-left: auto;
+	    margin-right: auto;
+		margin-top: 4vh;
+	}
+}
+
+.summaryNumberOfTickets {
+	position: relative;
+	color: @basicFontColor;
+	z-index: 1;
+	font-size: 1.4vw;
+	margin-left: 3vw;
+	margin-top: 4vh;
+	width: 35vw;
+	
+	b {
+		color: @numberOfTicketscolor;
+	}
+	
+	@media (orientation:portrait) {
+		text-align: center;
+		font-size: 3.5vw;
+		width: 80vw;
+		left: 0px;
+	    right: 0px;
+	    margin-left: auto;
+	    margin-right: auto;
+		margin-top: 2vh;
+	}
+}
+
+.summaryBackground {
+	position: absolute;
+	width: 108%;
+	height: 100%;
+	margin-left: -4%;
+	z-index: -1;
+	opacity: 0.8;
+	background-color: @backgroundColor;
+	border-radius: 2vw;
+	box-shadow: -0.38vw 0.35vw 0.3vw 0.3vw @shadowColor;
+	
+	@media (orientation:portrait) {
+		height: 108%;
+	}
+}
+
+.summaryPayPalBackground {
+	position: relative;
+	margin-top: 6vh;
+	margin-left: 10vw;
+	width: 17vw;
+	height: 5vw;
+	
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	
+	@media (orientation:portrait) {
+		width: 51vw;
+		height: 15vw;
+		left: 0px;
+	    right: 0px;
+	    margin-left: auto;
+	    margin-right: auto;
+		margin-top: 8vh;
+	}
+}
+
+.summaryButtons {
+	margin-top: 5vh;
+	margin-left:  4vw;
+	
+	@media (orientation:portrait) {
+		margin-top: 7vh;
+	}
+}
+
+.summaryButtons > div {
+	position: relative;
+	display: inline-block;
+	font-size: 1.8vw;
+	width: 15vw;
+	height: 2.2vw;
+	text-align: center;
+	z-index: 2;
+	
+	.btn {
+		font-size: 1.6vw;
+		width: 9vw;
+		box-shadow: -0.30vw 0.31vw 0.24vw 0.24vw @shadowColor;
+		
+		@media (orientation:portrait) {
+			width: 21vw;
+			font-size: 3.3vw;
+		}
+	}
+	
+	@media (orientation:portrait) {
+		width: 11vw;
+		margin-left: 20vw;
+	}
+}
+
+.summaryBackgroundImg {
+	position: absolute;
+	right: 15vw;
+	top: 9vh;
+	width: 40vw;
+	height: 39vw;
+	opacity: 0.7;
+	
+	img {
+		width: 100%;
+		height: 100%;
+	}
+	
+	@media (orientation:portrait) {
+		left: 0px;
+	    right: 0px;
+	    margin-left: auto;
+	    margin-right: auto;
+		top: 71vh;
+	}
+}
+
+
