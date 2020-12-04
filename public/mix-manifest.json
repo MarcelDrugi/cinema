@@ -9,6 +9,12 @@
     "/../resources/css/order/index.css": "/../resources/css/order/index.css",
     "/../resources/css/ordersummary/index.css": "/../resources/css/ordersummary/index.css",
     "/../resources/css/about/index.css": "/../resources/css/about/index.css",
+    "/../resources/css/adminpanel/index.css": "/../resources/css/adminpanel/index.css",
+    "/../resources/css/auth/login.css": "/../resources/css/auth/login.css",
+    "/../resources/css/auth/register.css": "/../resources/css/auth/register.css",
+    "/../resources/css/screening/index.css": "/../resources/css/screening/index.css",
+    "/../resources/css/modifypricing/index.css": "/../resources/css/modifypricing/index.css",
+    "/../resources/css/information/index.css": "/../resources/css/information/index.css",
     "/css/app.css": "/css/app.css",
     "/css/main.css": "/css/main.css"
 }

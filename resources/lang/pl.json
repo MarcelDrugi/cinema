@@ -141,6 +141,7 @@
 	"about_side": "o nas - boczny",
 	"about_right": "o nas - z prawej",
 	"about_left": "o nas - z lewej",
+	"about_bottom": "o nas - dół",
 	"api": "api",
 	"public content": "kontent publiczny",
 	"ENTER CONTENT FOR THE SUBPAGE SECTION": "WPROWADŹ ZAWARTOŚĆ DLA SEKCJI PODSTRON",
@@ -168,7 +169,8 @@
 	"movie published": "film z roku",
 	"Content is too long.": "Kontent jest zbyt długi.",
 	"You don't have any discounts.": "Nie posiadasz niżek.",
-	"Pay Now": "Zapłać"
+	"Pay Now": "Zapłać",
+	"CREATE AN EMPLOYEE ACCOUNT": "STWÓRZ KONTO PRACOWNIKA"
 	
 	
 }

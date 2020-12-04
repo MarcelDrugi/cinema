@@ -96,9 +96,9 @@ const modifyScreening = (event) => {
 	document.getElementById('confirmScreeningEdition').disabled = false;
 	document.getElementById('deleteScreeningEdition').disabled = false;
 	
-	document.getElementById('timeGroup').style.display = 'block';
-	document.getElementById('termGroup').style.display = 'block';
-	document.getElementById('hallCheckBox').style.display = 'block';
+	document.getElementById('timeGroup').style.display = 'flex';
+	document.getElementById('termGroup').style.display = 'flex';
+	document.getElementById('hallCheckBox').style.display = 'flex';
 	
 	modifyTerm.value = term.slice(8, 10) + '-' + term.slice(5, 7) + '-' + term.slice(0, 4);
 	modifyTime.value = term.slice(11, 13) + ':' + term.slice(14, 16);
@@ -111,7 +111,7 @@ const changeHall = () => {
 	const selectHall = document.getElementById('changeHallSelect');
 	
 	if(newHall.checked == true) {
-		selectHall.style.display = 'block';
+		selectHall.style.display = 'flex';
 	}
 	else {
 		selectHall.style.display = 'none';

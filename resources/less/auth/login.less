@@ -1,0 +1,104 @@
+@shadowColor: hsl(180, 0%, 39%);
+@backgroundColor: hsl(182, 25%, 39%);
+@backgroundHeaderColor: rgb(80, 109, 105);
+@basicFontColor: hsl(220, 14%, 92%);
+
+
+.loginPanel {
+	position: relative;
+	display: flex;
+	z-index: 2;
+	margin-top: 10vh;
+	
+	.card-header {
+		background-color: @backgroundHeaderColor;
+		color: @basicFontColor;
+		font-size: 1.2vw;
+		
+		@media (orientation:portrait) {
+			font-size: 2.5vw;
+			width: 83vw;
+		}
+	}
+	
+	.card-body {
+		background-color: @backgroundColor;
+		color: @basicFontColor;
+		font-size: 1vw;
+		
+		@media (orientation:portrait) {
+			font-size: 2.2vw;
+			width: 83vw;
+		}
+	}
+	
+	.btn {
+		font-size: 1vw;
+		background-color: @basicFontColor;
+		color: black;
+		border: 0.1vw solid black;
+		
+		&:hover {
+			background-color: black;
+			color: @basicFontColor;
+			border: 0.1vw solid @basicFontColor;
+		}
+		
+		@media (orientation:portrait) {
+			font-size: 2vw;
+		}
+	}
+	
+	@media (orientation:portrait) {
+		display: block;
+		margin-top: 15vh;
+		width: 83vw;
+	}
+}
+
+.loginBakgroundImg1 {
+	position: absolute;
+	
+	width: 28.3vw;
+	height: 41.5vw;
+	right: 0vw;
+	bottom: 8vh;
+	opacity: 0.9;
+	
+	@media (orientation:portrait) {
+		margin-top: auto;
+		bottom: 8vh;
+		right: 14vw;
+		width: 56.6vw;
+		height: 83vw;
+		
+	}
+	
+	img{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.loginBakgroundImg2 {
+	position: absolute;
+	
+	width: 28vw;
+	height: 41.5vw;
+	left: 5vw;
+	bottom: 11vh;
+	
+	@media (orientation:portrait) {
+		display: none;
+	}
+	
+	img{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.loginViewContainer {
+	overflow: hidden;
+}
+

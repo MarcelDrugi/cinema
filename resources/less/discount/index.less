@@ -1,0 +1,181 @@
+@backgroundColor: hsl(182, 25%, 39%);
+@basicFontColor: hsl(220, 14%, 92%);
+@shadowColor: hsl(180, 0%, 39%);
+
+
+.horizontalCenter {
+	left: 0px;
+    right: 0px;
+    margin-left: auto;
+	margin-right: auto;
+}
+
+.employeeDiscountTitle {
+	.horizontalCenter;
+	
+	text-align: center;
+	font-size: 2.2vw;
+	width: 60vw;
+	margin-top: 5vh;
+	
+	@media (orientation:portrait) {
+		font-size: 4vw;
+	}
+}
+
+.employeeDiscountSubtitle {
+	.employeeDiscountTitle;
+
+	font-size: 1.6vw;
+	margin-top: 4vh;
+	
+	@media (orientation:portrait) {
+		font-size: 3vw;
+	}
+}
+
+.employeeNewDiscount {
+	.horizontalCenter;
+	
+	position: relative;
+	z-index: 2;
+	width: 80vw;
+	margin-bottom: 9vh;
+	
+	form {
+		width: 100%;
+		text-align: center;
+		
+		input[type='text'], select {
+			.horizontalCenter;
+			
+			display: inline-block;
+			width: 50%;
+			font-size: 1vw;
+			
+			@media (orientation:portrait) {
+				font-size: 2vw;
+			}
+		}
+		
+		label[for='value'], label[for='customerSelect'] {
+			text-align: center;
+			width: 8%;
+			font-size: 1.1vw;
+			
+			@media (orientation:portrait) {
+				font-size: 2.2vw;
+				width: 15%;
+			}
+		}
+		
+		label[for='customerCheckBox'] {
+			margin-left: 0;
+			font-size: 1.4vw;
+			
+			@media (orientation:portrait) {
+				font-size: 2.5vw;
+			}
+		}
+	}
+	
+	.btn {
+		font-size: 1.2vw;
+		width: 12vw;
+		border: 0.15vw solid black;
+		
+		@media (orientation:portrait) {
+			font-size: 2vw;
+			width: 20vw;
+		}
+	}
+}
+
+.employeeRemoveDiscount {
+	.horizontalCenter;
+	
+	position: relative;
+	z-index: 2;
+	width: 55vw;
+	
+	form {
+		select {
+			.horizontalCenter;
+			
+			text-align: center;
+			display: inline-block;
+			width: 100%;
+			font-size: 1vw;
+			
+			@media (orientation:portrait) {
+				font-size: 2vw;
+			}
+		}
+	}
+	
+	.btn {
+		.horizontalCenter;
+		
+		font-size: 1.2vw;
+		width: 12vw;
+		margin-top: 2vh;
+		border: 0.15vw solid black;
+		
+		@media (orientation:portrait) {
+			font-size: 2vw;
+		}
+	}
+}
+
+.employeeDelWarning {
+	.horizontalCenter;
+	
+	position: relative;
+	z-index: 2;
+	width: 50vw;
+	margin-top: 4vh;
+	font-size: 1.8vw;
+	text-align: center;
+	border-radius: 2vw;
+	border: 0.2vw solid red;
+	margin-bottom: 5vh;	
+}
+
+.employeeDelInfo {
+	.employeeDelWarning;
+	border: 0.2vw solid orange;
+}
+
+.employeeDiscountForCustomer {
+	position: relative;
+	z-index: 2;
+	
+	.custom-switch.custom-switch-lg .custom-control-label {
+	    padding-left: 2.5vw;
+	    padding-bottom: 1.4vw;
+	}
+	
+	.custom-switch.custom-switch-lg .custom-control-label::before {
+	    height: 1.8vw;
+	    width: 3.6vw;
+	    border-radius: 2vw;
+	}
+	
+	.custom-switch.custom-switch-lg .custom-control-label::after {
+	    width: calc(1.8vw - 0.2vw);
+	    height: calc(1.8vw - 0.2vw);
+	    border-radius: calc(3.8vw - (1.8vw / 2));
+	}
+	
+	.custom-switch.custom-switch-lg .custom-control-input:checked ~ .custom-control-label::after {
+	    transform: translateX(calc(2vw - 0.2vw));
+	}
+}
+
+.invalid-feedback {
+	font-size: 1vw;
+	
+	@media (orientation:portrait) {
+		font-size: 2vw;
+	}
+}

@@ -1,8 +1,8 @@
 @extends('layouts.base')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container loginViewContainer">
+    <div class="justify-content-center loginPanel">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
@@ -63,5 +63,11 @@
             </div>
         </div>
     </div>
+</div>
+<div class="loginBakgroundImg1">
+	<img src="{{ asset('images/login3.png') }}" class="tapeBackground">
+</div>
+<div class="loginBakgroundImg2">
+	<img src="{{ asset('images/login2.png') }}" class="tapeBackground">
 </div>
 @endsection

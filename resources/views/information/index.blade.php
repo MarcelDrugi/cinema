@@ -22,16 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 @extends('layouts.base')
 
 @section('content')
-	<div>
-		<ul class="nav nav-tabs">
-			<li class="nav-item"><a class="nav-link" href="{{ route('movie.index') }}">{{ __('edit movie') }}</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('discount.index') }}">{{ __('discounts') }}</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('screening.index') }}">{{ strtolower(__('SCREENINGS')) }}</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('modify-pricing.index') }}">{{ strtolower(__('PRICINGS')) }}</a></li>
-            <li class="nav-item"><a class="nav-link active" href="{{ route('information.index') }}">{{ strtolower(__('public content')) }}</a></li>
-		</ul>
-	</div>
-	
 	@if ($errors->any())
       <div class="alert alert-danger alert-dismissible">
       	<b>{{ __('EDIT ERROR') }}</b>
@@ -53,8 +43,17 @@ document.addEventListener("DOMContentLoaded", () => {
         	</button>
         </div>
 	@endif
-	<h2>{{ __('ENTER CONTENT FOR THE SUBPAGE SECTION') }}</h2>
-	<div class="col-md-8">
+	<div class="employeePanelNav">
+		<ul class="nav nav-tabs">
+			<li class="nav-item"><a class="nav-link" href="{{ route('movie.index') }}">{{ __('edit movie') }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('discount.index') }}">{{ __('discounts') }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('screening.index') }}">{{ strtolower(__('SCREENINGS')) }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('modify-pricing.index') }}">{{ strtolower(__('PRICINGS')) }}</a></li>
+            <li class="nav-item"><a class="nav-link active" href="{{ route('information.index') }}">{{ strtolower(__('public content')) }}</a></li>
+		</ul>
+	</div>
+	<div class="empoloyeeInformationTitle">{{ __('ENTER CONTENT FOR THE SUBPAGE SECTION') }}</div>
+	<div class="employeeInformation">
     	<form method="post" action="{{ route('information.update') }}">
         	@csrf
         	@method('PUT')
@@ -68,9 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 </select>
         	</div>
         	<div id="enterContent" style="display: none;">
-        		<h4>{{ __('Enter the content') }}:</h4>
+        		<label for="content">{{ __('Enter the content') }}:</label>
         		<textarea class="form-control" id="content" name="content" value=""> </textarea>
-        		<button type="submit">{{ __('ACCEPT') }}</button>
+        		<button class="btn btn-success" type="submit">{{ __('ACCEPT') }}</button>
         	</div>
     	</form>
     </div>

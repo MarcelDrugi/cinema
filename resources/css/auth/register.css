@@ -1,0 +1,88 @@
+.registerPanel {
+  position: relative;
+  display: flex;
+  z-index: 2;
+  margin-top: 10vh;
+}
+.registerPanel .card-header {
+  background-color: #506d69;
+  color: hsl(220, 14%, 92%);
+  font-size: 1.2vw;
+}
+@media (orientation: portrait) {
+  .registerPanel .card-header {
+    font-size: 2.5vw;
+    width: 83vw;
+  }
+}
+.registerPanel .card-body {
+  background-color: hsl(182, 25%, 39%);
+  color: hsl(220, 14%, 92%);
+  font-size: 1vw;
+}
+@media (orientation: portrait) {
+  .registerPanel .card-body {
+    font-size: 2.2vw;
+    width: 83vw;
+  }
+}
+.registerPanel .btn {
+  font-size: 1vw;
+  background-color: hsl(220, 14%, 92%);
+  color: black;
+  border: 0.1vw solid black;
+}
+.registerPanel .btn:hover {
+  background-color: black;
+  color: hsl(220, 14%, 92%);
+  border: 0.1vw solid hsl(220, 14%, 92%);
+}
+@media (orientation: portrait) {
+  .registerPanel .btn {
+    font-size: 2vw;
+  }
+}
+@media (orientation: portrait) {
+  .registerPanel {
+    display: block;
+    margin-top: 15vh;
+    width: 83vw;
+  }
+}
+.registerBakgroundImg1 {
+  position: absolute;
+  width: 38.8vw;
+  height: 35vw;
+  right: 0vw;
+  bottom: 9vh;
+  opacity: 0.9;
+}
+@media (orientation: portrait) {
+  .registerBakgroundImg1 {
+    display: none;
+  }
+}
+.registerBakgroundImg1 img {
+  width: 100%;
+  height: 100%;
+}
+.registerBakgroundImg2 {
+  position: absolute;
+  width: 35vw;
+  height: 40.1vw;
+  left: 1vw;
+  bottom: 8vh;
+}
+@media (orientation: portrait) {
+  .registerBakgroundImg2 {
+    margin-top: auto;
+    bottom: 8vh;
+    left: 13vw;
+    width: 70vw;
+    height: 80.2vw;
+  }
+}
+.registerBakgroundImg2 img {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,205 @@
+.horizontalCenter {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.employeeDiscountTitle {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 2.2vw;
+  width: 60vw;
+  margin-top: 5vh;
+}
+@media (orientation: portrait) {
+  .employeeDiscountTitle {
+    font-size: 4vw;
+  }
+}
+.employeeDiscountSubtitle {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 2.2vw;
+  width: 60vw;
+  margin-top: 5vh;
+  font-size: 1.6vw;
+  margin-top: 4vh;
+}
+@media (orientation: portrait) {
+  .employeeDiscountSubtitle {
+    font-size: 4vw;
+  }
+}
+@media (orientation: portrait) {
+  .employeeDiscountSubtitle {
+    font-size: 3vw;
+  }
+}
+.employeeNewDiscount {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 2;
+  width: 80vw;
+  margin-bottom: 9vh;
+}
+.employeeNewDiscount form {
+  width: 100%;
+  text-align: center;
+}
+.employeeNewDiscount form input[type='text'],
+.employeeNewDiscount form select {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  width: 50%;
+  font-size: 1vw;
+}
+@media (orientation: portrait) {
+  .employeeNewDiscount form input[type='text'],
+  .employeeNewDiscount form select {
+    font-size: 2vw;
+  }
+}
+.employeeNewDiscount form label[for='value'],
+.employeeNewDiscount form label[for='customerSelect'] {
+  text-align: center;
+  width: 8%;
+  font-size: 1.1vw;
+}
+@media (orientation: portrait) {
+  .employeeNewDiscount form label[for='value'],
+  .employeeNewDiscount form label[for='customerSelect'] {
+    font-size: 2.2vw;
+    width: 15%;
+  }
+}
+.employeeNewDiscount form label[for='customerCheckBox'] {
+  margin-left: 0;
+  font-size: 1.4vw;
+}
+@media (orientation: portrait) {
+  .employeeNewDiscount form label[for='customerCheckBox'] {
+    font-size: 2.5vw;
+  }
+}
+.employeeNewDiscount .btn {
+  font-size: 1.2vw;
+  width: 12vw;
+  border: 0.15vw solid black;
+}
+@media (orientation: portrait) {
+  .employeeNewDiscount .btn {
+    font-size: 2vw;
+    width: 20vw;
+  }
+}
+.employeeRemoveDiscount {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 2;
+  width: 55vw;
+}
+.employeeRemoveDiscount form select {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  font-size: 1vw;
+}
+@media (orientation: portrait) {
+  .employeeRemoveDiscount form select {
+    font-size: 2vw;
+  }
+}
+.employeeRemoveDiscount .btn {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2vw;
+  width: 12vw;
+  margin-top: 2vh;
+  border: 0.15vw solid black;
+}
+@media (orientation: portrait) {
+  .employeeRemoveDiscount .btn {
+    font-size: 2vw;
+  }
+}
+.employeeDelWarning {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 2;
+  width: 50vw;
+  margin-top: 4vh;
+  font-size: 1.8vw;
+  text-align: center;
+  border-radius: 2vw;
+  border: 0.2vw solid red;
+  margin-bottom: 5vh;
+}
+.employeeDelInfo {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 2;
+  width: 50vw;
+  margin-top: 4vh;
+  font-size: 1.8vw;
+  text-align: center;
+  border-radius: 2vw;
+  border: 0.2vw solid red;
+  margin-bottom: 5vh;
+  border: 0.2vw solid orange;
+}
+.employeeDiscountForCustomer {
+  position: relative;
+  z-index: 2;
+}
+.employeeDiscountForCustomer .custom-switch.custom-switch-lg .custom-control-label {
+  padding-left: 2.5vw;
+  padding-bottom: 1.4vw;
+}
+.employeeDiscountForCustomer .custom-switch.custom-switch-lg .custom-control-label::before {
+  height: 1.8vw;
+  width: 3.6vw;
+  border-radius: 2vw;
+}
+.employeeDiscountForCustomer .custom-switch.custom-switch-lg .custom-control-label::after {
+  width: calc(1.8vw - 0.2vw);
+  height: calc(1.8vw - 0.2vw);
+  border-radius: calc(3.8vw - (1.8vw / 2));
+}
+.employeeDiscountForCustomer .custom-switch.custom-switch-lg .custom-control-input:checked ~ .custom-control-label::after {
+  transform: translateX(calc(2vw - 0.2vw));
+}
+.invalid-feedback {
+  font-size: 1vw;
+}
+@media (orientation: portrait) {
+  .invalid-feedback {
+    font-size: 2vw;
+  }
+}

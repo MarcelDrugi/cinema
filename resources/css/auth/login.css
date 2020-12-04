@@ -1,0 +1,91 @@
+.loginPanel {
+  position: relative;
+  display: flex;
+  z-index: 2;
+  margin-top: 10vh;
+}
+.loginPanel .card-header {
+  background-color: #506d69;
+  color: hsl(220, 14%, 92%);
+  font-size: 1.2vw;
+}
+@media (orientation: portrait) {
+  .loginPanel .card-header {
+    font-size: 2.5vw;
+    width: 83vw;
+  }
+}
+.loginPanel .card-body {
+  background-color: hsl(182, 25%, 39%);
+  color: hsl(220, 14%, 92%);
+  font-size: 1vw;
+}
+@media (orientation: portrait) {
+  .loginPanel .card-body {
+    font-size: 2.2vw;
+    width: 83vw;
+  }
+}
+.loginPanel .btn {
+  font-size: 1vw;
+  background-color: hsl(220, 14%, 92%);
+  color: black;
+  border: 0.1vw solid black;
+}
+.loginPanel .btn:hover {
+  background-color: black;
+  color: hsl(220, 14%, 92%);
+  border: 0.1vw solid hsl(220, 14%, 92%);
+}
+@media (orientation: portrait) {
+  .loginPanel .btn {
+    font-size: 2vw;
+  }
+}
+@media (orientation: portrait) {
+  .loginPanel {
+    display: block;
+    margin-top: 15vh;
+    width: 83vw;
+  }
+}
+.loginBakgroundImg1 {
+  position: absolute;
+  width: 28.3vw;
+  height: 41.5vw;
+  right: 0vw;
+  bottom: 8vh;
+  opacity: 0.9;
+}
+@media (orientation: portrait) {
+  .loginBakgroundImg1 {
+    margin-top: auto;
+    bottom: 8vh;
+    right: 14vw;
+    width: 56.6vw;
+    height: 83vw;
+  }
+}
+.loginBakgroundImg1 img {
+  width: 100%;
+  height: 100%;
+}
+.loginBakgroundImg2 {
+  position: absolute;
+  width: 28vw;
+  height: 41.5vw;
+  left: 5vw;
+  bottom: 11vh;
+}
+@media (orientation: portrait) {
+  .loginBakgroundImg2 {
+    display: none;
+  }
+}
+.loginBakgroundImg2 img {
+  width: 100%;
+  height: 100%;
+}
+.loginViewContainer {
+  overflow: hidden;
+}

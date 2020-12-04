@@ -1,20 +1,20 @@
 <script>
-  const loadFile = function(event) {
-  	const output = document.getElementById('currentAvatar');
-    output.src = URL.createObjectURL(event.target.files[0]);
-    output.style.height = 100;
-    output.style.width = 100;
-    output.onload = function() {
-      URL.revokeObjectURL(output.src)
-    }
-  };
+const loadAvatar = (event) => {
+	const avatar = document.getElementById('currentAvatar');
+    avatar.src = URL.createObjectURL(event.target.files[0]);
+    avatar.style.height = 120;
+    avatar.style.width = 120;
+    avatar.onload = () => {
+		URL.revokeObjectURL(output.src)
+	};
+};
 </script>
 
 @extends('layouts.base')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container loginViewContainer">
+    <div class="justify-content-center registerPanel">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
@@ -69,7 +69,7 @@
                             <label for="avatar" class="col-md-4 col-form-label text-md-right">Avatar</label>
 
                             <div class="col-md-6">
-                                <input id="avatar" type="file" onchange="loadFile(event)" class="@error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" autofocus>
+                                <input id="avatar" type="file" onchange="loadAvatar(event)" class="@error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" autofocus>
 								<img id="currentAvatar"/>
                                 @error('avatar')
                                     <span class="invalid-feedback" role="alert">
@@ -112,6 +112,12 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="registerBakgroundImg1">
+		<img src="{{ asset('images/register1.png') }}" class="tapeBackground">
+    </div>
+    <div class="registerBakgroundImg2">
+    	<img src="{{ asset('images/register2.png') }}" class="tapeBackground">
     </div>
 </div>
 @endsection
