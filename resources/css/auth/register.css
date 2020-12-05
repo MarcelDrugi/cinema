@@ -45,7 +45,7 @@
 @media (orientation: portrait) {
   .registerPanel {
     display: block;
-    margin-top: 15vh;
+    margin-top: 20vh;
     width: 83vw;
   }
 }

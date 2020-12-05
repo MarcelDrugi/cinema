@@ -37,7 +37,7 @@ class InformationSeeder extends Seeder
         Information::create([
             'place' => 'pricing',
             'content' => '',
-            'max_length' => '250',
+            'max_length' => '580',
         ]);
         
         Information::create([

@@ -3985,7 +3985,7 @@ body {
 @media (orientation: portrait) {
   .loginPanel {
     display: block;
-    margin-top: 15vh;
+    margin-top: 25vh;
     width: 83vw;
   }
 }
@@ -4077,7 +4077,7 @@ body {
 @media (orientation: portrait) {
   .registerPanel {
     display: block;
-    margin-top: 15vh;
+    margin-top: 20vh;
     width: 83vw;
   }
 }
@@ -4480,5 +4480,440 @@ body {
 @media (orientation: portrait) {
   .employeeInformation {
     width: 80vw;
+  }
+}
+
+.horizontalCenter {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pricingTitle {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  font-size: 3vw;
+  width: 60vw;
+  margin-top: 8vh;
+}
+@media (orientation: portrait) {
+  .pricingTitle {
+    font-size: 5.2vw;
+  }
+}
+.pricinContent {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  margin-top: 8vh;
+  width: 70vw;
+  font-size: 1.2vw;
+  color: hsl(220, 14%, 92%);
+}
+@media (orientation: portrait) {
+  .pricinContent {
+    width: 80vw;
+    font-size: 2.4vw;
+    margin-top: 20vh;
+  }
+}
+.pricingBackground {
+  position: absolute;
+  z-index: -1;
+  background-color: hsl(182, 25%, 39%);
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  border-radius: 2vw;
+  box-shadow: -0.38vw 0.35vw 0.3vw 0.3vw hsl(0, 0%, 39%);
+}
+@media (orientation: portrait) {
+  .pricingBackground {
+    height: 103%;
+    margin-top: -1%;
+  }
+}
+.pricingCardWrapper {
+  position: relative;
+  z-index: 2;
+  width: 70vw;
+  margin-left: 15vw;
+  height: 18vh;
+  margin-top: 5vh;
+}
+@media (orientation: portrait) {
+  .pricingCardWrapper {
+    width: 90vw;
+    margin-left: 10vw;
+  }
+}
+.pricingCardTitle {
+  text-align: center;
+  font-size: 1.2vw;
+}
+@media (orientation: portrait) {
+  .pricingCardTitle {
+    font-size: 2.1vw;
+    font-weight: 900;
+    margin-bottom: 1vh;
+    margin-top: 1vw;
+  }
+}
+.pricingTicketName {
+  display: inline-block;
+  text-align: right;
+  margin-left: 5%;
+  width: 50%;
+  font-size: 1vw;
+}
+@media (orientation: portrait) {
+  .pricingTicketName {
+    font-size: 1.9vw;
+  }
+}
+.pricingCardPrice {
+  display: inline-block;
+  text-align: right;
+  width: 35%;
+  margin-right: 3%;
+  font-size: 1vw;
+}
+@media (orientation: portrait) {
+  .pricingCardPrice {
+    font-size: 2vw;
+  }
+}
+.pricingButtons {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  margin-top: 4vh;
+  width: 100%;
+}
+.pricingButtons .pricingLeftArrow {
+  background-color: transparent;
+  border: 0px solid transparent;
+  -webkit-animation: pricingLeftArrowMove 2s infinite;
+          animation: pricingLeftArrowMove 2s infinite;
+}
+.pricingButtons .pricingLeftArrow img {
+  width: 5vw;
+  height: 5vw;
+}
+@media (orientation: portrait) {
+  .pricingButtons .pricingLeftArrow img {
+    width: 15vw;
+    height: 15vw;
+  }
+}
+.pricingButtons .pricingRightArrow {
+  background-color: transparent;
+  border: 0px solid transparent;
+  -webkit-animation: pricingLeftArrowMove 2s infinite;
+          animation: pricingLeftArrowMove 2s infinite;
+  -webkit-animation: pricingRightArrowMove 2s infinite;
+          animation: pricingRightArrowMove 2s infinite;
+}
+.pricingButtons .pricingRightArrow img {
+  width: 5vw;
+  height: 5vw;
+}
+@media (orientation: portrait) {
+  .pricingButtons .pricingRightArrow img {
+    width: 15vw;
+    height: 15vw;
+  }
+}
+@media (orientation: portrait) {
+  .pricingButtons {
+    margin-top: 0;
+  }
+}
+.pricingCard {
+  position: absolute;
+  z-index: 1;
+  border: 0.2vw solid black;
+  background-color: hsl(60, 3%, 72%);
+  opacity: 0.8;
+  color: black;
+  border-radius: 1vw;
+  width: 10vw;
+  margin-top: 1.5vh;
+  height: 15.5vh;
+}
+@media (orientation: portrait) {
+  .pricingCard {
+    border: 0.3vw solid black;
+    width: 20vw;
+    height: 19vw;
+    opacity: 0.9;
+  }
+}
+.pricingMoveRight {
+  -webkit-animation: pricingMoveRight 1.4s;
+          animation: pricingMoveRight 1.4s;
+}
+.pricingMoveLeft {
+  -webkit-animation: pricingMoveLeft 1.4s;
+          animation: pricingMoveLeft 1.4s;
+}
+.pricingCard0 {
+  position: absolute;
+  z-index: 1;
+  border: 0.2vw solid black;
+  background-color: hsl(60, 3%, 72%);
+  opacity: 0.8;
+  color: black;
+  border-radius: 1vw;
+  width: 10vw;
+  margin-top: 1.5vh;
+  height: 15.5vh;
+  margin-left: 0vw;
+  filter: blur(5px);
+}
+@media (orientation: portrait) {
+  .pricingCard0 {
+    border: 0.3vw solid black;
+    width: 20vw;
+    height: 19vw;
+    opacity: 0.9;
+  }
+}
+.pricingCard1 {
+  position: absolute;
+  z-index: 1;
+  border: 0.2vw solid black;
+  background-color: hsl(60, 3%, 72%);
+  opacity: 0.8;
+  color: black;
+  border-radius: 1vw;
+  width: 10vw;
+  margin-top: 1.5vh;
+  height: 15.5vh;
+  margin-left: 10vw;
+  transform: scale(1.05, 1.05);
+  filter: blur(3px);
+}
+@media (orientation: portrait) {
+  .pricingCard1 {
+    border: 0.3vw solid black;
+    width: 20vw;
+    height: 19vw;
+    opacity: 0.9;
+  }
+}
+.pricingCard2 {
+  position: absolute;
+  z-index: 1;
+  border: 0.2vw solid black;
+  background-color: hsl(60, 3%, 72%);
+  opacity: 0.8;
+  color: black;
+  border-radius: 1vw;
+  width: 10vw;
+  margin-top: 1.5vh;
+  height: 15.5vh;
+  margin-left: 20vw;
+  transform: scale(1.1, 1.1);
+  filter: blur(2px);
+}
+@media (orientation: portrait) {
+  .pricingCard2 {
+    border: 0.3vw solid black;
+    width: 20vw;
+    height: 19vw;
+    opacity: 0.9;
+  }
+}
+.pricingCard3 {
+  position: absolute;
+  z-index: 1;
+  border: 0.2vw solid black;
+  background-color: hsl(60, 3%, 72%);
+  opacity: 0.8;
+  color: black;
+  border-radius: 1vw;
+  width: 10vw;
+  margin-top: 1.5vh;
+  height: 15.5vh;
+  z-index: 3;
+  margin-left: 30vw;
+  transform: scale(1.2, 1.2);
+}
+@media (orientation: portrait) {
+  .pricingCard3 {
+    border: 0.3vw solid black;
+    width: 20vw;
+    height: 19vw;
+    opacity: 0.9;
+  }
+}
+.pricingCard4 {
+  position: absolute;
+  z-index: 1;
+  border: 0.2vw solid black;
+  background-color: hsl(60, 3%, 72%);
+  opacity: 0.8;
+  color: black;
+  border-radius: 1vw;
+  width: 10vw;
+  margin-top: 1.5vh;
+  height: 15.5vh;
+  margin-left: 40vw;
+  transform: scale(1.1, 1.1);
+  filter: blur(2px);
+}
+@media (orientation: portrait) {
+  .pricingCard4 {
+    border: 0.3vw solid black;
+    width: 20vw;
+    height: 19vw;
+    opacity: 0.9;
+  }
+}
+.pricingCard5 {
+  position: absolute;
+  z-index: 1;
+  border: 0.2vw solid black;
+  background-color: hsl(60, 3%, 72%);
+  opacity: 0.8;
+  color: black;
+  border-radius: 1vw;
+  width: 10vw;
+  margin-top: 1.5vh;
+  height: 15.5vh;
+  margin-left: 50vw;
+  transform: scale(1.05, 1.05);
+  filter: blur(3px);
+}
+@media (orientation: portrait) {
+  .pricingCard5 {
+    border: 0.3vw solid black;
+    width: 20vw;
+    height: 19vw;
+    opacity: 0.9;
+  }
+}
+.pricingCard6 {
+  position: absolute;
+  z-index: 1;
+  border: 0.2vw solid black;
+  background-color: hsl(60, 3%, 72%);
+  opacity: 0.8;
+  color: black;
+  border-radius: 1vw;
+  width: 10vw;
+  margin-top: 1.5vh;
+  height: 15.5vh;
+  margin-left: 60vw;
+  filter: blur(5px);
+}
+@media (orientation: portrait) {
+  .pricingCard6 {
+    border: 0.3vw solid black;
+    width: 20vw;
+    height: 19vw;
+    opacity: 0.9;
+  }
+}
+.pricingBackgroundImg1 {
+  position: absolute;
+  height: 29.3vw;
+  width: 20vw;
+  left: 0;
+  top: 6vh;
+  opacity: 0.6;
+}
+.pricingBackgroundImg1 img {
+  width: 100%;
+  height: 100%;
+}
+@media (orientation: portrait) {
+  .pricingBackgroundImg1 {
+    left: 1vw;
+    height: 44vw;
+    width: 30vw;
+    top: 41vh;
+  }
+}
+.pricingBackgroundImg2 {
+  position: absolute;
+  height: 29.3vw;
+  width: 20vw;
+  left: 0;
+  top: 6vh;
+  opacity: 0.6;
+  left: 72vw;
+  top: 30vh;
+  width: 18vw;
+  height: 18vw;
+}
+.pricingBackgroundImg2 img {
+  width: 100%;
+  height: 100%;
+}
+@media (orientation: portrait) {
+  .pricingBackgroundImg2 {
+    left: 1vw;
+    height: 44vw;
+    width: 30vw;
+    top: 41vh;
+  }
+}
+@media (orientation: portrait) {
+  .pricingBackgroundImg2 {
+    left: 65vw;
+    height: 24vw;
+    width: 24vw;
+    top: 39vh;
+  }
+}
+@-webkit-keyframes pricingMoveRight {
+  0% {
+    transform: translateX(-10vw);
+  }
+}
+@keyframes pricingMoveRight {
+  0% {
+    transform: translateX(-10vw);
+  }
+}
+@-webkit-keyframes pricingMoveLeft {
+  0% {
+    transform: translateX(10vw);
+  }
+}
+@keyframes pricingMoveLeft {
+  0% {
+    transform: translateX(10vw);
+  }
+}
+@-webkit-keyframes pricingLeftArrowMove {
+  70% {
+    transform: translateX(-1vw);
+  }
+}
+@keyframes pricingLeftArrowMove {
+  70% {
+    transform: translateX(-1vw);
+  }
+}
+@-webkit-keyframes pricingRightArrowMove {
+  70% {
+    transform: translateX(1vw);
+  }
+}
+@keyframes pricingRightArrowMove {
+  70% {
+    transform: translateX(1vw);
   }
 }

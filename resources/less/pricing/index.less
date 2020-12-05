@@ -1,0 +1,290 @@
+@backgroundColor: hsl(182, 25%, 39%);
+@basicFontColor: hsl(220, 14%, 92%);
+@basicBackgrundColor: hsl(60, 3%, 72%);
+@shadowColor: hsl(180, 0%, 39%);
+
+
+.horizontalCenter {
+	left: 0px;
+    right: 0px;
+    margin-left: auto;
+	margin-right: auto;
+}
+
+.pricingTitle {
+	.horizontalCenter;
+	
+	position: relative;
+	text-align: center;
+	z-index: 2;
+	font-size: 3vw;
+	width: 60vw;
+	margin-top: 8vh;
+	
+	@media (orientation:portrait) {
+		font-size: 5.2vw;
+	}
+}
+
+.pricinContent {
+	.horizontalCenter;
+	
+	position: relative;
+	text-align: center;
+	z-index: 2;
+	margin-top: 8vh;
+	width: 70vw;
+	font-size: 1.2vw;
+	color: @basicFontColor;
+	
+	@media (orientation:portrait) {
+		width: 80vw;
+		font-size: 2.4vw;
+		margin-top: 20vh;
+	}
+}
+
+.pricingBackground {
+	position: absolute;
+	z-index: -1;
+	background-color: @backgroundColor;
+	opacity: 0.8;
+	width: 100%;
+	height: 100%;
+	border-radius: 2vw;
+	box-shadow: -0.38vw 0.35vw 0.3vw 0.3vw @shadowColor;
+	
+	@media (orientation:portrait) {
+		height: 103%;
+		margin-top: -1%;
+	}
+}
+
+.pricingCardWrapper {
+	position: relative;
+	z-index: 2;
+	margin-top: 5vh;
+	width: 70vw;
+	margin-left: 15vw;
+	height: 18vh;
+	margin-top: 5vh;
+	
+	@media (orientation:portrait) {
+		width: 90vw;
+		margin-left: 10vw;
+	}
+}
+
+.pricingCardTitle {
+	text-align: center;
+	font-size: 1.2vw;
+	
+	@media (orientation:portrait) {
+		font-size: 2.1vw;
+		font-weight: 900;
+		margin-bottom: 1vh;
+		margin-top: 1vw;
+	}
+}
+
+.pricingTicketName {
+	display: inline-block;
+	text-align: right;
+	margin-left: 5%;
+	width: 50%;
+	font-size: 1vw;
+	
+	@media (orientation:portrait) {
+		font-size: 1.9vw;
+	}
+}
+
+.pricingCardPrice {
+	display: inline-block;
+	text-align: right;
+	width: 35%;
+	margin-right: 3%;
+	font-size: 1vw;
+	
+	@media (orientation:portrait) {
+		font-size: 2vw;
+	}
+}
+
+.pricingButtons {
+	position: relative;
+	text-align: center;
+	z-index: 2;
+	margin-top: 4vh;
+	width: 100%;
+	
+	.pricingLeftArrow {
+		background-color: transparent;
+		border: 0px solid transparent;
+		img {
+			width: 5vw;
+			height: 5vw;
+			
+			@media (orientation:portrait) {
+				width: 15vw;
+				height: 15vw;
+			}
+		}
+		animation: pricingLeftArrowMove 2s infinite;
+	}
+	
+	.pricingRightArrow {
+		.pricingLeftArrow;
+		animation: pricingRightArrowMove 2s infinite;
+	}
+	
+	@media (orientation:portrait) {
+		margin-top: 0;
+	}
+}
+
+.pricingCard {
+	position: absolute;
+	z-index: 1;
+	border: 0.2vw solid black;
+	background-color: @basicBackgrundColor;
+	opacity: 0.8;
+	color: black;
+	border-radius: 1vw;
+	width: 10vw;
+	margin-top: 1.5vh;
+	height: 15.5vh;
+	
+	@media (orientation:portrait) {
+		border: 0.3vw solid black;
+		width: 20vw;
+		height: 19vw;
+		opacity: 0.9;
+	}
+}
+
+.pricingMoveRight {
+	animation: pricingMoveRight 1.4s;
+}
+
+.pricingMoveLeft {
+	animation: pricingMoveLeft 1.4s;
+}
+
+.pricingCard0 {
+	.pricingCard;
+	margin-left: 0vw;
+	filter: blur(5px);
+}
+
+.pricingCard1 {
+	.pricingCard;
+	margin-left: 10vw;
+	transform: scale(1.05, 1.05);
+	filter: blur(3px);
+}
+
+.pricingCard2 {
+	.pricingCard;
+	margin-left: 20vw;
+	transform: scale(1.1, 1.1);
+	filter: blur(2px);
+}
+
+.pricingCard3 {
+	.pricingCard;
+	z-index: 3;
+	margin-left: 30vw;
+	transform: scale(1.2, 1.2);
+}
+
+.pricingCard4 {
+	.pricingCard;
+	margin-left: 40vw;
+	transform: scale(1.1, 1.1);
+	filter: blur(2px);
+}
+
+.pricingCard5 {
+	.pricingCard;
+	margin-left: 50vw;
+	transform: scale(1.05, 1.05);
+	filter: blur(3px);
+}
+
+.pricingCard6 {
+	.pricingCard;
+	margin-left: 60vw;
+	filter: blur(5px);
+}
+
+.pricingBackgroundImg1 {
+	position: absolute;
+	height: 29.3vw;
+	width: 20vw;
+	left: 0;
+	top: 6vh;
+	opacity: 0.6;
+	
+	img {
+		width: 100%;
+		height: 100%;
+	}
+	
+	@media (orientation:portrait) {
+		left: 1vw;
+		height: 44vw;
+		width: 30vw;
+		top: 41vh;
+	}
+}
+
+.pricingBackgroundImg2 {
+	.pricingBackgroundImg1;
+	left:72vw;
+	top: 30vh;
+	width: 18vw;
+	height: 18vw;
+	
+	@media (orientation:portrait) {
+		left: 65vw;
+		height: 24vw;
+		width: 24vw;
+		top: 39vh;
+	}
+}
+
+@keyframes pricingMoveRight {
+	0% {
+		transform: translateX(-10vw);
+	}
+	100% { }
+}
+
+@keyframes pricingMoveLeft {
+	0% {
+		transform: translateX(10vw);
+	}
+	100% { }
+}
+
+@keyframes pricingLeftArrowMove {
+	0% {
+	
+	}
+	70% {
+		transform: translateX(-1vw);
+	}
+	100% { }
+}
+
+@keyframes pricingRightArrowMove {
+	0% {
+	
+	}
+	70% {
+		transform: translateX(1vw);
+	}
+	100% { }
+}
+

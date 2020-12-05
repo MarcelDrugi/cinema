@@ -22,6 +22,7 @@ mix.scripts([
 		'resources/js/layouts/base.js',
 		'resources/js/homepage/index.js',
 		'resources/js/repertoire/index.js',
+		'resources/js/pricing/index.js',
 	],
 	'public/js/main.js'
 );
