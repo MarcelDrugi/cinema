@@ -52,6 +52,7 @@
 	@endif
 	<div class="slidingName"> {{ __('CINEMA CLASSICS') }} </div>
 	<img src="{{ asset('images/tape.png') }}" class="tapeBackground">
+	<img src="{{ asset('images/leon.png') }}" class="leonBackground">
 	<div class="posterRadio">
 		<div class="radioCover"></div>
 		@foreach ($movies as $m)
@@ -78,7 +79,7 @@
             	<div class="beginHiddenPoster poster{{ $loop->index }}">
             	<div class="titleBackground"></div>
             		<div class="movieTitle">
-						<a href="#">{{ $m->title }} ({{$m->published}})</a>
+						<a href="{{ route('moviedetail.index', ['id' => $m->id]) }}">{{ $m->title }} ({{$m->published}})</a>
         			</div>
             		<img src="{{ $m->poster }}">
             	</div>

@@ -46,14 +46,33 @@
 .tapeBackground {
 	position: absolute;
 	width: 29vw;
-	height: 29vh;
+	height: 43vw;
 	left: 0;
 	top: 8vh;
 	opacity: 0.65;
 	
 	@media (orientation:portrait) {
-		width: 60vw;
-		height: 34vw;
+		width: 58vw;
+		height: 86vw;
+		left: 12vw;
+		top: 4vh;
+		opacity: 0.35;
+	}
+}
+
+.leonBackground {
+	position: absolute;
+	width: 16vw;
+	height: 25.5vw;
+	right: 0;
+	top: 46vh;
+	opacity: 0.6;
+	
+	@media (orientation:portrait) {
+		width: 32vw;
+		height: 51vw;
+		right: 0vw;
+		top: 74vh;
 	}
 }
 
@@ -148,6 +167,7 @@
 
 .sliderInfo {
 	position: relative;
+	text-align: center;
 	z-index: 2;
 	width: 70vw;
 	left: 0px;
@@ -191,6 +211,9 @@
 .homepageBottomInfo {
 	.sliderInfo;
 	font-size: 0.8vw;
+	.sliderInfoBackground {
+		box-shadow: none;
+	}
 }
 
 .rightArrowStatic {
@@ -208,12 +231,12 @@
 	}
 	
 	@media (orientation:portrait) {
-		margin-top: 23vw;
+		margin-top: 25vw;
 		right: 5vw;
 		
 		img {
 			width: 10vw;
-			height: 3vh;
+			height: 3.9vw;
 		}
 	}
 }
@@ -239,12 +262,12 @@
 	}
 	
 	@media (orientation:portrait) {
-		margin-top: 23vw;
+		margin-top: 25vw;
 		left: 5vw;
 		
 		img {
 			width: 10vw;
-			height: 3vh;
+			height: 3.9vw;
 		}
 	}
 }

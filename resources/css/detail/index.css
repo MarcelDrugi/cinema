@@ -269,9 +269,8 @@
   z-index: 2;
   left: 3vw;
   top: 10vh;
-  color: hsl(119, 77%, 44%);
-  -webkit-animation: detailGlow 1s ease-in-out infinite alternate;
-          animation: detailGlow 1s ease-in-out infinite alternate;
+  color: black;
+  @detail NeonTextColor;
 }
 @media (orientation: portrait) {
   .detailNeonTitle {

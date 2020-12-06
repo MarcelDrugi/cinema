@@ -35,15 +35,34 @@
 .tapeBackground {
   position: absolute;
   width: 29vw;
-  height: 29vh;
+  height: 43vw;
   left: 0;
   top: 8vh;
   opacity: 0.65;
 }
 @media (orientation: portrait) {
   .tapeBackground {
-    width: 60vw;
-    height: 34vw;
+    width: 58vw;
+    height: 86vw;
+    left: 12vw;
+    top: 4vh;
+    opacity: 0.35;
+  }
+}
+.leonBackground {
+  position: absolute;
+  width: 16vw;
+  height: 25.5vw;
+  right: 0;
+  top: 46vh;
+  opacity: 0.6;
+}
+@media (orientation: portrait) {
+  .leonBackground {
+    width: 32vw;
+    height: 51vw;
+    right: 0vw;
+    top: 74vh;
   }
 }
 .slidingName {
@@ -136,6 +155,7 @@
 }
 .sliderInfo {
   position: relative;
+  text-align: center;
   z-index: 2;
   width: 70vw;
   left: 0px;
@@ -175,6 +195,7 @@
 }
 .homepageBottomInfo {
   position: relative;
+  text-align: center;
   z-index: 2;
   width: 70vw;
   left: 0px;
@@ -201,6 +222,9 @@
     font-size: 2.4vw;
   }
 }
+.homepageBottomInfo .sliderInfoBackground {
+  box-shadow: none;
+}
 .rightArrowStatic {
   position: absolute;
   background-color: transparent;
@@ -216,12 +240,12 @@
 }
 @media (orientation: portrait) {
   .rightArrowStatic {
-    margin-top: 23vw;
+    margin-top: 25vw;
     right: 5vw;
   }
   .rightArrowStatic img {
     width: 10vw;
-    height: 3vh;
+    height: 3.9vw;
   }
 }
 .rightArrow {
@@ -242,12 +266,12 @@
 }
 @media (orientation: portrait) {
   .rightArrow {
-    margin-top: 23vw;
+    margin-top: 25vw;
     right: 5vw;
   }
   .rightArrow img {
     width: 10vw;
-    height: 3vh;
+    height: 3.9vw;
   }
 }
 .leftArrowStatic {
@@ -265,12 +289,12 @@
 }
 @media (orientation: portrait) {
   .leftArrowStatic {
-    margin-top: 23vw;
+    margin-top: 25vw;
     left: 5vw;
   }
   .leftArrowStatic img {
     width: 10vw;
-    height: 3vh;
+    height: 3.9vw;
   }
 }
 .leftArrow {
@@ -291,12 +315,12 @@
 }
 @media (orientation: portrait) {
   .leftArrow {
-    margin-top: 23vw;
+    margin-top: 25vw;
     left: 5vw;
   }
   .leftArrow img {
     width: 10vw;
-    height: 3vh;
+    height: 3.9vw;
   }
 }
 .poster {

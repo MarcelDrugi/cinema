@@ -308,6 +308,7 @@ body {
 }
 .userInfo {
   position: fixed;
+  z-index: 4;
   right: 2vw;
   top: 13vh;
   text-align: center;
@@ -331,9 +332,9 @@ body {
 .userInfo .avatar img {
   width: 5vw;
   height: 5vw;
-  border: 3px inset hsl(184, 62%, 19%);
+  border: 0.2vw inset hsl(184, 62%, 19%);
   border-radius: 2.5vw;
-  padding: 5px;
+  padding: 0.25vw;
 }
 @media (orientation: portrait) {
   .userInfo .avatar img {

@@ -170,7 +170,10 @@
 	"Content is too long.": "Kontent jest zbyt długi.",
 	"You don't have any discounts.": "Nie posiadasz niżek.",
 	"Pay Now": "Zapłać",
-	"CREATE AN EMPLOYEE ACCOUNT": "STWÓRZ KONTO PRACOWNIKA"
+	"CREATE AN EMPLOYEE ACCOUNT": "STWÓRZ KONTO PRACOWNIKA",
+	"Edit your profile":"Edutuj swój profil",
+	"no reservations": "brak rezerwacji",
+	"no discounts": "brak zniżek"
 	
 	
 }

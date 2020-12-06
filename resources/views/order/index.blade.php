@@ -31,8 +31,8 @@
                         </div>
                     	@foreach($discounts as $discount)
                     		<div class="custom-control custom-radio">
-                                <input type="radio" id="{{ $discount->id }}" class="custom-control-input" name="discountRadio" value="{{ $discount->value }}" onchange="display({{ $screening->term->pricing->normal }}, {{ $screening->term->pricing->school }}, {{ $screening->term->pricing->senior }})">
-                                <label class="custom-control-label" for="{{ $discount->id }}"> {{ $discount->code }} ({{ $discount->value * 100}}%)</label>
+                                <input type="radio" id="discountRadio{{ $discount->id }}" class="custom-control-input" name="discountRadio" value="{{ $discount->value }}" onchange="display({{ $screening->term->pricing->normal }}, {{ $screening->term->pricing->school }}, {{ $screening->term->pricing->senior }})">
+                                <label class="custom-control-label" for="discountRadio{{ $discount->id }}"> {{ $discount->code }} ({{ $discount->value * 100}}%)</label>
                             </div>
                     	@endforeach
                     @else

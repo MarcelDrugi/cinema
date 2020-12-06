@@ -727,6 +727,7 @@ body {
 }
 .userInfo {
   position: fixed;
+  z-index: 4;
   right: 2vw;
   top: 13vh;
   text-align: center;
@@ -750,9 +751,9 @@ body {
 .userInfo .avatar img {
   width: 5vw;
   height: 5vw;
-  border: 3px inset hsl(184, 62%, 19%);
+  border: 0.2vw inset hsl(184, 62%, 19%);
   border-radius: 2.5vw;
-  padding: 5px;
+  padding: 0.25vw;
 }
 @media (orientation: portrait) {
   .userInfo .avatar img {
@@ -1081,15 +1082,34 @@ body {
 .tapeBackground {
   position: absolute;
   width: 29vw;
-  height: 29vh;
+  height: 43vw;
   left: 0;
   top: 8vh;
   opacity: 0.65;
 }
 @media (orientation: portrait) {
   .tapeBackground {
-    width: 60vw;
-    height: 34vw;
+    width: 58vw;
+    height: 86vw;
+    left: 12vw;
+    top: 4vh;
+    opacity: 0.35;
+  }
+}
+.leonBackground {
+  position: absolute;
+  width: 16vw;
+  height: 25.5vw;
+  right: 0;
+  top: 46vh;
+  opacity: 0.6;
+}
+@media (orientation: portrait) {
+  .leonBackground {
+    width: 32vw;
+    height: 51vw;
+    right: 0vw;
+    top: 74vh;
   }
 }
 .slidingName {
@@ -1182,6 +1202,7 @@ body {
 }
 .sliderInfo {
   position: relative;
+  text-align: center;
   z-index: 2;
   width: 70vw;
   left: 0px;
@@ -1221,6 +1242,7 @@ body {
 }
 .homepageBottomInfo {
   position: relative;
+  text-align: center;
   z-index: 2;
   width: 70vw;
   left: 0px;
@@ -1247,6 +1269,9 @@ body {
     font-size: 2.4vw;
   }
 }
+.homepageBottomInfo .sliderInfoBackground {
+  box-shadow: none;
+}
 .rightArrowStatic {
   position: absolute;
   background-color: transparent;
@@ -1262,12 +1287,12 @@ body {
 }
 @media (orientation: portrait) {
   .rightArrowStatic {
-    margin-top: 23vw;
+    margin-top: 25vw;
     right: 5vw;
   }
   .rightArrowStatic img {
     width: 10vw;
-    height: 3vh;
+    height: 3.9vw;
   }
 }
 .rightArrow {
@@ -1288,12 +1313,12 @@ body {
 }
 @media (orientation: portrait) {
   .rightArrow {
-    margin-top: 23vw;
+    margin-top: 25vw;
     right: 5vw;
   }
   .rightArrow img {
     width: 10vw;
-    height: 3vh;
+    height: 3.9vw;
   }
 }
 .leftArrowStatic {
@@ -1311,12 +1336,12 @@ body {
 }
 @media (orientation: portrait) {
   .leftArrowStatic {
-    margin-top: 23vw;
+    margin-top: 25vw;
     left: 5vw;
   }
   .leftArrowStatic img {
     width: 10vw;
-    height: 3vh;
+    height: 3.9vw;
   }
 }
 .leftArrow {
@@ -1337,12 +1362,12 @@ body {
 }
 @media (orientation: portrait) {
   .leftArrow {
-    margin-top: 23vw;
+    margin-top: 25vw;
     left: 5vw;
   }
   .leftArrow img {
     width: 10vw;
-    height: 3vh;
+    height: 3.9vw;
   }
 }
 .poster {
@@ -2578,6 +2603,7 @@ body {
     position: absolute;
     margin-top: 15vh;
     font-size: 2vw;
+    z-index: 2;
   }
 }
 .employeePanelNav {
@@ -2907,9 +2933,8 @@ body {
   z-index: 2;
   left: 3vw;
   top: 10vh;
-  color: hsl(119, 77%, 44%);
-  -webkit-animation: detailGlow 1s ease-in-out infinite alternate;
-          animation: detailGlow 1s ease-in-out infinite alternate;
+  color: black;
+  @detail NeonTextColor;
 }
 @media (orientation: portrait) {
   .detailNeonTitle {
@@ -3465,6 +3490,7 @@ body {
   height: 27vw;
   bottom: 0;
   left: 0;
+  opacity: 0.8;
 }
 .orderBackgroundImg2 img {
   height: 100%;
@@ -4915,5 +4941,535 @@ body {
 @keyframes pricingRightArrowMove {
   70% {
     transform: translateX(1vw);
+  }
+}
+
+.horizontalCenter {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.profileTitle {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 2.2vw;
+  width: 60vw;
+  margin-top: 5vh;
+  margin-bottom: 3vh;
+}
+@media (orientation: portrait) {
+  .profileTitle {
+    margin-top: 16vh;
+    margin-bottom: 2vh;
+    font-size: 4vw;
+  }
+}
+.profileSubitle {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.6vw;
+  margin-bottom: 2vh;
+}
+@media (orientation: portrait) {
+  .profileSubitle {
+    font-size: 3vw;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+}
+.modifyProfile {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 60vw;
+}
+.modifyProfile label {
+  font-size: 1.1vw;
+  font-weight: 900;
+}
+@media (orientation: portrait) {
+  .modifyProfile label {
+    font-size: 2.2vw;
+  }
+}
+.modifyProfile input[type='text'],
+.modifyProfile input[type='email'],
+.modifyProfile input[type='password'] {
+  width: 49%;
+  font-size: 1vw;
+}
+@media (orientation: portrait) {
+  .modifyProfile input[type='text'],
+  .modifyProfile input[type='email'],
+  .modifyProfile input[type='password'] {
+    font-size: 2vw;
+    width: 65%;
+  }
+}
+.modifyProfile input[type='file'] {
+  font-size: 1vw;
+}
+@media (orientation: portrait) {
+  .modifyProfile input[type='file'] {
+    font-size: 2vw;
+  }
+}
+.modifyProfile .btn {
+  font-size: 1.2vw;
+  width: 12vw;
+  border: 0.2vw solid black;
+}
+@media (orientation: portrait) {
+  .modifyProfile .btn {
+    font-size: 2vw;
+    width: 20vw;
+  }
+}
+.modifyProfile img {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  max-width: 6vw;
+  max-height: 6vw;
+  border-radius: 2.5vw;
+  padding: 0.25vw;
+  border: 0.2vw inset hsl(220, 14%, 92%);
+}
+@media (orientation: portrait) {
+  .modifyProfile img {
+    margin-left: -10vw;
+    margin-top: 3vh;
+  }
+}
+.modifyProfile .custom-switch.custom-switch-lg .custom-control-label {
+  padding-left: 2.8vw;
+  padding-bottom: 1.4vw;
+}
+.modifyProfile .custom-switch.custom-switch-lg .custom-control-label::before {
+  height: 1.8vw;
+  width: 3.6vw;
+  border-radius: 2vw;
+}
+.modifyProfile .custom-switch.custom-switch-lg .custom-control-label::after {
+  width: calc(1.8vw - 0.2vw);
+  height: calc(1.8vw - 0.2vw);
+  border-radius: calc(3.8vw - (1.8vw / 2));
+}
+.modifyProfile .custom-switch.custom-switch-lg .custom-control-input:checked ~ .custom-control-label::after {
+  transform: translateX(calc(2vw - 0.2vw));
+}
+@media (orientation: portrait) {
+  .modifyProfile {
+    width: 80vw;
+  }
+}
+.profileBakcground {
+  position: absolute;
+  z-index: -1;
+  background-color: hsl(182, 25%, 39%);
+  opacity: 0.8;
+  width: 100%;
+  height: 107%;
+  margin-top: -1%;
+  border-radius: 2vw;
+  box-shadow: -0.38vw 0.35vw 0.3vw 0.3vw hsl(0, 0%, 39%);
+}
+.profileInfoWrapper {
+  position: relative;
+  z-index: 2;
+}
+.profileInfo {
+  display: flex;
+  z-index: 2;
+  margin-top: 8vh;
+}
+.profileInfo .profileBakcground {
+  border-radius: 0;
+  box-shadow: none;
+  height: 100%;
+  margin-top: 0%;
+}
+.profileInfo .profileReservations {
+  text-align: center;
+}
+.profileInfo .profileReservations .profilReservationsContent {
+  width: 80%;
+  margin-left: 10%;
+  font-size: 1vw;
+}
+@media (orientation: portrait) {
+  .profileInfo .profileReservations .profilReservationsContent {
+    text-align: left;
+    font-size: 2.2vw;
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+.profileInfo .profileReservations ul {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  width: 45vw;
+}
+@media (orientation: portrait) {
+  .profileInfo .profileReservations ul {
+    width: 90vw;
+    margin-right: 5vw;
+  }
+}
+.profileInfo .profileReservations ul b {
+  background-color: white;
+  border-radius: 0.2vw;
+  padding: 0.2vw;
+}
+.profileInfo .profileReservations ul form {
+  display: inline;
+  margin-left: 1vw;
+}
+.profileInfo .profileReservations ul form .btn {
+  font-size: 1vw;
+}
+@media (orientation: portrait) {
+  .profileInfo .profileReservations ul form .btn {
+    font-size: 2vw;
+  }
+}
+@media (orientation: portrait) {
+  .profileInfo .profileReservations {
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vw;
+  }
+}
+.profileInfo .profileDiscoutns {
+  text-align: center;
+}
+.profileInfo .profileDiscoutns .profileDiscoutnsContent {
+  width: 80%;
+  margin-left: 10%;
+  font-size: 1vw;
+}
+@media (orientation: portrait) {
+  .profileInfo .profileDiscoutns .profileDiscoutnsContent {
+    text-align: left;
+    font-size: 2.5vw;
+  }
+}
+.profileInfo .profileDiscoutns ul {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  width: 15vw;
+}
+@media (orientation: portrait) {
+  .profileInfo .profileDiscoutns ul {
+    width: 38vw;
+    margin-right: 15vw;
+  }
+}
+@media (orientation: portrait) {
+  .profileInfo .profileDiscoutns {
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90vw;
+    margin-top: 3vh;
+  }
+}
+@media (orientation: portrait) {
+  .profileInfo {
+    display: block;
+  }
+}
+.profileBakgroundImg1 {
+  position: absolute;
+  width: 27.3vw;
+  height: 30vw;
+  opacity: 0.5;
+  top: 2vh;
+  left: 0vw;
+}
+.profileBakgroundImg1 img {
+  width: 100%;
+  height: 100%;
+}
+@media (orientation: portrait) {
+  .profileBakgroundImg1 {
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 41vw;
+    height: 45vw;
+    top: 70vh;
+  }
+}
+.profileBakgroundImg2 {
+  position: absolute;
+  z-index: 5;
+  width: 15vw;
+  height: 15vw;
+  opacity: 0.5;
+  bottom: 0;
+  right: 2vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/images/profile2.png");
+}
+@media (orientation: portrait) {
+  .profileBakgroundImg2 {
+    width: 20vw;
+    height: 20vw;
+  }
+}
+
+.horizontalCenter {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.apiTitle {
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 2.2vw;
+  width: 60vw;
+  margin-top: 5vh;
+}
+@media (orientation: portrait) {
+  .apiTitle {
+    font-size: 4vw;
+    margin-top: 16vh;
+  }
+}
+.apiSubtitle {
+  text-align: center;
+  font-size: 1.7vw;
+  margin-top: 2vh;
+}
+@media (orientation: portrait) {
+  .apiSubtitle {
+    font-size: 3.4vw;
+  }
+}
+.apiResponseTitle {
+  font-size: 1.4vw;
+  margin-left: 1vw;
+}
+@media (orientation: portrait) {
+  .apiResponseTitle {
+    font-size: 3vw;
+    margin-left: 2vw;
+  }
+}
+.apiBackground {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(182, 25%, 39%);
+  opacity: 0.8;
+  border-radius: 2vw;
+  box-shadow: -0.38vw 0.35vw 0.3vw 0.3vw hsl(0, 0%, 39%);
+}
+.endpointPath {
+  position: relative;
+  z-index: 2;
+  font-size: 1.6vw;
+  width: 26vw;
+  margin-left: 6vw;
+  margin-bottom: 4vh;
+}
+.endpointPath ul {
+  padding-left: 3vw;
+}
+@media (orientation: portrait) {
+  .endpointPath {
+    font-size: 3vw;
+    width: 45vw;
+  }
+}
+.endpointExamplePath {
+  position: relative;
+  z-index: 2;
+  font-size: 1.6vw;
+  width: 26vw;
+  margin-left: 6vw;
+  margin-bottom: 4vh;
+  width: 47vw;
+  font-size: 1.2vw;
+}
+.endpointExamplePath ul {
+  padding-left: 3vw;
+}
+@media (orientation: portrait) {
+  .endpointExamplePath {
+    font-size: 3vw;
+    width: 45vw;
+  }
+}
+.endpointExamplePath p {
+  padding-left: 3vw;
+}
+@media (orientation: portrait) {
+  .endpointExamplePath {
+    font-size: 3vw;
+    width: 85vw;
+  }
+}
+.screeningEndpoint {
+  position: relative;
+  z-index: 2;
+  margin-top: 4vh;
+  width: 80%;
+}
+.screeningEndpoint table {
+  width: 76vw;
+  margin-left: 12vw;
+  border-radius: 2vw;
+  box-shadow: -0.38vw 0.35vw 0.3vw 0.3vw hsl(0, 0%, 39%);
+  background-color: hsl(182, 25%, 39%);
+  color: hsl(220, 14%, 92%);
+  font-size: 1vw;
+  opacity: 0.9;
+}
+@media (orientation: portrait) {
+  .screeningEndpoint table {
+    font-size: 2vw;
+    margin-bottom: 2vh;
+  }
+}
+.screeningEndpoint .table > tbody > tr > th {
+  border-top: none;
+}
+.apiResponse {
+  position: relative;
+  z-index: 2;
+  margin-left: 5vw;
+  width: 40vw;
+}
+@media (orientation: portrait) {
+  .apiResponse {
+    width: 80vw;
+  }
+}
+.movieEndpoint {
+  position: relative;
+  z-index: 2;
+  margin-top: 4vh;
+  width: 80%;
+  margin-top: 9vh;
+  margin-bottom: 7vh;
+}
+.movieEndpoint table {
+  width: 76vw;
+  margin-left: 12vw;
+  border-radius: 2vw;
+  box-shadow: -0.38vw 0.35vw 0.3vw 0.3vw hsl(0, 0%, 39%);
+  background-color: hsl(182, 25%, 39%);
+  color: hsl(220, 14%, 92%);
+  font-size: 1vw;
+  opacity: 0.9;
+}
+@media (orientation: portrait) {
+  .movieEndpoint table {
+    font-size: 2vw;
+    margin-bottom: 2vh;
+  }
+}
+.movieEndpoint .table > tbody > tr > th {
+  border-top: none;
+}
+.movieEndpoint .apiResponse {
+  width: 88vw;
+}
+.movieEndpoint .endpointExamplePath {
+  width: 23vw;
+}
+@media (orientation: portrait) {
+  .movieEndpoint .endpointExamplePath {
+    width: 50vw;
+  }
+}
+.apiBackgroundImg1 {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+  width: 9.5vw;
+  height: 9.5vw;
+  left: 64vw;
+  top: -9.5vw;
+}
+.apiBackgroundImg1 img {
+  width: 100%;
+  height: 100%;
+}
+@media (orientation: portrait) {
+  .apiBackgroundImg1 {
+    top: -20vw;
+    width: 20vw;
+    height: 20vw;
+  }
+}
+.apiBackgroundImg2 {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+  width: 9.5vw;
+  height: 9.5vw;
+  top: -9.5vw;
+  z-index: 1;
+  opacity: 0.6;
+  width: 20vw;
+  height: 25.5vw;
+  left: 64vw;
+  top: 80vh;
+}
+.apiBackgroundImg2 img {
+  width: 100%;
+  height: 100%;
+}
+@media (orientation: portrait) {
+  .apiBackgroundImg2 {
+    top: -20vw;
+    width: 20vw;
+    height: 20vw;
+  }
+}
+@media (orientation: portrait) {
+  .apiBackgroundImg2 {
+    display: none;
+  }
+}
+xmp {
+  white-space: pre-wrap;
+}
+@media (orientation: portrait) {
+  xmp {
+    font-size: 1.8vw;
   }
 }

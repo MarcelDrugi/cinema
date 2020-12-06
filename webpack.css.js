@@ -18,7 +18,9 @@ mix.less('resources/less/discount/index.less', '../resources/css/discount')
 		.less('resources/less/screening/index.less', '../resources/css/screening')
 		.less('resources/less/modifypricing/index.less', '../resources/css/modifypricing')
 		.less('resources/less/information/index.less', '../resources/css/information')
-		.less('resources/less/pricing/index.less', '../resources/css/pricing').combine([
+		.less('resources/less/pricing/index.less', '../resources/css/pricing')
+		.less('resources/less/profile/index.less', '../resources/css/profile')
+		.less('resources/less/api-description/index.less', '../resources/css/api-description').combine([
 	    'resources/css/discount/index.css',
 		'resources/css/movie/index.css',
 	    'resources/css/layouts/base.css',
@@ -36,6 +38,8 @@ mix.less('resources/less/discount/index.less', '../resources/css/discount')
 		'resources/css/modifypricing/index.css',
 		'resources/css/information/index.css',
 		'resources/css/pricing/index.css',
+		'resources/css/profile/index.css',
+		'resources/css/api-description/index.css',
 	],
 	'public/css/main.css'
 );
