@@ -14,8 +14,10 @@
         <link href="/css/main.css" rel="stylesheet">
     
 	</head>
-
     <body>
+		<div class="pageLoader">
+			<img src="{{ asset('images/loader.png') }}">
+		</div>
 		<div class="hamburger" onclick="showHero()"></div>
 		@if(Auth::user())
     		<div class="userInfo">

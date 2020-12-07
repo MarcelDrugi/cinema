@@ -1,3 +1,11 @@
+
+window.addEventListener('load', () => {
+    document.getElementsByClassName('pageLoader')[0].style.display = 'none';
+    document.getElementsByClassName('section')[0].style.visibility = 'visible';
+    document.getElementsByClassName('footer')[0].style.visibility = 'visible';
+    document.getElementsByClassName('hamburger')[0].style.visibility = 'visible';
+});
+
 const resize = () => {
 	size = Math.floor(Math.random() * 200) - 100;
 	return size;
