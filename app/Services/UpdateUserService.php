@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
-class UpdateUserService
+final class UpdateUserService
 {
     public function __construct($id)
     {

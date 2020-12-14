@@ -5,7 +5,7 @@ namespace App\Services;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Discount;
 
-class DiscountService
+final class DiscountService
 {
     private $data;
     

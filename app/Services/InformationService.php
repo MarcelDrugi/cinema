@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Models\Information;
 
-class InformationService
+final class InformationService
 {
     private $content, $info;
     

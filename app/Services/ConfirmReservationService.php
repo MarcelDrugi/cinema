@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Models\Reservation;
 
-class ConfirmReservationService
+final class ConfirmReservationService
 {
     private $reservationId, $parameters;
     

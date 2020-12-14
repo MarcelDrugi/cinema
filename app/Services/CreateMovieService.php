@@ -7,7 +7,7 @@ use App\Models\Movie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class CreateMovieService
+final class CreateMovieService
 {
     private $data;
     

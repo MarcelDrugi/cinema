@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Models\Screening;
 
-class OrderService
+final class OrderService
 {
     private $data;
     
@@ -21,7 +21,7 @@ class OrderService
         $pricing = $screening->term->pricing;
         
         $toPay = $this->data['normalTickets'] * $pricing->normal + $this->data['juniorTickets'] * $pricing->school +
-        $this->data['seniorTickets'] * $pricing->senior;
+            $this->data['seniorTickets'] * $pricing->senior;
         $toPay *= (1.0 - $this->data['discountRadio']);
         
         $request->session()->flash('toPay', $toPay);

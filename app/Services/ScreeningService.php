@@ -9,7 +9,7 @@ use App\Models\Term;
 use App\Models\Screening;
 use Carbon\Carbon;
 
-class ScreeningService
+final class ScreeningService
 {
     private $data;
     

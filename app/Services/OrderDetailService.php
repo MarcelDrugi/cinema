@@ -6,7 +6,7 @@ namespace App\Services;
 use Illuminate\Http\Request;
 use App\Models\Discount;
 
-class OrderDetailService
+final class OrderDetailService
 {
     public function orderContext()
     {

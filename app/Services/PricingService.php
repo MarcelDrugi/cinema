@@ -5,7 +5,7 @@ namespace App\Services;
 
 use App\Models\Pricing;
 
-class PricingService
+final class PricingService
 {
     private $data;
     

@@ -6,8 +6,9 @@ use App\Models\Reservation;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Discount;
 use App\Models\Screening;
+use Exception;
 
-class ReservationService
+final class ReservationService
 {
     private $screeningId, $discountId, $toPay, $sumOfTickets;
     
@@ -33,7 +34,7 @@ class ReservationService
             session()->put('reservationId', $reservation->id);
         } 
         else
-            throw new \Exception('There are no free seats in the hall!');
+            throw new Exception('There are no free seats in the hall!');
     }
     
     public function removeDiscount()

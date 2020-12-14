@@ -160,14 +160,14 @@ class TermSeeder extends Seeder
         $term22 = new Term([
             'screening_id' => 22,
             'hall_id' => 1,
-            'date_time' => Carbon::today()->addHours(21)->addMinutes(50),
+            'date_time' => Carbon::today()->addDays(1)->addHours(9)->addMinutes(50),
         ]);
         $term22->save();
         
         $term23 = new Term([
             'screening_id' => 23,
             'hall_id' => 1,
-            'date_time' => Carbon::today()->addHours(14)->addMinutes(55),
+            'date_time' => Carbon::today()->addDays(1)->addHours(14)->addMinutes(55),
         ]);
         $term23->save();
         
@@ -181,7 +181,7 @@ class TermSeeder extends Seeder
         $term25 = new Term([
             'screening_id' => 25,
             'hall_id' => 2,
-            'date_time' => Carbon::today()->addHours(13)->addMinutes(55),
+            'date_time' => Carbon::today()->addDays(1)->addHours(13)->addMinutes(55),
         ]);
         $term25->save();
         
@@ -195,7 +195,7 @@ class TermSeeder extends Seeder
         $term27 = new Term([
             'screening_id' => 27,
             'hall_id' => 1,
-            'date_time' => Carbon::today()->addDays(1)->addHours(9)->addMinutes(20),
+            'date_time' => Carbon::today()->addDays(4)->addHours(13)->addMinutes(20),
         ]);
         $term27->save();
     }

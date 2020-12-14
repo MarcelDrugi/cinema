@@ -4,7 +4,7 @@ namespace App\Services;
 
 use Carbon\Carbon;
 
-class RepertoireService
+final class RepertoireService
 {
     private function daysGenerator($today) {
         $weekDays = [
@@ -26,6 +26,7 @@ class RepertoireService
         }
         return $days;
     }
+    
     public function weekDays()
     {
         $dayOfTheWeek = Carbon::now()->dayOfWeek;
