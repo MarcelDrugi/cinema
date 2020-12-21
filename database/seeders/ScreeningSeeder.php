@@ -11,7 +11,7 @@ class ScreeningSeeder extends Seeder
     {
         $screening1 = new Screening([
             'movie_id' => 1,
-            'viewers' => 142,
+            'viewers' => 111,
         ]);
         $screening1->save();
         
@@ -23,7 +23,7 @@ class ScreeningSeeder extends Seeder
         
         $screening3 = new Screening([
             'movie_id' => 2,
-            'viewers' => 144,
+            'viewers' => 107,
         ]);
         $screening3->save();
         
@@ -65,7 +65,7 @@ class ScreeningSeeder extends Seeder
         
         $screening10 = new Screening([
             'movie_id' => 4,
-            'viewers' => 125,
+            'viewers' => 115,
         ]);
         $screening10->save();
         
@@ -119,7 +119,7 @@ class ScreeningSeeder extends Seeder
         
         $screening19 = new Screening([
             'movie_id' => 8,
-            'viewers' => 131,
+            'viewers' => 91,
         ]);
         $screening19->save();
         

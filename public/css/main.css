@@ -4251,7 +4251,7 @@ body {
 }
 .employeeScreeningCreate {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 .employeeScreeningCreate form {
   width: 100%;
@@ -4291,7 +4291,7 @@ body {
 }
 .employeeScreeningModify {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 .employeeScreeningModify form {
   width: 100%;

@@ -24,6 +24,8 @@ mix.scripts([
 		'resources/js/repertoire/index.js',
 		'resources/js/pricing/index.js',
 		'resources/js/profile/index.js',
+		'resources/js/auth/register.js',
+		'resources/js/information/index.js',
 	],
 	'public/js/main.js'
 );
