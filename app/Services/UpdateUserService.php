@@ -23,11 +23,13 @@ final class UpdateUserService
             'last_name' =>$data['last_name'],
             'email' =>$data['email'],
         ]);
-        if(!empty($data['password'])) {
+        
+        if (!empty($data['password'])) {
             $user->password = Hash::make($data['password']);
             $user->save();
         }
-        if(!empty($data['avatar'])) {
+        
+        if (!empty($data['avatar'])) {
             $s3 = Storage::disk('s3');
             $s3->delete(substr($user->avatar, 50));
             

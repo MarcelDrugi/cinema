@@ -6,7 +6,8 @@ use App\Models\Reservation;
 
 final class ConfirmReservationService
 {
-    private $reservationId, $parameters;
+    private $reservationId;
+    private $parameters;
     
     public function __construct(string $reservationId, array $parameters)
     {

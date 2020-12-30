@@ -15,9 +15,8 @@ class PricingTest extends NoPermissionRedirect
     protected $correctRole = 'employee';
     protected $incorrectRole = 'customer';
     
-    //protected $weekDays = [];
-    
-    public function setUp(): void {
+    public function setUp(): void 
+    {
         parent::setUp();
         
         $this->weekDays = [
@@ -68,8 +67,8 @@ class PricingTest extends NoPermissionRedirect
         $body = [];
         $ticketCost = 10;
         
-        foreach($this->weekDays as $day) {
-            foreach($this->ticketTypes as $ticket) {
+        foreach ($this->weekDays as $day) {
+            foreach ($this->ticketTypes as $ticket) {
                 $body[$day . $ticket] = $ticketCost;
             }
         }
@@ -101,8 +100,8 @@ class PricingTest extends NoPermissionRedirect
         $pricing = Pricing::factory()->create();
         $body = [];
         
-        foreach($this->weekDays as $day) {
-            foreach($this->ticketTypes as $ticket) {
+        foreach ($this->weekDays as $day) {
+            foreach ($this->ticketTypes as $ticket) {
                 $body[$day . $ticket] = '';
             }
         }
@@ -134,8 +133,8 @@ class PricingTest extends NoPermissionRedirect
         
         $body = [];
         
-        foreach($this->weekDays as $day) {
-            foreach($this->ticketTypes as $ticket) {
+        foreach ($this->weekDays as $day) {
+            foreach ($this->ticketTypes as $ticket) {
                 $body[$day . $ticket] = '';
             }
         }

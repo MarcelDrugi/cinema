@@ -35,7 +35,7 @@ final class OrderService
             $this->data['normalTickets'] + $this->data['juniorTickets'] + $this->data['seniorTickets']
         );
         
-        if($toPay > 0)
+        if ($toPay > 0)
             return $toPay;
         else
             abort(404);

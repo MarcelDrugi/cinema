@@ -7,7 +7,8 @@ use App\Services\OrderDetailService;
 
 class OrderSummaryController extends Controller
 {
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('auth');
         $this->middleware('role:customer');
     }

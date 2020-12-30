@@ -63,23 +63,23 @@ class PayPalService
         $this->itemList->setItems($this->getPayPalItems($toPay));
         $subTotalAmount = $this->getTotalAmount($toPay);
         $this->amount->setCurrency(self::CURRENCY)
-        ->setTotal($subTotalAmount);
+            ->setTotal($subTotalAmount);
         $this->transaction->setAmount($this->amount)
-        ->setItemList($this->itemList)
-        ->setDescription('Purchase of tickets at the Klasyka Kina cinema')
-        ->setInvoiceNumber(uniqid());
+            ->setItemList($this->itemList)
+            ->setDescription('Purchase of tickets at the Klasyka Kina cinema')
+            ->setInvoiceNumber(uniqid());
         $this->redirectUrls
-        ->setReturnUrl(route('homepage.index', ['action' => 'paid']))
-        ->setCancelUrl(route('homepage.index', ['action' => 'nonpaid']));
+            ->setReturnUrl(route('homepage.index', ['action' => 'paid']))
+            ->setCancelUrl(route('homepage.index', ['action' => 'nonpaid']));
         $inputFields = new InputFields();
         $inputFields->setNoShipping(1);
         $this->webProfile->setName('test' . uniqid())->setInputFields($inputFields);
         $webProfileId = $this->webProfile->create($this->paypalClient->context())->getId();
         $this->payment->setExperienceProfileId($webProfileId);
         $this->payment->setIntent("sale")
-        ->setPayer($this->payer)
-        ->setRedirectUrls($this->redirectUrls)
-        ->setTransactions(array($this->transaction));
+            ->setPayer($this->payer)
+            ->setRedirectUrls($this->redirectUrls)
+            ->setTransactions(array($this->transaction));
         
         try {
             $this->payment->create($this->paypalClient->context());
@@ -88,14 +88,14 @@ class PayPalService
             throw new Exception($ex->getMessage());
         }
         
-        foreach($this->payment->getLinks() as $link) {
+        foreach ($this->payment->getLinks() as $link) {
             if($link->getRel() == 'approval_url') {
                 $redirect_url = $link->getHref();
                 break;
             }
         }
         
-        if(isset($redirect_url))
+        if (isset($redirect_url))
             return $redirect_url;
         else
             return null;
@@ -134,12 +134,12 @@ class PayPalService
     {
         $request = request();
         
-        if($toPay == $request->session()->get('toPay') || strpos($request->server('HTTP_REFERER'), '/profile'))
+        if ($toPay == $request->session()->get('toPay') || strpos($request->server('HTTP_REFERER'), '/profile'))
             return [
                 ['name' => 'set of tickets', 'quantity' => 1, 'price' => $toPay],
             ];
-            else
-                abort(404,'Session not found.');
+        else
+            abort(404,'Session not found.');
     }
     
     public function confirmPayment(Request $request)

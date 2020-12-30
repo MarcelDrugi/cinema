@@ -13,7 +13,8 @@ class PricingModifyTest extends TestCase
 {
     use RefreshDatabase;
     
-    public function setUp(): void {
+    public function setUp(): void 
+    {
         parent::setUp();
         
         $this->weekDays = [
@@ -40,8 +41,8 @@ class PricingModifyTest extends TestCase
         
         $data = [];
         
-        foreach($this->weekDays as $day) {
-            foreach($this->ticketTypes as $ticket) {
+        foreach ($this->weekDays as $day) {
+            foreach ($this->ticketTypes as $ticket) {
                 $data[$day . $ticket] = '';
             }
         }
@@ -66,8 +67,8 @@ class PricingModifyTest extends TestCase
         $data = [];
         $price = 13;
         
-        foreach($this->weekDays as $day) {
-            foreach($this->ticketTypes as $ticket) {
+        foreach ($this->weekDays as $day) {
+            foreach ($this->ticketTypes as $ticket) {
                 $data[$day . $ticket] = $price;
             }
         }
@@ -81,7 +82,7 @@ class PricingModifyTest extends TestCase
         
         $this->assertEquals($pricings->count(), count($this->weekDays));
         
-        foreach($pricings as $pricing) {
+        foreach ($pricings as $pricing) {
             $this->assertEquals($pricing->normal, $price);
             $this->assertEquals($pricing->school, $price);
             $this->assertEquals($pricing->senior, $price);
@@ -94,8 +95,8 @@ class PricingModifyTest extends TestCase
         $pricing = Pricing::factory()->create();
         $data = [];
         
-        foreach($this->weekDays as $day) {
-            foreach($this->ticketTypes as $ticket) {
+        foreach ($this->weekDays as $day) {
+            foreach ($this->ticketTypes as $ticket) {
                 $data[$day . $ticket] = '';
             }
         }

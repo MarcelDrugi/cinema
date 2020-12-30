@@ -13,21 +13,23 @@ class InformationRequest extends FormRequest
             'infoSelect' => [
                 'bail',
                 'required',
-                function($attribute, $value, $fail) {
+                function($attribute, $value, $fail)
+                {
                     $place = json_decode($value, true)['place'];
                     
-                    if(!in_array($place, Information::$availablePlaces))
+                    if (!in_array($place, Information::$availablePlaces))
                         $fail(__('Unknown info location.'));
                 },
             ],
             
             'content' => [
                 'bail',
-                function($attribute, $value, $fail) {
+                function($attribute, $value, $fail)
+                {
                     $place = json_decode($this->infoSelect, true)['place'];
                     
-                    if($info = Information::where('place', $place)->first()) {
-                        if(strlen($value) > $info->max_length) {
+                    if ($info = Information::where('place', $place)->first()) {
+                        if (strlen($value) > $info->max_length) {
                             $fail(__('Content is too long.'));
                         }
                     }

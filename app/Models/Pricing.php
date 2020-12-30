@@ -27,12 +27,9 @@ class Pricing extends Model
     
     public function save(array $options = array())
     {
-        if ($this->isValid())
-        {
+        if ($this->isValid())  {
             parent::save($options);
-        }
-        else
-        {
+        } else {
             $fail = $this->errors->first();
             throw new Exception($fail, 0);
         }
@@ -54,9 +51,8 @@ class Pricing extends Model
         
         $rules = [
             'week_day' => function($attribute, $value, $fail) use ($weekDays) {
-                if(!in_array($value, $weekDays)) {
+                if (!in_array($value, $weekDays))
                     $fail('The value must be one of the days of the week in English.');
-                }
             },
         ];
         

@@ -13,28 +13,29 @@ class PricingRequest extends FormRequest
         $rules = [];
         $ticketTypes = ['normal', 'school', 'senior'];
         
-        foreach(PricingService::$weekDays as $day) {
-            foreach($ticketTypes as $type) {
+        foreach (PricingService::$weekDays as $day) {
+            foreach ($ticketTypes as $type) {
                 
                 $rules[$day . $type] = [
                     
-                    function($attribute, $value, $fail) {
-                        if(!empty($value) && !filter_var($value, FILTER_VALIDATE_INT))
+                    function($attribute, $value, $fail)
+                    {
+                        if (!empty($value) && !filter_var($value, FILTER_VALIDATE_INT))
                             $fail(__('The ticket price must be an INTEGER'));
                     },
                     
                     function($attribute, $value, $fail) use ($day){
-                        if(
+                        if (
                             !empty($this->input($day . 'normal')) &&
                             !empty($this->input($day . 'school')) &&
                             !empty($this->input($day . 'senior'))
-                            ) { }
-                        elseif(
+                            ) 
+                        { } elseif(
                             empty($this->input($day . 'normal')) &&
                             empty($this->input($day . 'school')) &&
                             empty($this->input($day . 'senior'))
-                            ) { }
-                        else {
+                            ) 
+                        { } else {
                             $fail(__('You must specify the prices of all ticket types to create a price list, ' .
                                     'or delete all prices to delete them. You cannot create a partial price list.'
                             ));

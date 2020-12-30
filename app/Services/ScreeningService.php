@@ -48,7 +48,7 @@ final class ScreeningService
             'date_time' => Carbon::parse($this->data['modifyTerm'] . ' ' . $this->data['modifyTime']),
         ]);
         
-        if(!empty($this->data['changedHall'])) {
+        if (!empty($this->data['changedHall'])) {
             $parsedHallData = json_decode($this->data['changedHall'], true);
             $term->update([
                 'hall_id' => $parsedHallData['id'],

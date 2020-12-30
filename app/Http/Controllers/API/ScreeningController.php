@@ -13,7 +13,7 @@ class ScreeningController extends Controller
     {
         $filter = new ScreeningFilter($request->all());
         
-        if($filtered = $filter->resultFiltering())
+        if ($filtered = $filter->resultFiltering())
             return ScreeningResource::collection($filtered);
         else
             return response()->json(['error' => 'Wrong filters.'], 400);

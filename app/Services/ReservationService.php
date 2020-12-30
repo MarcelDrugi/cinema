@@ -10,7 +10,10 @@ use Exception;
 
 final class ReservationService
 {
-    private $screeningId, $discountId, $toPay, $sumOfTickets;
+    private $screeningId;
+    private $discountId;
+    private $toPay;
+    private $sumOfTickets;
     
     public function __construct($screeningId, $toPay, $sumOfTickets, $discountId)
     {
@@ -22,8 +25,7 @@ final class ReservationService
     
     public function createReservation()
     {
-        if($this->addNewViewers())
-        {
+        if ($this->addNewViewers()) {
             $reservation = Reservation::create([
                 'screening_id' => $this->screeningId,
                 'user_id' => Auth::user()->id,
@@ -32,15 +34,13 @@ final class ReservationService
                 'tickets_number' => $this->sumOfTickets,
             ]);
             session()->put('reservationId', $reservation->id);
-        } 
-        else
+        } else
             throw new Exception('There are no free seats in the hall!');
     }
     
     public function removeDiscount()
     {
-        if($this->discountId !== 'noDiscount')
-        {
+        if ($this->discountId !== 'noDiscount') {
             $discount = Discount::findOrFail($this->discountId);
             $discount->delete();
         }
@@ -53,8 +53,7 @@ final class ReservationService
             $screening->viewers += $this->sumOfTickets;
             $screening->save();
             return true;
-        }
-        else
+        } else
             return false;
     }
 }

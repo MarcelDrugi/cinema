@@ -26,7 +26,7 @@ class RepertoireTest extends TestCase
         $daysFromService = $service->weekDays();
         
         $this->assertEquals(7, count($daysFromService));
-        foreach($daysFromService as $key => $value){
+        foreach ($daysFromService as $key => $value) {
             $this->assertLessThanOrEqual(7, $key);
             $this>assertGreaterThanOrEqual(0, $key);
             $this->assertTrue(in_array($value, $days));

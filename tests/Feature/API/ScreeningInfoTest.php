@@ -15,14 +15,15 @@ class ScreeningInfoTest extends TestCase
     
     protected $url = '/api/screenings';
     
-    protected function setUp(): void {
+    protected function setUp(): void 
+    {
         parent::setUp();
         
         $this->screenings = Screening::factory()->count(5)->create();
         
         $this->jsonResponse = [];
         
-        foreach($this->screenings as $screening){
+        foreach ($this->screenings as $screening) {
             $term = Term::factory()->create([
                 'screening_id' => $screening->id,
                 'date_time' => Carbon::tomorrow()->addHours(14),

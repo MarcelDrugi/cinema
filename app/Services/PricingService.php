@@ -26,13 +26,13 @@ final class PricingService
     
     public function updatePricing()
     {
-        foreach(self::$weekDays as $day) {
-            if(
+        foreach (self::$weekDays as $day) {
+            if (
                 !empty($normal = $this->data[$day . 'normal']) && 
                 !empty($school = $this->data[$day . 'school']) && 
                 !empty($senior = $this->data[$day . 'senior'])
                 ) {
-                if($pricing = Pricing::where('week_day', $day)->first()) {
+                if ($pricing = Pricing::where('week_day', $day)->first()) {
                     $before = $pricing->updated_at;
                     
                     $pricing->normal = $normal;
@@ -42,12 +42,11 @@ final class PricingService
                     
                     $after = $pricing->updated_at;
                     
-                    if($before != $after){
+                    if ($before != $after) {
                         $request = request();
                         $request->session()->flash('pricingModified', true);
                     }
-                }
-                else {
+                } else {
                     Pricing::create([
                         'week_day' => $day,
                         'normal' => $normal,
@@ -58,13 +57,12 @@ final class PricingService
                     $request = request();
                     $request->session()->flash('pricingCreated', true);
                 }
-            }
-            elseif (
+            } elseif (
                 empty($normal = $this->data[$day . 'normal']) &&
                 empty($school = $this->data[$day . 'school']) &&
                 empty($school = $this->data[$day . 'school'])
                 ) {
-                if($pricing = Pricing::where('week_day', $day)->first()) {
+                if ($pricing = Pricing::where('week_day', $day)->first()) {
                     $pricing->delete();
                     
                     $request = request();

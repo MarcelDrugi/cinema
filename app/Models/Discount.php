@@ -28,10 +28,10 @@ class Discount extends Model
     
     public function randomCode()
     {
-        while(true) {
+        while (true) {
             $code = Str::random(16);
             $discount = Discount::where('code', $code)->first();
-            if(!$discount) {
+            if (!$discount) {
                 $this->code = $code;
                 $this->save();
                 break;
@@ -41,12 +41,9 @@ class Discount extends Model
     
     public function save(array $options = array())
     {
-        if ($this->isValid())
-        {
+        if ($this->isValid()) {
             parent::save($options);
-        } 
-        else 
-        {
+        } else {
             $fail = $this->errors->first();
             throw new Exception($fail, 0);         
         }

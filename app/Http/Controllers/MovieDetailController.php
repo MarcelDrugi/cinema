@@ -14,8 +14,8 @@ class MovieDetailController extends Controller
         $terms = Term::whereHas(
             'screening', fn($q1) => $q1->whereHas(
                 'movie', fn($q2) => $q2->where('id', $id)
-                )
-            )->orderBy('date_time')->get();
+            )
+        )->orderBy('date_time')->get();
         
         $service = new RepertoireService();
         $weekDays = $service->weekDays();
@@ -30,7 +30,7 @@ class MovieDetailController extends Controller
                 $termsWithDays[$weekDay][$x] = array();
                 foreach($terms as $term) {
                     
-                    if(
+                    if (
                         $term->day() == $weekDay && 
                         date('H:i', strtotime($term->date_time)) >= $x && 
                         date('H:i', strtotime($term->date_time)) < $x + 2

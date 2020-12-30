@@ -30,7 +30,7 @@ class ReservationTest extends TestCase
         $screening = Screening::factory()->create();
         Term::factory()->for(Pricing::factory()->state(['week_day' => 'Friday']))->create([
             'screening_id' => $screening->id,
-            'date_time' => new Carbon('2020-12-25 18:35:00')
+            'date_time' => Carbon::now()->addDays(3),
         ]);
         
         $toPay = 84.95;

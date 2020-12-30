@@ -16,7 +16,7 @@ class CreateDiscountsTable extends Migration
             $table->float('value', 3, 2);
         });
         
-            Schema::table('discounts', function (Blueprint $table) {
+        Schema::table('discounts', function (Blueprint $table) {
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')

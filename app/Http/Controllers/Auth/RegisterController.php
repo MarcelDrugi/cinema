@@ -54,7 +54,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $request = request();
-        if(!empty($request->file('avatar'))) {
+        if (!empty($request->file('avatar'))) {
             $path = $request->file('avatar')->store('avatars', 's3');
             $avatar = Storage::disk('s3')->url($path);
         }

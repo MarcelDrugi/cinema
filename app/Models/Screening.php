@@ -49,12 +49,9 @@ class Screening extends Model
         parent::boot();
         
         self::saving(function($model){
-            if($model->term)
-            {
-                if($model->viewers > $model->term->hall->capacity)
-                {
+            if ($model->term) {
+                if ($model->viewers > $model->term->hall->capacity)
                     throw new \Exception('The number of viewers is greater than the capacity of the hall!', 1);
-                }
             }
         });
     }

@@ -19,17 +19,17 @@ class ScreeningFilter
     
     public function resultFiltering()
     {
-        foreach($this->filters as $parameter => $value) {
+        foreach ($this->filters as $parameter => $value) {
             
-            if($parameter == 'title')
+            if ($parameter == 'title')
                 $this->resoult = $this->resoult->where('movie.title', $value);
             
-            elseif($parameter == 'sevenDays') {
-                if($value == true)
+            elseif ($parameter == 'sevenDays') {
+                if ($value == true)
                     $this->resoult = $this->resoult->where('sevenDaysTerm', '!=', null);
             }
             
-            elseif($parameter == 'day') {
+            elseif ($parameter == 'day') {
                 
                 try {
                     $day = new Carbon($value);

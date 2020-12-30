@@ -12,7 +12,7 @@ class CheckRole extends Authenticate
     {
             $user = Auth::user();
             
-            if($user->hasRole($role))
+            if ($user->hasRole($role))
                 return $next($request);
                 
             return redirect()->route('no-perm', ['role' => $role]);

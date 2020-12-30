@@ -6,7 +6,8 @@ use App\Models\Information;
 
 final class InformationService
 {
-    private $content, $info;
+    private $content;
+    private $info;
     
     public function __construct($data)
     {
@@ -16,7 +17,7 @@ final class InformationService
     
     public function updateInfo()
     {
-        if($info = Information::where('place', $this->info['place'])->first()) {
+        if ($info = Information::where('place', $this->info['place'])->first()) {
             $info->content = $this->content;
             $info->save();
             

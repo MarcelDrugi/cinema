@@ -12,7 +12,8 @@ use App\Http\Requests\EditScreeningRequest;
 
 class ScreeningController extends Controller
 {
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('auth');
         $this->middleware('role:employee');
     }

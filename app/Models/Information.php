@@ -34,11 +34,8 @@ class Information extends Model
     public function save(array $options = array())
     {
         if ($this->isValid())
-        {
             parent::save($options);
-        }
-        else
-        {
+        else {
             $fail = $this->errors->first();
             throw new Exception($fail, 0);
         }
@@ -49,8 +46,8 @@ class Information extends Model
         $values = $this->getAttributes();
         $rules = [
             'content' => function($attribute, $value, $fail) {
-                if(strlen($value) > $this->max_length)
-                $fail('Content is too long.');
+                if (strlen($value) > $this->max_length)
+                    $fail('Content is too long.');
             },
         ];
         

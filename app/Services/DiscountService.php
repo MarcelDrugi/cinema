@@ -21,7 +21,7 @@ final class DiscountService
         ]);
         $discount->randomCode();
 
-        if(!empty($this->data['customerSelect'])) {
+        if (!empty($this->data['customerSelect'])) {
             $discount->user_id = $this->data['customerSelect'];
             $discount->save();
         }
@@ -32,7 +32,7 @@ final class DiscountService
     
     public function delDiscount()
     {
-        if(!empty($this->data['selectDiscount'])) {
+        if (!empty($this->data['selectDiscount'])) {
             $id = json_decode($this->data['selectDiscount'], true)['id'];
             $discount = Discount::findOrFail($id);
             
@@ -40,8 +40,7 @@ final class DiscountService
             $request->session()->flash('deletedDiscount', $discount->code);
             
             $discount->delete();
-        }
-        else
+        } else
             abort(404, 'Discount does not exist.');
     }
 }

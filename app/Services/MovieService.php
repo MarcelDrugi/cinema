@@ -28,19 +28,17 @@ final class MovieService
             'age_limit' => $this->data['age_limit'],
         ]);
         
-        if(!empty($this->data['new_movie']))
-        {
-            if($this->data['new_movie'] == 'on') {
+        if (!empty($this->data['new_movie'])) {
+            if ($this->data['new_movie'] == 'on') {
                 $movie->new_movie = true;
                 $movie->save();
             }
-        }
-        else {
+        } else {
             $movie->new_movie = false;
             $movie->save();
         }
         
-        if(!empty($this->data['poster'])) {
+        if (!empty($this->data['poster'])) {
             $s3 = Storage::disk('s3');
             $s3->delete(substr($this->data['poster'], 50));
             

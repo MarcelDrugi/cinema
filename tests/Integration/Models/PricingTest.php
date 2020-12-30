@@ -17,7 +17,7 @@ class PricingTest extends TestCase
     public function relationWithTerm()
     {
         $term = Term::factory()->for(Pricing::factory()->state(['week_day' => 'Monday']))->create([
-            'date_time' => new Carbon('2020-12-21 20:00:00')
+            'date_time' => Carbon::now()->addDays(5),
         ]);
         
         $pricing = Pricing::orderBy('id', 'desc')->first();

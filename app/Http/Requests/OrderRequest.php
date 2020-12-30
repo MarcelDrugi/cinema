@@ -13,15 +13,15 @@ class OrderRequest extends FormRequest
             'discountRadio' => ['required'],
             'normalTickets' => [
                 'required',
-                function($attribute, $value, $fail) {
-                    if($value < 0) {
+                function($attribute, $value, $fail)
+                {
+                    if ($value < 0)
                         $fail(__('Number of tickets must be positive.'));
-                    }
                     else {
                         $id = $this->input('screeningId');
                         $screening = Screening::findOrFail($id);
                         $freeTickets = $screening->term->hall->capacity - $screening->viewers;
-                        if($value + $this->input('juniorTickets') + $this->input('seniorTickets') > $freeTickets) {
+                        if ($value + $this->input('juniorTickets') + $this->input('seniorTickets') > $freeTickets) {
                             $fail('Too many tickets');
                         }
                     }

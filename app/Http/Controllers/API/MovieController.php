@@ -12,7 +12,7 @@ class MovieController extends Controller
     {
         $movie = Movie::where('title', $title)->get();
         
-        if(!$movie->isEmpty())
+        if (!$movie->isEmpty())
             return MovieResource::collection($movie);
         else
             return response()->json(['error' => 'Movie not found.'], 404);

@@ -16,7 +16,7 @@ class HomepageController extends Controller
     {
         $parameters = request()->all();
         
-        if(!empty($parameters['paymentId']) && !empty($parameters['PayerID'])) {
+        if (!empty($parameters['paymentId']) && !empty($parameters['PayerID'])) {
             $reservationId = session()->pull('reservationId');
             $confirmReservation = new ConfirmReservationService($reservationId, $parameters);
             $confirmReservation->confirm();

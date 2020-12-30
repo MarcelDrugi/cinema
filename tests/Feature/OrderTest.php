@@ -21,7 +21,14 @@ class OrderTest extends NoPermissionRedirect
     protected $url = '/order';
     protected $correctRole = 'customer';
     protected $incorrectRole = 'employee';
-
+    protected $term;
+    
+    public function setUp(): void 
+    {
+        parent::setUp();
+        $this->term = Carbon::now()->addDays(3);
+    }
+    
     /** @test */
     public function postRedirectNotLoggedInUser()
     {
@@ -48,7 +55,7 @@ class OrderTest extends NoPermissionRedirect
         
         Term::factory()->for(Pricing::factory()->state(['week_day' => 'Monday']))->create([
             'screening_id' => $screening->id,
-            'date_time' => new Carbon('2020-12-21 20:00:00')
+            'date_time' => $this->term,
         ]);
         
         $body = [
@@ -175,7 +182,7 @@ class OrderTest extends NoPermissionRedirect
         
         Term::factory()->for(Pricing::factory()->state(['week_day' => 'Monday']))->create([
             'screening_id' => $screening->id,
-            'date_time' => new Carbon('2020-12-21 20:00:00'),
+            'date_time' => $this->term,
         ]);
         
         $response = $this->actingAs($user)->get($this->url . "/$screening->id");

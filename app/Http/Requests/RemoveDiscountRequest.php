@@ -12,11 +12,11 @@ class RemoveDiscountRequest extends FormRequest
         return [
             'selectDiscount' => [
                 'required',
-                function($attribute, $value, $fail) {
-                    
+                function($attribute, $value, $fail)
+                {
                     $id = json_decode($value, true)['id'];
                     
-                    if(!filter_var($id, FILTER_VALIDATE_INT))
+                    if (!filter_var($id, FILTER_VALIDATE_INT))
                         $fail(__('id must be an INTEGER'));
                 },
             ],

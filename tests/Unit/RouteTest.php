@@ -15,6 +15,7 @@ class RouteTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
+        
         $this->withoutMiddleware(\App\Http\Middleware\Authenticate::class);
         $this->withoutMiddleware(\App\Http\Middleware\CheckRole::class);
     }

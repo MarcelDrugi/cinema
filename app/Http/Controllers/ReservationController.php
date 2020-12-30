@@ -9,7 +9,8 @@ use App\Models\Reservation;
 
 class ReservationController extends Controller
 {
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('auth');
         $this->middleware('role:customer');
     }
@@ -32,7 +33,7 @@ class ReservationController extends Controller
             $reservationService->removeDiscount();
         });
         
-        if($redirect_url = $paypal->createPayment(request()->input('toPay')))
+        if ($redirect_url = $paypal->createPayment(request()->input('toPay')))
             return redirect($redirect_url);
         else
             return redirect()->route('homepage.index', ['action' => 'nonpaid']);  
