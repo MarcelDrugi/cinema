@@ -9,7 +9,7 @@
 
 ## About
 Application under development. Early alpha version.
-#### Live demo: [klasyczne-kino.infinityfreeapp.com](http://klasyczne-kino.infinityfreeapp.com/)
+#### Live demo: [klasyka-kina.epizy.com](http://klasyka-kina.epizy.com/) (The first request may wait for a response in about 20-30s. After that, the site works normally.)
 
 ## Running the application locally
 
